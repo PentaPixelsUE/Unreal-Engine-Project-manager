@@ -23,6 +23,7 @@ private:
     QJsonObject jsonObject;
     QString selectedProjectFolderPath;
 
+
 private slots:
     void onProjectPathBrowseBtnClicker();
     void onEngineSourcePathBtnClicker();

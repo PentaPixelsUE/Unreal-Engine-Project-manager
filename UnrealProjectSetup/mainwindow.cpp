@@ -9,6 +9,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QCoreApplication>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -73,6 +74,8 @@ void MainWindow::onEngineSourcePathBtnClicker()
 //Project files setup;
 void MainWindow::onSetupProjectFilesBtnClicker()
 {
+    QString jsonFilePath = QDir::currentPath() + QDir::separator() + "linuxconfig.json";
+
 
     // Get the text from the Project_Name_Txt QLineEdit
 
@@ -101,16 +104,23 @@ void MainWindow::onSetupProjectFilesBtnClicker()
     {
         ProjectGenerator projectGenerator;
         QMessageBox::information(this, "Project Name", "Project Name: " + project_name);
+
+        // Construct the path to linuxconfig.json
+
+
+        // ...
+
+        QString executablePath = QCoreApplication::applicationDirPath();
+        QString jsonFilePath = executablePath + "/linuxconfig.json";
+
+
         QString projectFolderPath = ui->Project_Path_Txt->text() + QDir::separator() + project_name;
         QString engineSourcePath = ui->UE_Source_Path_Txt->text();
 
-
-
-        QJsonObject jsonObject;
-        // Call the createFoldersAndFiles function
-        projectGenerator.createFoldersAndFiles(jsonObject, projectFolderPath);
-
+        // Call the createFoldersAndFiles function with the JSON file path
+        projectGenerator.createFoldersAndFiles(jsonFilePath, projectFolderPath);
     }
+
     else
     {
         // Handle the case where the text field is empty

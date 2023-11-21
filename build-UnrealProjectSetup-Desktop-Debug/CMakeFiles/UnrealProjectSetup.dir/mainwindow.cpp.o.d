@@ -365,4 +365,6 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsondocument.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsondocument.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QCoreApplication \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h

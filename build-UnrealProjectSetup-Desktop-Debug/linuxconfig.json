@@ -1,0 +1,28 @@
+{
+  "~Project_Name~": {
+
+    "Source": {
+
+      "~Project_Name~Core": {
+
+        "Public": {
+          "~Project_Name~Core.h" : "~Project_Name~Core.h "
+        },
+
+        "Private": {
+           
+            "Log.cpp": "Log.cpp",
+            "Log.h": "Log.h",
+            "~Project_Name~Core.cpp": "~Project_Name~Core.cpp"
+          },
+          
+          "~Project_Name~Core.Build.cs": "~Project_Name~Core.Build.cs"
+        }
+      },
+      "~Project_Name~.Target.cs": "~Project_Name~.Target.cs",
+      "~Project_Name~Editor.Target.cs": "~Project_Name~.Target.cs"
+    }
+    
+   
+  }
+
