@@ -18,6 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setMinimumSize(800, 250);
+    setMaximumSize(800,250);
+
     // Connect the button click signal to a slot (function) in the MainWindow class
     connect(ui->Project_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onProjectPathBrowseBtnClicker);
     connect(ui->UE_Source_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onEngineSourcePathBtnClicker);
@@ -105,11 +108,6 @@ void MainWindow::onSetupProjectFilesBtnClicker()
         ProjectGenerator projectGenerator;
         QMessageBox::information(this, "Project Name", "Project Name: " + project_name);
 
-        // Construct the path to linuxconfig.json
-
-
-        // ...
-
         QString executablePath = QCoreApplication::applicationDirPath();
         QString jsonFilePath = executablePath + "/linuxconfig.json";
 
@@ -118,7 +116,8 @@ void MainWindow::onSetupProjectFilesBtnClicker()
         QString engineSourcePath = ui->UE_Source_Path_Txt->text();
 
         // Call the createFoldersAndFiles function with the JSON file path
-        projectGenerator.createFoldersAndFiles(jsonFilePath, projectFolderPath);
+        projectGenerator.createFoldersAndFiles(jsonFilePath, projectFolderPath,project_name);
+
     }
 
     else
@@ -150,12 +149,6 @@ void MainWindow::validateProjectName() {
         updateErrorLabel("");  // Clear the error message if validation passes
     }
 }
-
-
-
-
-
-
 
 
 

@@ -1205,6 +1205,7 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
   /usr/include/c++/13/bits/fs_fwd.h \
   /usr/include/c++/13/bits/fs_ops.h \
   /usr/include/c++/13/bits/fs_path.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/gslice.h \
@@ -1314,6 +1315,7 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/filesystem \
   /usr/include/c++/13/forward_list \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
@@ -1461,8 +1463,10 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -1563,6 +1567,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
@@ -1614,6 +1620,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/indirect_array.h:
+
+/usr/include/c++/13/bits/fstream.tcc:
 
 /usr/include/c++/13/bits/fs_ops.h:
 
@@ -1878,6 +1886,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/include/nlohmann/adl_serializer.hpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h:
+
+/usr/include/c++/13/fstream:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h:
 
@@ -2248,6 +2258,8 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h:
 
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
 
 /usr/include/c++/13/typeinfo:
 
