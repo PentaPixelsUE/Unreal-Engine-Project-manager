@@ -32,19 +32,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 43,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 59,
+				"line" : 58,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 49,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
@@ -82,13 +82,13 @@
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 70,
+				"line" : 69,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 78,
+				"line" : 77,
 				"parent" : 0
 			}
 		]
@@ -176,7 +176,7 @@
 				0,
 				1,
 				2,
-				6
+				5
 			]
 		}
 	],
@@ -248,7 +248,7 @@
 				0,
 				1,
 				2,
-				6
+				5
 			]
 		},
 		{
@@ -256,16 +256,15 @@
 			"sourceIndexes" : 
 			[
 				3,
-				7,
-				8
+				6,
+				7
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				4,
-				5
+				4
 			]
 		}
 	],
@@ -298,11 +297,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "mainwindow.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 1,
-			"path" : "linuxconfig.json",
 			"sourceGroupIndex" : 2
 		},
 		{

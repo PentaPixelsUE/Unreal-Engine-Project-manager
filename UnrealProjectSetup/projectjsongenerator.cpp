@@ -11,7 +11,7 @@
 
 ProjectGenerator::ProjectGenerator()
 {
-    // Constructor logic, if needed
+    // Constructor logic
 }
 
 void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const QString& basePath, const QString project_name)
@@ -80,13 +80,14 @@ void ProjectGenerator::printJsonStructure(const QJsonObject& jsonObject, const Q
 void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QString& basePath, const QString& project_name)
 {
     for (const auto& key : jsonObject.keys()) {
-        QString currentPath = QDir::cleanPath(basePath + QDir::separator() + replacePlaceholders(key, project_name));
+        QString currentPath = QDir::cleanPath(basePath + QDir::separator() + replaceprojectname(key, project_name));
 
         if (jsonObject[key].isObject()) {
             qDebug() << "Folder:" << currentPath;
             // Create the folder using QDir::mkpath
             QDir().mkpath(currentPath);
             createStructure(jsonObject[key].toObject(), currentPath, project_name);
+
         } else {
             qDebug() << "File:" << currentPath;
             // Create the file using QFile
@@ -94,7 +95,8 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
             if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
                 QTextStream stream(&file);
                 if (jsonObject[key].isString()) {
-                    stream << replacePlaceholders(jsonObject[key].toString(), project_name);
+                    stream << replaceprojectname(jsonObject[key].toString(), project_name);
+
                 }
                 file.close();
             } else {
@@ -104,11 +106,27 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
     }
 }
 
-QString ProjectGenerator::replacePlaceholders(const QString& input, const QString& project_name)
+
+
+
+QString ProjectGenerator::replaceprojectname(const QString& input, const QString& project_name)
 {
     QString output = input;
     output.replace("~Project_Name~", project_name);
     return output;
+
 }
 
+QString ProjectGenerator::Replace_Engine_Path(const QString& input, const QString& engine_path)
+{
+    QString output = input;
+    output.replace("~Engine-Path~", engine_path);
+    return output;
+}
 
+QString ProjectGenerator::Replace_Project_Path(const QString& input, const QString& project_path)
+{
+    QString output = input;
+    output.replace("~Project_Path~", project_path);
+    return output;
+}

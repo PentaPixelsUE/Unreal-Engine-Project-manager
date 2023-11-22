@@ -79,6 +79,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.h",
+			"MU",
+			"EWIEGA46WW/moc_buildsetup.cpp",
+			null
+		],
+		[
 			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -144,6 +150,11 @@
 	"SETTINGS_FILE" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles/UnrealProjectSetup_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp",
+			"MU",
+			null
+		],
 		[
 			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/main.cpp",
 			"MU",

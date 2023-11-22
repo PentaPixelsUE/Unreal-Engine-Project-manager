@@ -211,6 +211,30 @@ UnrealProjectSetup_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.s
 .PHONY : UnrealProjectSetup_autogen/mocs_compilation.cpp.s
 
+buildsetup.o: buildsetup.cpp.o
+.PHONY : buildsetup.o
+
+# target to build an object file
+buildsetup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o
+.PHONY : buildsetup.cpp.o
+
+buildsetup.i: buildsetup.cpp.i
+.PHONY : buildsetup.i
+
+# target to preprocess a source file
+buildsetup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.i
+.PHONY : buildsetup.cpp.i
+
+buildsetup.s: buildsetup.cpp.s
+.PHONY : buildsetup.s
+
+# target to generate assembly for a file
+buildsetup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.s
+.PHONY : buildsetup.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -300,6 +324,9 @@ help:
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.o"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.i"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.s"
+	@echo "... buildsetup.o"
+	@echo "... buildsetup.i"
+	@echo "... buildsetup.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

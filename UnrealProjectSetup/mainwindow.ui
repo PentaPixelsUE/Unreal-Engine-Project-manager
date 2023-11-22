@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>947</width>
-    <height>285</height>
+    <width>900</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="sizePolicy">
    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>1</horstretch>
-    <verstretch>1</verstretch>
+    <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="windowTitle">
@@ -23,44 +23,29 @@
    <string notr="true">background-color:rgb(153, 193, 241)</string>
   </property>
   <widget class="QWidget" name="Project_Path_Hbox">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,10,1">
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="1">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>1</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="MainLayout" stretch="1,1,1,0,0">
-        <property name="spacing">
-         <number>10</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <layout class="QHBoxLayout" name="ProjectPath_Hbox" stretch="5,0,30,5">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <property name="sizeConstraint">
-           <enum>QLayout::SetDefaultConstraint</enum>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>14</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
           <item>
            <widget class="QLabel" name="Project_Path_Label">
             <property name="styleSheet">
@@ -74,25 +59,94 @@ QLabel {
 }</string>
             </property>
             <property name="text">
-             <string>Project Path      </string>
+             <string>Project Path</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_8">
+           <widget class="QLabel" name="UE_Source_Path_Label">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/* Label */
+QLabel {
+  color: rgb(0, 0, 0); /* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+            </property>
+            <property name="text">
+             <string>UE Source Path  </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="ProjectName">
+            <property name="styleSheet">
+             <string notr="true">/* Label */
+QLabel {
+  color: rgb(0, 0, 0); /* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Project Name     </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_8">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>20</width>
+              <height>41</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>14</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
            <widget class="QLineEdit" name="Project_Path_Txt">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">QLineEdit {
   background-color: #282c34;
@@ -109,7 +163,144 @@ QLabel {
            </widget>
           </item>
           <item>
+           <widget class="QLineEdit" name="UE_Source_Path_Txt">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+  background-color: #282c34;
+  border-radius: 5px;
+  border: 1px solid #40444b;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+}</string>
+            </property>
+            <property name="text">
+             <string>PLease Select the '~/Engine' Folder</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="Project_Name_Txt">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit {
+  background-color: #282c34;
+  border-radius: 5px;
+  border: 1px solid #40444b;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+}</string>
+            </property>
+            <property name="inputMethodHints">
+             <set>Qt::ImhLatinOnly</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>6</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="Project_Name_Error">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: red;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>14</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QPushButton" name="Project_Path_Browse_Btn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>146</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">/* Button */
 QPushButton {
@@ -142,64 +333,40 @@ QPushButton:disabled {
             <property name="text">
              <string>Set Project Path</string>
             </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="UE_Source_Path_Hbox" stretch="0,0,35,14">
-          <property name="spacing">
-           <number>10</number>
-          </property>
-          <property name="sizeConstraint">
-           <enum>QLayout::SetMaximumSize</enum>
-          </property>
-          <item>
-           <widget class="QLabel" name="UE_Source_Path_Label">
-            <property name="styleSheet">
-             <string notr="true">/* Label */
-QLabel {
-  color: rgb(0, 0, 0); /* Electric blue text */
-  font-family: 'Roboto', sans-serif; /* Modern font */
-  font-size: 17px;
-  font-weight: normal;
-  padding: 5px;
-}</string>
-            </property>
-            <property name="text">
-             <string>UE Source Path</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_9">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
+            <property name="iconSize">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>16</width>
+              <height>16</height>
              </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="UE_Source_Path_Txt">
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-  background-color: #282c34;
-  border-radius: 5px;
-  border: 1px solid #40444b;
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 14px;
-}</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="UE_Source_Path_Browse_Btn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>146</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">/* Button */
 QPushButton {
@@ -232,136 +399,34 @@ QPushButton:disabled {
             <property name="text">
              <string>Engine Path</string>
             </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="Project_Name_HBOX" stretch="0,6,30,32">
-          <item>
-           <widget class="QLabel" name="ProjectName">
-            <property name="styleSheet">
-             <string notr="true">/* Label */
-QLabel {
-  color: rgb(0, 0, 0); /* Electric blue text */
-  font-family: 'Roboto', sans-serif; /* Modern font */
-  font-size: 17px;
-  font-weight: normal;
-  padding: 5px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Project Name  </string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_10">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
+            <property name="iconSize">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>16</width>
+              <height>18</height>
              </size>
             </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="Project_Name_Txt">
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-  background-color: #282c34;
-  border-radius: 5px;
-  border: 1px solid #40444b;
-  color: #fff;
-  padding: 5px 10px;
-  font-size: 14px;
-}</string>
-            </property>
-            <property name="inputMethodHints">
-             <set>Qt::ImhLatinOnly</set>
-            </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="Error_Msg_HBOX" stretch="1,5">
-          <item>
-           <spacer name="horizontalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLabel" name="Project_Name_Error">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">color: red;</string>
-            </property>
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="Button_Build_and_run_HBOX">
-          <property name="leftMargin">
-           <number>10</number>
-          </property>
-          <property name="topMargin">
-           <number>10</number>
-          </property>
-          <property name="rightMargin">
-           <number>10</number>
-          </property>
-          <property name="bottomMargin">
-           <number>10</number>
-          </property>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="Generate_Project_Files_Btn">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>146</width>
+              <height>34</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">/* Button */
 QPushButton {
@@ -397,22 +462,131 @@ QPushButton:disabled {
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_5">
+           <spacer name="verticalSpacer_4">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>20</width>
+              <height>49</height>
              </size>
             </property>
            </spacer>
           </item>
-          <item>
-           <widget class="QPushButton" name="Build_And_Run_Btn">
-            <property name="styleSheet">
-             <string notr="true">/* Button */
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="Build_Config_Lbl">
+          <property name="styleSheet">
+           <string notr="true">/* Label */
+QLabel {
+  color: rgb(0, 0, 0); /* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Configuration</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="Dev_Conf">
+          <property name="styleSheet">
+           <string notr="true">/* Label */
+QLabel {
+  color: rgb(0, 0, 0); /* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Development</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="Debug_Conf">
+          <property name="styleSheet">
+           <string notr="true">/* Label */
+QLabel {
+  color: rgb(0, 0, 0); /* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Debug</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="Game_Conf">
+          <property name="styleSheet">
+           <string notr="true">/* Label */
+QLabel {
+  color: rgb(0, 0, 0); /* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+          </property>
+          <property name="text">
+           <string>Game</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Build_And_Run_Btn">
+          <property name="minimumSize">
+           <size>
+            <width>146</width>
+            <height>34</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">/* Button */
 QPushButton {
     background-color: #282c34;
     border-radius: 5px;
@@ -439,41 +613,13 @@ QPushButton:disabled {
     color: #888888;
 }
 </string>
-            </property>
-            <property name="text">
-             <string>Build and Run</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-         </layout>
+          </property>
+          <property name="text">
+           <string>Build and Run</string>
+          </property>
+         </widget>
         </item>
        </layout>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_4">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </item>
@@ -484,12 +630,12 @@ QPushButton:disabled {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>947</width>
+     <width>900</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <resources/>
  <connections/>

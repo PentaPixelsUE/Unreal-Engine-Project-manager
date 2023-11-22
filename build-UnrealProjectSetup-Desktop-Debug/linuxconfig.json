@@ -1,8 +1,10 @@
 {
   "~Project_Name~": {
+
+    "build.sh": "#!/bin/bash\n\n# Set the path to the Unreal Engine build script\nUNREAL_BUILD_SCRIPT='~Engine-Path~/Build/BatchFiles/Linux/Build.sh'\n# Set project-specific variables\nTARGET='~Project_Name~Editor'\nPLATFORM='Linux'\nCONFIGURATION='Development'\nUPROJECT_PATH='~Project_Path~/~Project_Name~/~Project_Name~.uproject'\n# Run the Unreal Build Tool with the provided parameters\"\n\"${UNREAL_BUILD_SCRIPT}\" \"${TARGET}\" \"${PLATFORM}\" \"${CONFIGURATION}\" \"${UPROJECT_PATH}\"",
+    "run.sh": "#!/bin/bash\n# Set the path to the Unreal Editor executable\nUNREAL_EDITOR_EXEC='~Engine-Path~/Binaries/Linux/UnrealEditor'\n# Set project-specific variables\nUPROJECT_PATH='~Project_Path~/~Project_Name~/~Project_Name~.uproject'\n# Run the Unreal Editor with the provided parameters\n\"${UNREAL_EDITOR_EXEC}\" \"${UPROJECT_PATH}\" -log",
     "~Project_Name~.uproject": 
-      "{\n    \"FileVersion\": 3,\n    \"EngineAssociation\": \"F63141F7-1CBA-46C8-8D97-8ADFBBFD2048\",\n    \"Category\": \"\",\n    \"Description\": \"\",\n    \"Modules\": [\n        {\n            \"Name\": \"~Project_Name~Core\",\n            \"Type\": \"Runtime\",\n            \"LoadingPhase\": \"Default\",\n            \"AdditionalDependencies\": [\n                \"Engine\"\n            ]\n        }\n    ]\n}"
-    ,
+      "{\n    \"FileVersion\": 3,\n    \"EngineAssociation\": \"F63141F7-1CBA-46C8-8D97-8ADFBBFD2048\",\n    \"Category\": \"\",\n    \"Description\": \"\",\n    \"Modules\": [\n        {\n            \"Name\": \"~Project_Name~Core\",\n            \"Type\": \"Runtime\",\n            \"LoadingPhase\": \"Default\",\n            \"AdditionalDependencies\": [\n                \"Engine\"\n            ]\n        }\n    ]\n}",
     "Source": {
       "~Project_Name~Core": {
         

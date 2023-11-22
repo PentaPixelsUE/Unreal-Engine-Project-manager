@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "UnrealProjectSetup_autogen"
   "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o"
+  "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o"
   "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o"

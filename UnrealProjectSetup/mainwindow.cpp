@@ -24,8 +24,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    setMinimumSize(800, 250);
-    setMaximumSize(800,250);
+    setMinimumSize(900, 350);
+    setMaximumSize(900,350);
 
     // Connect the button click signal to a slot (function) in the MainWindow class
     connect(ui->Project_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onProjectPathBrowseBtnClicker);
@@ -72,10 +72,11 @@ void MainWindow::onProjectPathBrowseBtnClicker()
 
 void MainWindow::onEngineSourcePathBtnClicker()
 {
-    QString selectedFolder = QFileDialog::getExistingDirectory(this,"Select Engine Folder",QDir::homePath(),QFileDialog::ShowDirsOnly);
+    QString EnginePath = QFileDialog::getExistingDirectory(this,"Select Engine Folder",QDir::homePath(),QFileDialog::ShowDirsOnly);
 
-    ui->UE_Source_Path_Txt->setText(selectedFolder);
-    QMessageBox::information(this, "Folder Selected", "Engine Source folder set to: " + selectedFolder);
+    ui->UE_Source_Path_Txt->setText(EnginePath);
+    QMessageBox::information(this, "Folder Selected", "Engine Source folder set to: " + EnginePath);
+
 
 }
 
@@ -150,7 +151,7 @@ void MainWindow::validateProjectName() {
     if (projectName.isEmpty()) {
         updateErrorLabel("Error: Project name cannot be empty.");
     } else if (!regex.exactMatch(projectName)) {
-        updateErrorLabel("Error: Project name must contain only alphanumerics (no spaces or special characters).");
+        updateErrorLabel("Error: Project name must contain only alphanumerics.");
     } else {
         updateErrorLabel("");  // Clear the error message if validation passes
     }

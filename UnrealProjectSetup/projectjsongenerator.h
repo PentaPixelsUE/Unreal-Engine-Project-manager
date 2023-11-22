@@ -8,14 +8,16 @@ class ProjectGenerator
 public:
     ProjectGenerator();
 
-    // Function to create folders and files based on the JSON structure
     void createFoldersAndFiles(const QString& jsonFilePath, const QString& basePath,const QString project_name);
     void createStructure (const QJsonObject& jsonObject, const QString& basePath, const QString& project_name)  ;
 
 private:
-    // Declare the printJsonStructure function as a private member
+
+
     void printJsonStructure(const QJsonObject& jsonObject, const QString& basePath);
-    QString replacePlaceholders(const QString& input, const QString& project_name);
+    QString replaceprojectname(const QString& input, const QString& project_name);
+    QString Replace_Engine_Path(const QString& input, const QString& project_path);
+    QString Replace_Project_Path(const QString& input, const QString& project_path);
 
 
 };

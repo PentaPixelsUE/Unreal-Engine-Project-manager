@@ -17,7 +17,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
-        linuxconfig.json
+        buildsetup.cpp
+        buildsetup.h
         projectjsongenerator.cpp
         projectjsongenerator.h
 )
@@ -73,11 +74,11 @@ set(CMAKE_PREFIX_PATH /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/U
 # Add the nlohmann/json library
 add_subdirectory(/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/)
 
-# ... (other settings)
+
 
 target_link_libraries(UnrealProjectSetup PRIVATE Qt${QT_VERSION_MAJOR}::Widgets nlohmann_json)
 
-# Assuming nlohmann_json is the name of the library, correct the following lines
+
 find_package(nlohmann_json REQUIRED)
 target_include_directories(UnrealProjectSetup PRIVATE ${JSONCPP_INCLUDE_DIRS})
 

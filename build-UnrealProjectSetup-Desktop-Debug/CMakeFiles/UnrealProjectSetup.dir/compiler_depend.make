@@ -352,6 +352,10 @@ CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cp
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
+CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp \
+  /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.h \
+  /usr/include/stdc-predef.h
+
 CMakeFiles/UnrealProjectSetup.dir/main.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/main.cpp \
   /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.h \
   /usr/include/alloca.h \
@@ -1071,13 +1075,16 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileSystemModel \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFormLayout \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHBoxLayout \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenuBar \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpacerItem \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QStatusBar \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
@@ -1090,6 +1097,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfilesystemmodel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qformlayout.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
@@ -1101,6 +1109,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstatusbar.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
@@ -1589,8 +1598,6 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /usr/include/c++/13/tr1/legendre_function.tcc:
 
-/usr/include/c++/13/tr1/gamma.tcc:
-
 /usr/include/c++/13/tr1/ell_integral.tcc:
 
 /usr/include/c++/13/tr1/beta_function.tcc:
@@ -1667,6 +1674,10 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.cpp:
 
+/usr/include/c++/13/tr1/gamma.tcc:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h:
+
 /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/include/nlohmann/detail/iterators/internal_iterator.hpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h:
@@ -1685,6 +1696,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qformlayout.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout:
@@ -1696,6 +1709,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMenuBar:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHBoxLayout:
 
@@ -1947,6 +1962,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /usr/include/c++/13/bits/vector.tcc:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFormLayout:
+
 /usr/include/c++/13/variant:
 
 /usr/include/c++/13/bits/stl_function.h:
@@ -1958,6 +1975,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 /usr/include/c++/13/bits/atomic_base.h:
 
 /usr/include/c++/13/bits/align.h:
+
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -2027,7 +2046,11 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h:
+
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
