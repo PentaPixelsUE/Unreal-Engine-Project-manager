@@ -82,13 +82,13 @@
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 71,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 79,
+				"line" : 78,
 				"parent" : 0
 			}
 		]
@@ -129,7 +129,7 @@
 				},
 				{
 					"backtrace" : 10,
-					"path" : "/json-develop"
+					"path" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop"
 				},
 				{
 					"backtrace" : 11,

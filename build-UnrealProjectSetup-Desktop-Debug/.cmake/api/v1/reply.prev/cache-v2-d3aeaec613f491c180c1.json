@@ -1374,6 +1374,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding nlohmann_json"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/nlohmann_jsonConfig.cmake][v3.11.2()]"
+		},
+		{
 			"name" : "JSON_BuildTests",
 			"properties" : 
 			[
@@ -1492,6 +1504,18 @@
 			],
 			"type" : "BOOL",
 			"value" : "OFF"
+		},
+		{
+			"name" : "Json-develop_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for Json-develop."
+				}
+			],
+			"type" : "PATH",
+			"value" : "Json-develop_DIR-NOTFOUND"
 		},
 		{
 			"name" : "NLOHMANN_JSON_CONFIG_INSTALL_DIR",
@@ -1660,6 +1684,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/json-develop"
+		},
+		{
+			"name" : "nlohmann_json_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for nlohmann_json."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop"
 		},
 		{
 			"name" : "nlohmann_json_IS_TOP_LEVEL",

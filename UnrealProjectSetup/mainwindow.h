@@ -4,6 +4,8 @@
 #define MAINWINDOW_H
 
 #include "qjsonobject.h"
+
+
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -18,10 +20,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private:
     Ui::MainWindow *ui;
     QJsonObject jsonObject;
     QString selectedProjectFolderPath;
+
 
 
 private slots:

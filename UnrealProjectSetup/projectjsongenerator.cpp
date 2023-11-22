@@ -8,6 +8,7 @@
 
 
 
+
 ProjectGenerator::ProjectGenerator()
 {
     // Constructor logic, if needed
@@ -78,27 +79,26 @@ void ProjectGenerator::printJsonStructure(const QJsonObject& jsonObject, const Q
 }
 void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QString& basePath, const QString& project_name)
 {
-    // Iterate over the keys in the JSON object
     for (const auto& key : jsonObject.keys()) {
-        // Combine the basePath with the current key
-        QString currentPath = QDir::cleanPath(basePath + QDir::separator() + key);
+        QString currentPath = QDir::cleanPath(basePath + QDir::separator() + replacePlaceholders(key, project_name));
 
-        // Check if the current value is an object (folder)
         if (jsonObject[key].isObject()) {
-            // Replace placeholders in folder names with project_name
-            QString folderName = replacePlaceholders(key, project_name);
-            qDebug() << "Folder:" << QDir::cleanPath(basePath + QDir::separator() + folderName);
-            // Recursively call the function for the nested object
+            qDebug() << "Folder:" << currentPath;
+            // Create the folder using QDir::mkpath
+            QDir().mkpath(currentPath);
             createStructure(jsonObject[key].toObject(), currentPath, project_name);
         } else {
-            // Current value is not an object, so it's a file
-            // Replace placeholders in file names with project_name
-            QString fileName = replacePlaceholders(key, project_name);
-            qDebug() << "File:" << QDir::cleanPath(basePath + QDir::separator() + fileName);
-
-            if (jsonObject[key].isString()) {
-                // Print the file content
-                qDebug().noquote() << "Contents:" << jsonObject[key].toString();
+            qDebug() << "File:" << currentPath;
+            // Create the file using QFile
+            QFile file(currentPath);
+            if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                QTextStream stream(&file);
+                if (jsonObject[key].isString()) {
+                    stream << replacePlaceholders(jsonObject[key].toString(), project_name);
+                }
+                file.close();
+            } else {
+                qDebug() << "Failed to create file:" << currentPath;
             }
         }
     }

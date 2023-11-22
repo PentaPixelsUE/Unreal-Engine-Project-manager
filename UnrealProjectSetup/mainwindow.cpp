@@ -18,6 +18,12 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+        // Set text color to white
+    //QMessageBox::setStyleSheet("QLabel { color: #ffffff; }");  // Set text color to white
+
+
+
+
     setMinimumSize(800, 250);
     setMaximumSize(800,250);
 

@@ -64,13 +64,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(878, 285);
+        MainWindow->resize(947, 285);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(1);
         sizePolicy.setVerticalStretch(1);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color:rgb(0, 0, 0)"));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color:rgb(153, 193, 241)"));
         Project_Path_Hbox = new QWidget(MainWindow);
         Project_Path_Hbox->setObjectName(QString::fromUtf8("Project_Path_Hbox"));
         verticalLayout_2 = new QVBoxLayout(Project_Path_Hbox);
@@ -94,7 +94,7 @@ public:
         Project_Path_Label->setObjectName(QString::fromUtf8("Project_Path_Label"));
         Project_Path_Label->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
-"  color: #007bff; /* Electric blue text */\n"
+"  color: rgb(0, 0, 0); /* Electric blue text */\n"
 "  font-family: 'Roboto', sans-serif; /* Modern font */\n"
 "  font-size: 17px;\n"
 "  font-weight: normal;\n"
@@ -167,7 +167,7 @@ public:
         UE_Source_Path_Label->setObjectName(QString::fromUtf8("UE_Source_Path_Label"));
         UE_Source_Path_Label->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
-"  color: #007bff; /* Electric blue text */\n"
+"  color: rgb(0, 0, 0); /* Electric blue text */\n"
 "  font-family: 'Roboto', sans-serif; /* Modern font */\n"
 "  font-size: 17px;\n"
 "  font-weight: normal;\n"
@@ -236,7 +236,7 @@ public:
         ProjectName->setObjectName(QString::fromUtf8("ProjectName"));
         ProjectName->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
-"  color: rgb(38, 162, 105); /* Electric blue text */\n"
+"  color: rgb(0, 0, 0); /* Electric blue text */\n"
 "  font-family: 'Roboto', sans-serif; /* Modern font */\n"
 "  font-size: 17px;\n"
 "  font-weight: normal;\n"
@@ -395,7 +395,7 @@ public:
         MainWindow->setCentralWidget(Project_Path_Hbox);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 878, 22));
+        menubar->setGeometry(QRect(0, 0, 947, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

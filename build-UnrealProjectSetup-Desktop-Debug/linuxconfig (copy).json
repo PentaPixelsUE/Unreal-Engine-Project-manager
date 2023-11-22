@@ -1,0 +1,20 @@
+{
+  "~Project_Name~": {
+    "Source": {
+      "~Project_Name~Core": {
+        "Public": {
+          "~Project_Name~Core.h": "#pragma once\n\n#include \"CoreMinimal.h\"\n#include \"Modules/ModuleInterface.h\"\n\nclass F~Project_Name~Core : public IModuleInterface\n{\npublic:\n    static inline F~Project_Name~Core& Get()\n    {\n        return FModuleManager::LoadModuleChecked<F~Project_Name~Core>(\"~Project_Name~Core\");\n    }\n\n    static inline bool IsAvailable()\n    {\n        return FModuleManager::Get().IsModuleLoaded(\"~Project_Name~Core\");\n    }\n\n    virtual void StartupModule() override;\n    virtual void ShutdownModule() override;\n};"
+        },
+        "Private": {
+          "Log.cpp": "#include \"Log.h\"\n\nDEFINE_LOG_CATEGORY(Log~Project_Name~Core);",
+          "Log.h": "#pragma once\n\n#include \"Logging/LogMacros.h\"\n\nDECLARE_LOG_CATEGORY_EXTERN(Log~Project_Name~Core, Log, All);",
+          "~Project_Name~Core.cpp": "#include \"~Project_Name~Core.h\"\n#include \"Modules/ModuleManager.h\"\n\n#include \"Log.h\"\n\nvoid F~Project_Name~Core::StartupModule()\n{\n    UE_LOG(Log~Project_Name~Core, Log, TEXT(\"~Project_Name~Core module starting up\"));\n}"
+        },
+        "~Project_Name~Core.Build.cs": "// Copyright Epic Games, Inc. All Rights Reserved.\n\nusing UnrealBuildTool;\n\npublic class ~Project_Name~Core : ModuleRules\n{\npublic ~Project_Name~Core(ReadOnlyTargetRules Target) : base(Target)\n{\nPCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;\n\nPublicDependencyModuleNames.AddRange(new string[] { \"Core\", \"CoreUObject\", \"Engine\", \"InputCore\" });\n\nPrivateDependencyModuleNames.AddRange(new string[] { });\n\n// Uncomment if you are using Slate UI\n// PrivateDependencyModuleNames.AddRange(new string[] { \"Slate\", \"SlateCore\" });\n\n// Uncomment if you are using online features\n// PrivateDependencyModuleNames.Add(\"OnlineSubsystem\");\n\n// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true\n}\n}"
+      },
+      "~Project_Name~.Target.cs": "// Copyright Epic Games, Inc. All Rights Reserved.\n\nusing UnrealBuildTool;\nusing System.Collections.Generic;\n\npublic class ~Project_Name~Target : TargetRules\n{\npublic ~Project_Name~Target(TargetInfo Target) : base(Target)\n{\nType = TargetType.Game;\nDefaultBuildSettings = BuildSettingsVersion.V4;\nIncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;\nExtraModuleNames.Add(\"~Project_Name~Core\");\n}"
+    },
+    "~Project_Name~Editor.Target.cs": "// Copyright Epic Games, Inc. All Rights Reserved.\n\nusing UnrealBuildTool;\nusing System.Collections.Generic;\n\npublic class ~Project_Name~Target : TargetRules\n{\npublic ~Project_Name~Target(TargetInfo Target) : base(Target)\n{\nType = TargetType.Editor;\nDefaultBuildSettings = BuildSettingsVersion.V4;\nIncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;\nExtraModuleNames.Add(\"~Project_Name~Core\");\n}"
+  }
+}
+
