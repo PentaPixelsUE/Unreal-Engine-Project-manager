@@ -33,7 +33,8 @@ private slots:
     void onEngineSourcePathBtnClicker();
     void onSetupProjectFilesBtnClicker();
     void validateProjectName();
-    void updateErrorLabel(const QString& errorMessage);  // Add this line
-};
+    void updateErrorLabel(const QString& errorMessage);
+    void onBuildAndRunClicker();
 
+};
 #endif // MAINWINDOW_H

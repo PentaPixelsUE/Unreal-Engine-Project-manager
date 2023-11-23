@@ -24,13 +24,13 @@ void ProjectGenerator::setPaths(const QString& enginePath, const QString& projec
 
 void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const QString& basePath, const QString project_name)
 {
-    qDebug() << "Creating folders and files in: " << basePath;
+    //qDebug() << "Creating folders and files in: " << basePath;
 
     // Read the JSON file
     QFile jsonFile(jsonFilePath);
     if (!jsonFile.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        qDebug() << "Failed to open JSON file:" << jsonFilePath;
+        //qDebug() << "Failed to open JSON file:" << jsonFilePath;
         return;
     }
 
@@ -44,7 +44,7 @@ void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const 
     // Check if the conversion was successful
     if (jsonDocument.isNull())
     {
-        qDebug() << "Failed to parse JSON from file:" << jsonFilePath;
+        //qDebug() << "Failed to parse JSON from file:" << jsonFilePath;
         return;
     }
 
@@ -52,8 +52,8 @@ void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const 
     QJsonObject jsonObject = jsonDocument.object();
 
     // Print the JSON structure
-    qDebug() << "JSON Structure:";
-    qDebug().noquote() << QJsonDocument(jsonObject).toJson(QJsonDocument::Indented);
+    //qDebug() << "JSON Structure:";
+    //qDebug().noquote() << QJsonDocument(jsonObject).toJson(QJsonDocument::Indented);
 
     // Call the printJsonStructure function
     printJsonStructure(jsonObject, basePath);
@@ -71,33 +71,43 @@ void ProjectGenerator::printJsonStructure(const QJsonObject& jsonObject, const Q
 
         // Check if the current value is an object (folder)
         if (jsonObject[key].isObject()) {
-            qDebug() << "Folder:" << currentPath;
+            //qDebug() << "Folder:" << currentPath;
             // Recursively call the function for the nested object
             printJsonStructure(jsonObject[key].toObject(), currentPath);
         } else {
             // Current value is not an object, so it's a file
-            qDebug() << "File:" << currentPath;
+            //qDebug() << "File:" << currentPath;
 
             if (jsonObject[key].isString()) {
                 // Print the file content
-                qDebug().noquote() << "Contents:" << jsonObject[key].toString();
+                //qDebug().noquote() << "Contents:" << jsonObject[key].toString();
             }
         }
     }
 }
 void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QString& basePath, const QString& project_name)
 {
+
     for (const auto& key : jsonObject.keys()) {
         QString currentPath = QDir::cleanPath(basePath + QDir::separator() + replaceprojectname(key, project_name));
-
+        qDebug()<< basePath<<"BASE PATH";
         if (jsonObject[key].isObject()) {
-            qDebug() << "Folder:" << currentPath;
-            // Create the folder using QDir::mkpath
-            QDir().mkpath(currentPath);
-            createStructure(jsonObject[key].toObject(), currentPath, project_name);
+            if (key == project_name) {
+                // Skip creating the project folder because it has already been created
+                continue;
+            } else {
+                //qDebug() << "Folder:" << currentPath;
 
+                // Create the folder using QDir::mkpath
+                QDir().mkpath(currentPath);
+
+                // Recursively create the structure inside the folder
+                createStructure(jsonObject[key].toObject(), currentPath, project_name);
+
+            }
         } else {
-            qDebug() << "File:" << currentPath;
+            //qDebug() << "File:" << currentPath;
+
             // Create the file using QFile
             QFile file(currentPath);
             if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -112,7 +122,7 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
                 }
                 file.close();
             } else {
-                qDebug() << "Failed to create file:" << currentPath;
+                //qDebug() << "Failed to create file:" << currentPath;
             }
         }
     }

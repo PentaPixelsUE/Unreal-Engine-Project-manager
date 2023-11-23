@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->UE_Source_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onEngineSourcePathBtnClicker);
     connect(ui->Generate_Project_Files_Btn,&QPushButton::clicked,this, &::MainWindow::onSetupProjectFilesBtnClicker);
     connect(ui->Project_Name_Txt, &QLineEdit::textChanged, this, &MainWindow::validateProjectName);
-
+    connect(ui->Build_And_Run_Btn,&QPushButton::clicked,this,&MainWindow::onBuildAndRunClicker);
 }
 
 
@@ -118,7 +118,7 @@ void MainWindow::onSetupProjectFilesBtnClicker()
         QString jsonFilePath = executablePath + "/linuxconfig.json";
 
 
-        QString projectFolderPath = ui->Project_Path_Txt->text() + QDir::separator() + project_name;
+        QString projectFolderPath = ui->Project_Path_Txt->text() ;
         QString engineSourcePath = ui->UE_Source_Path_Txt->text();
          projectGenerator.setPaths(ui->UE_Source_Path_Txt->text(), ui->Project_Path_Txt->text());
 
@@ -157,7 +157,10 @@ void MainWindow::validateProjectName() {
     }
 }
 
+void MainWindow::onBuildAndRunClicker(){
 
+
+}
 
 
 
