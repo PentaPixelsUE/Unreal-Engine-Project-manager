@@ -14,6 +14,14 @@ ProjectGenerator::ProjectGenerator()
     // Constructor logic
 }
 
+
+void ProjectGenerator::setPaths(const QString& enginePath, const QString& projectPath)
+{
+    enginePath_ = enginePath;
+    projectPath_ = projectPath;
+}
+
+
 void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const QString& basePath, const QString project_name)
 {
     qDebug() << "Creating folders and files in: " << basePath;
@@ -95,8 +103,12 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
             if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
                 QTextStream stream(&file);
                 if (jsonObject[key].isString()) {
-                    stream << replaceprojectname(jsonObject[key].toString(), project_name);
+                    QString replacedContent = jsonObject[key].toString();
+                    replacedContent = replaceprojectname(replacedContent, project_name);
+                    replacedContent = Replace_Engine_Path(replacedContent, enginePath_);
+                    replacedContent = Replace_Project_Path(replacedContent, projectPath_);
 
+                    stream << replacedContent;
                 }
                 file.close();
             } else {

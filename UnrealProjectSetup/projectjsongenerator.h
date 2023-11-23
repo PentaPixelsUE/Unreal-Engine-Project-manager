@@ -10,10 +10,11 @@ public:
 
     void createFoldersAndFiles(const QString& jsonFilePath, const QString& basePath,const QString project_name);
     void createStructure (const QJsonObject& jsonObject, const QString& basePath, const QString& project_name)  ;
-
+    void setPaths(const QString& enginePath, const QString& projectPath);
 private:
 
-
+    QString enginePath_;
+    QString projectPath_;
     void printJsonStructure(const QJsonObject& jsonObject, const QString& basePath);
     QString replaceprojectname(const QString& input, const QString& project_name);
     QString Replace_Engine_Path(const QString& input, const QString& project_path);

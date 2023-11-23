@@ -18,8 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-        // Set text color to white
-    //QMessageBox::setStyleSheet("QLabel { color: #ffffff; }");  // Set text color to white
+
 
 
 
@@ -121,6 +120,7 @@ void MainWindow::onSetupProjectFilesBtnClicker()
 
         QString projectFolderPath = ui->Project_Path_Txt->text() + QDir::separator() + project_name;
         QString engineSourcePath = ui->UE_Source_Path_Txt->text();
+         projectGenerator.setPaths(ui->UE_Source_Path_Txt->text(), ui->Project_Path_Txt->text());
 
         // Call the createFoldersAndFiles function with the JSON file path
         projectGenerator.createFoldersAndFiles(jsonFilePath, projectFolderPath,project_name);
