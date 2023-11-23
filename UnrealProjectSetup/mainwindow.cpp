@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "buildsetup.h"
 #include "projectjsongenerator.h"
 #include <QObject>
 #include <QDir>
@@ -17,7 +18,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-
 
 
 
@@ -120,7 +120,7 @@ void MainWindow::onSetupProjectFilesBtnClicker()
 
         QString projectFolderPath = ui->Project_Path_Txt->text() ;
         QString engineSourcePath = ui->UE_Source_Path_Txt->text();
-         projectGenerator.setPaths(ui->UE_Source_Path_Txt->text(), ui->Project_Path_Txt->text());
+        projectGenerator.setPaths(engineSourcePath, projectFolderPath);
 
         // Call the createFoldersAndFiles function with the JSON file path
         projectGenerator.createFoldersAndFiles(jsonFilePath, projectFolderPath,project_name);
@@ -157,16 +157,14 @@ void MainWindow::validateProjectName() {
     }
 }
 
-void MainWindow::onBuildAndRunClicker(){
 
 
+void MainWindow::onBuildAndRunClicker() {
+        buildsetup buildSetupInstance;
+    QString buildfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
+        QString runfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
+        buildSetupInstance.getBuildandrunFilePath(buildfile,runfile);
 }
-
-
-
-
-
-
 
 
 

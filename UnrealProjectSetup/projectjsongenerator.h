@@ -11,6 +11,7 @@ public:
     void createFoldersAndFiles(const QString& jsonFilePath, const QString& basePath,const QString project_name);
     void createStructure (const QJsonObject& jsonObject, const QString& basePath, const QString& project_name)  ;
     void setPaths(const QString& enginePath, const QString& projectPath);
+
 private:
 
     QString enginePath_;

@@ -593,6 +593,7 @@ CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
@@ -609,6 +610,10 @@ CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -1021,6 +1026,7 @@ CMakeFiles/UnrealProjectSetup.dir/main.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.cpp \
+  /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.h \
   /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.h \
   /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.h \
   UnrealProjectSetup_autogen/include/ui_mainwindow.h \
@@ -1268,6 +1274,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
@@ -1882,6 +1889,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
 
@@ -2735,7 +2744,11 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QFile:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h:
 
@@ -2760,8 +2773,6 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
 
 /usr/include/c++/13/version:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qdiriterator.h:
 
@@ -2888,8 +2899,6 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /usr/include/c++/13/cwctype:
 
 /usr/include/c++/13/any:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/c++/13/bits/fs_fwd.h:
 

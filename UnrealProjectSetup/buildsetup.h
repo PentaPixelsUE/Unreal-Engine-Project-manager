@@ -9,10 +9,12 @@ public:
     buildsetup();
 
     // Add member functions here if needed
-    void executeBuildAndRunScripts(const QString& buildScriptPath, const QString& runScriptPath);
+        void getBuildandrunFilePath(const QString& buildfilepath,const QString& runfilepath);
+
 
 private:
          // Add member variables or private helper functions here if needed
+
 };
 
 #endif // BUILDSETUP_H
