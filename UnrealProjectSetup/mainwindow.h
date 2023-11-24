@@ -1,11 +1,18 @@
-
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include "qjsonobject.h"
-
-
 #include <QMainWindow>
+
+
+
+enum RunMode {
+    GameMode,
+    EditorMode,
+    StandaloneMode,
+
+};
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,15 +32,21 @@ private:
     QJsonObject jsonObject;
     QString selectedProjectFolderPath;
 
-
+    RunMode selectedMode;
 
 private slots:
     void onProjectPathBrowseBtnClicker();
     void onEngineSourcePathBtnClicker();
     void onSetupProjectFilesBtnClicker();
-    void validateProjectName();
+    bool validateProjectName();
+    void updateStandaloneLabel();
     void updateErrorLabel(const QString& errorMessage);
-    void onBuildAndRunClicker();
+    void onBuildClicker();
+    void onRunClicker();
+    void onGameMode();
+    void onStandaloneMode();
+    void onEditorMode();
+
 
 };
 #endif // MAINWINDOW_H

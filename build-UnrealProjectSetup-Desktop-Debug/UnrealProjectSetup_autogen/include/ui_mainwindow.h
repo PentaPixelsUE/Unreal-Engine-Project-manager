@@ -55,11 +55,16 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *Build_Config_Lbl;
     QSpacerItem *horizontalSpacer_2;
-    QRadioButton *Dev_Conf;
-    QRadioButton *Debug_Conf;
-    QRadioButton *Game_Conf;
+    QRadioButton *Editor_Mode_Tick;
+    QRadioButton *Standalone_Mode_Tick;
+    QRadioButton *Game_Mode_Tick;
     QSpacerItem *horizontalSpacer;
-    QPushButton *Build_And_Run_Btn;
+    QPushButton *Run_Btn;
+    QPushButton *Build_Btn;
+    QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_3;
+    QLabel *Standalone_Warning_Lbl;
     QMenuBar *menubar;
     QStatusBar *statusBar;
 
@@ -73,7 +78,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color:rgb(153, 193, 241)"));
+        MainWindow->setStyleSheet(QString::fromUtf8("color:rgb(26, 95, 180)"));
         Project_Path_Hbox = new QWidget(MainWindow);
         Project_Path_Hbox->setObjectName(QString::fromUtf8("Project_Path_Hbox"));
         formLayout = new QFormLayout(Project_Path_Hbox);
@@ -352,13 +357,26 @@ public:
 
         horizontalLayout_2->addWidget(Build_Config_Lbl);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        Dev_Conf = new QRadioButton(Project_Path_Hbox);
-        Dev_Conf->setObjectName(QString::fromUtf8("Dev_Conf"));
-        Dev_Conf->setStyleSheet(QString::fromUtf8("/* Label */\n"
+        Editor_Mode_Tick = new QRadioButton(Project_Path_Hbox);
+        Editor_Mode_Tick->setObjectName(QString::fromUtf8("Editor_Mode_Tick"));
+        Editor_Mode_Tick->setStyleSheet(QString::fromUtf8("/* Label */\n"
+"QLabel {\n"
+"  color: rgb(97, 53, 131);\n"
+"  font-family: 'Roboto', sans-serif; \n"
+"  font-size: 17px;\n"
+"  font-weight: normal;\n"
+"  padding: 5px;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(Editor_Mode_Tick);
+
+        Standalone_Mode_Tick = new QRadioButton(Project_Path_Hbox);
+        Standalone_Mode_Tick->setObjectName(QString::fromUtf8("Standalone_Mode_Tick"));
+        Standalone_Mode_Tick->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
 "  color: rgb(0, 0, 0); /* Electric blue text */\n"
 "  font-family: 'Roboto', sans-serif; /* Modern font */\n"
@@ -367,11 +385,11 @@ public:
 "  padding: 5px;\n"
 "}"));
 
-        horizontalLayout_2->addWidget(Dev_Conf);
+        horizontalLayout_2->addWidget(Standalone_Mode_Tick);
 
-        Debug_Conf = new QRadioButton(Project_Path_Hbox);
-        Debug_Conf->setObjectName(QString::fromUtf8("Debug_Conf"));
-        Debug_Conf->setStyleSheet(QString::fromUtf8("/* Label */\n"
+        Game_Mode_Tick = new QRadioButton(Project_Path_Hbox);
+        Game_Mode_Tick->setObjectName(QString::fromUtf8("Game_Mode_Tick"));
+        Game_Mode_Tick->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
 "  color: rgb(0, 0, 0); /* Electric blue text */\n"
 "  font-family: 'Roboto', sans-serif; /* Modern font */\n"
@@ -380,29 +398,16 @@ public:
 "  padding: 5px;\n"
 "}"));
 
-        horizontalLayout_2->addWidget(Debug_Conf);
+        horizontalLayout_2->addWidget(Game_Mode_Tick);
 
-        Game_Conf = new QRadioButton(Project_Path_Hbox);
-        Game_Conf->setObjectName(QString::fromUtf8("Game_Conf"));
-        Game_Conf->setStyleSheet(QString::fromUtf8("/* Label */\n"
-"QLabel {\n"
-"  color: rgb(0, 0, 0); /* Electric blue text */\n"
-"  font-family: 'Roboto', sans-serif; /* Modern font */\n"
-"  font-size: 17px;\n"
-"  font-weight: normal;\n"
-"  padding: 5px;\n"
-"}"));
-
-        horizontalLayout_2->addWidget(Game_Conf);
-
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        Build_And_Run_Btn = new QPushButton(Project_Path_Hbox);
-        Build_And_Run_Btn->setObjectName(QString::fromUtf8("Build_And_Run_Btn"));
-        Build_And_Run_Btn->setMinimumSize(QSize(146, 34));
-        Build_And_Run_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
+        Run_Btn = new QPushButton(Project_Path_Hbox);
+        Run_Btn->setObjectName(QString::fromUtf8("Run_Btn"));
+        Run_Btn->setMinimumSize(QSize(146, 34));
+        Run_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
 "QPushButton {\n"
 "    background-color: #282c34;\n"
 "    border-radius: 5px;\n"
@@ -430,10 +435,63 @@ public:
 "}\n"
 ""));
 
-        horizontalLayout_2->addWidget(Build_And_Run_Btn);
+        horizontalLayout_2->addWidget(Run_Btn);
+
+        Build_Btn = new QPushButton(Project_Path_Hbox);
+        Build_Btn->setObjectName(QString::fromUtf8("Build_Btn"));
+        Build_Btn->setMinimumSize(QSize(146, 34));
+        Build_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #282c34;\n"
+"    border-radius: 5px;\n"
+"    border: 1px solid #40444b;\n"
+"    color: #fff;\n"
+"    padding: 5px 10px;\n"
+"    font-size: 14px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #32363b;\n"
+"    border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #40444b;\n"
+"    border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #52565a;\n"
+"    border-color: #64686c;\n"
+"    color: #888888;\n"
+"}\n"
+""));
+
+        horizontalLayout_2->addWidget(Build_Btn);
 
 
         verticalLayout_4->addLayout(horizontalLayout_2);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout_4->addItem(verticalSpacer);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, 0, -1, -1);
+        horizontalSpacer_3 = new QSpacerItem(158, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_3);
+
+        Standalone_Warning_Lbl = new QLabel(Project_Path_Hbox);
+        Standalone_Warning_Lbl->setObjectName(QString::fromUtf8("Standalone_Warning_Lbl"));
+        Standalone_Warning_Lbl->setStyleSheet(QString::fromUtf8("color: red;"));
+
+        horizontalLayout_3->addWidget(Standalone_Warning_Lbl);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_3);
 
 
         formLayout->setLayout(0, QFormLayout::FieldRole, verticalLayout_4);
@@ -456,18 +514,20 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         Project_Path_Label->setText(QCoreApplication::translate("MainWindow", "Project Path", nullptr));
-        UE_Source_Path_Label->setText(QCoreApplication::translate("MainWindow", "UE Source Path  ", nullptr));
+        UE_Source_Path_Label->setText(QCoreApplication::translate("MainWindow", "Engine Path", nullptr));
         ProjectName->setText(QCoreApplication::translate("MainWindow", "Project Name     ", nullptr));
         UE_Source_Path_Txt->setText(QCoreApplication::translate("MainWindow", "PLease Select the '~/Engine' Folder", nullptr));
         Project_Name_Error->setText(QString());
         Project_Path_Browse_Btn->setText(QCoreApplication::translate("MainWindow", "Set Project Path", nullptr));
         UE_Source_Path_Browse_Btn->setText(QCoreApplication::translate("MainWindow", "Engine Path", nullptr));
         Generate_Project_Files_Btn->setText(QCoreApplication::translate("MainWindow", "Setup Project Files", nullptr));
-        Build_Config_Lbl->setText(QCoreApplication::translate("MainWindow", "Configuration", nullptr));
-        Dev_Conf->setText(QCoreApplication::translate("MainWindow", "Development", nullptr));
-        Debug_Conf->setText(QCoreApplication::translate("MainWindow", "Debug", nullptr));
-        Game_Conf->setText(QCoreApplication::translate("MainWindow", "Game", nullptr));
-        Build_And_Run_Btn->setText(QCoreApplication::translate("MainWindow", "Build and Run", nullptr));
+        Build_Config_Lbl->setText(QCoreApplication::translate("MainWindow", "Mode", nullptr));
+        Editor_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Editor", nullptr));
+        Standalone_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Standalone", nullptr));
+        Game_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Game", nullptr));
+        Run_Btn->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
+        Build_Btn->setText(QCoreApplication::translate("MainWindow", "Build", nullptr));
+        Standalone_Warning_Lbl->setText(QString());
     } // retranslateUi
 
 };

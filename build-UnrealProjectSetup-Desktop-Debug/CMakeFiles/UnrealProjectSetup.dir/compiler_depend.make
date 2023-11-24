@@ -354,6 +354,7 @@ CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cp
 
 CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp \
   /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.h \
+  /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -603,12 +604,16 @@ CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcborcommon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcborvalue.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
@@ -622,10 +627,14 @@ CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
@@ -634,15 +643,19 @@ CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
@@ -654,10 +667,41 @@ CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/quuid.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \

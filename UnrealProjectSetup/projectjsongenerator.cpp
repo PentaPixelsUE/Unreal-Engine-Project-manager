@@ -30,7 +30,7 @@ void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const 
     QFile jsonFile(jsonFilePath);
     if (!jsonFile.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        //qDebug() << "Failed to open JSON file:" << jsonFilePath;
+        qDebug() << "Failed to open JSON file:" << jsonFilePath;
         return;
     }
 
@@ -44,18 +44,14 @@ void ProjectGenerator::createFoldersAndFiles(const QString& jsonFilePath, const 
     // Check if the conversion was successful
     if (jsonDocument.isNull())
     {
-        //qDebug() << "Failed to parse JSON from file:" << jsonFilePath;
+
         return;
     }
 
     // Extract the JSON object from the document
     QJsonObject jsonObject = jsonDocument.object();
 
-    // Print the JSON structure
-    //qDebug() << "JSON Structure:";
-    //qDebug().noquote() << QJsonDocument(jsonObject).toJson(QJsonDocument::Indented);
 
-    // Call the printJsonStructure function
     printJsonStructure(jsonObject, basePath);
      createStructure(jsonObject, basePath, project_name);
 }
@@ -76,11 +72,11 @@ void ProjectGenerator::printJsonStructure(const QJsonObject& jsonObject, const Q
             printJsonStructure(jsonObject[key].toObject(), currentPath);
         } else {
             // Current value is not an object, so it's a file
-            //qDebug() << "File:" << currentPath;
+            qDebug() << "File:" << currentPath;
 
             if (jsonObject[key].isString()) {
                 // Print the file content
-                //qDebug().noquote() << "Contents:" << jsonObject[key].toString();
+                qDebug().noquote() << "Contents:" << jsonObject[key].toString();
             }
         }
     }
@@ -96,7 +92,6 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
                 // Skip creating the project folder because it has already been created
                 continue;
             } else {
-                //qDebug() << "Folder:" << currentPath;
 
                 // Create the folder using QDir::mkpath
                 QDir().mkpath(currentPath);
@@ -106,9 +101,7 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
 
             }
         } else {
-            //qDebug() << "File:" << currentPath;
 
-            // Create the file using QFile
             QFile file(currentPath);
             if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
                 QTextStream stream(&file);
@@ -122,7 +115,7 @@ void ProjectGenerator::createStructure(const QJsonObject& jsonObject, const QStr
                 }
                 file.close();
             } else {
-                //qDebug() << "Failed to create file:" << currentPath;
+                qDebug() << "Failed to create file:" << currentPath;
             }
         }
     }

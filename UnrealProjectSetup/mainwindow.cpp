@@ -20,19 +20,61 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-
+ setWindowTitle("Unreal Engine Project Manager");
 
 
     setMinimumSize(900, 350);
     setMaximumSize(900,350);
 
-    // Connect the button click signal to a slot (function) in the MainWindow class
+    //Main UI
+
     connect(ui->Project_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onProjectPathBrowseBtnClicker);
     connect(ui->UE_Source_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onEngineSourcePathBtnClicker);
     connect(ui->Generate_Project_Files_Btn,&QPushButton::clicked,this, &::MainWindow::onSetupProjectFilesBtnClicker);
-    connect(ui->Project_Name_Txt, &QLineEdit::textChanged, this, &MainWindow::validateProjectName);
-    connect(ui->Build_And_Run_Btn,&QPushButton::clicked,this,&MainWindow::onBuildAndRunClicker);
+
+    connect(ui->Build_Btn,&QPushButton::clicked,this,&MainWindow::onBuildClicker);
+    connect(ui->Run_Btn,&QPushButton::clicked,this,&MainWindow::onRunClicker);
+
+    //Radio Buttons
+    connect(ui->Standalone_Mode_Tick, &QRadioButton::clicked, this, [=]() {// Lambda Function
+        selectedMode = StandaloneMode;
+        updateStandaloneLabel();
+    });
+    connect(ui->Game_Mode_Tick, &QRadioButton::clicked, this, [=]() { selectedMode = GameMode;
+    updateStandaloneLabel();
+    });
+    connect(ui->Editor_Mode_Tick, &QRadioButton::clicked, this, [=]() { selectedMode = EditorMode;
+    updateStandaloneLabel();
+    });
+
+   // //What IS THIS  ?
+    //Labels
+
+   connect(ui->Project_Name_Txt, &QLineEdit::textChanged, this, &MainWindow::validateProjectName);
+    connect(ui->Standalone_Mode_Tick, &QRadioButton::clicked, this, &MainWindow::updateStandaloneLabel);
+   QMessageBox msgBox;
+   msgBox.setWindowTitle("Title");
+   msgBox.setText("Message text");
+   msgBox.setIcon(QMessageBox::Question);
+   msgBox.addButton("Create", QMessageBox::YesRole);
+   msgBox.addButton("Ignore", QMessageBox::NoRole);
 }
+
+void MainWindow::onGameMode()
+{
+    selectedMode = GameMode;
+}
+
+void MainWindow::onEditorMode()
+{
+    selectedMode = EditorMode;
+}
+
+void MainWindow::onStandaloneMode()
+{
+    selectedMode = StandaloneMode;
+}
+
 
 
 MainWindow::~MainWindow()
@@ -49,22 +91,16 @@ void MainWindow::onProjectPathBrowseBtnClicker()
 
     if (!selectedProjectFolderPath.isEmpty())
     {
-        QDir directory(selectedProjectFolderPath);
-
-        if (!directory.isEmpty()) {
-            QMessageBox::critical(this, "Folder Selected", "Please select an empty folder");
-
-        } else {
-            // Set the selected folder path to the QLineEdit
-            ui->Project_Path_Txt->setText(selectedProjectFolderPath);
-            QMessageBox::information(this, "Folder Selected", "Project folder set to: " + selectedProjectFolderPath);
-        }
+        // Set the selected folder path to the QLineEdit
+        ui->Project_Path_Txt->setText(selectedProjectFolderPath);
+        QMessageBox::information(this, "Folder Selected", "Project folder set to: " + selectedProjectFolderPath);
     }
     else
     {
         QMessageBox::critical(this, "Folder Selected", "Please select a folder");
     }
 }
+
 
 
 //Set The Engine Source Path
@@ -83,34 +119,17 @@ void MainWindow::onEngineSourcePathBtnClicker()
 //Project files setup;
 void MainWindow::onSetupProjectFilesBtnClicker()
 {
-    QString jsonFilePath = QDir::currentPath() + QDir::separator() + "linuxconfig.json";
 
-
-    // Get the text from the Project_Name_Txt QLineEdit
-
-    QString project_name = ui->Project_Name_Txt->text();
-
-    QRegExp regex("^[a-zA-Z0-9]+$");
-
-    if (!regex.exactMatch(project_name)) {
-
-        // Show an error message if validation fails
-
-        QMessageBox::warning(this, "Invalid Project Name", "Cannot Create Project");
-
-        // Optionally, clear the text in the Project_Name_Txt field
-
-        ui->Project_Name_Txt->clear();
-
-        // Exit the function to prevent further execution
-
+    if (!validateProjectName()) {
+         QMessageBox::warning(this, "Invalid Project Name", "Cannot Create Project");
         return;
     }
 
-    // Check if the text is not empty
+    QString project_name = ui->Project_Name_Txt->text();
 
     if (!project_name.isEmpty())
     {
+
         ProjectGenerator projectGenerator;
         QMessageBox::information(this, "Project Name", "Project Name: " + project_name);
 
@@ -140,32 +159,48 @@ void MainWindow::updateErrorLabel(const QString& errorMessage) {
 }
 
 
-
-
-void MainWindow::validateProjectName() {
-    QString projectName = ui->Project_Name_Txt->text();
-
-    // Example validation: Check if projectName contains only alphanumerics
-    QRegExp regex("^[a-zA-Z0-9]+$");
-
-    if (projectName.isEmpty()) {
-        updateErrorLabel("Error: Project name cannot be empty.");
-    } else if (!regex.exactMatch(projectName)) {
-        updateErrorLabel("Error: Project name must contain only alphanumerics.");
-    } else {
-        updateErrorLabel("");  // Clear the error message if validation passes
+void MainWindow::updateStandaloneLabel() {
+    if (ui->Standalone_Mode_Tick->isChecked()) {
+        ui->Standalone_Warning_Lbl->setText("This Mode Uses the 'Cook' Command , It can Take A while ! ");
+    }else{
+        ui->Standalone_Warning_Lbl->setText("");
     }
 }
 
 
 
-void MainWindow::onBuildAndRunClicker() {
-        buildsetup buildSetupInstance;
-    QString buildfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
-        QString runfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
-        buildSetupInstance.getBuildandrunFilePath(buildfile,runfile);
+bool MainWindow::validateProjectName() {
+    QString projectName = ui->Project_Name_Txt->text();
+    QString projectPath = ui->Project_Path_Txt->text();
+
+    // Check if projectName contains only alphanumerics
+    QRegExp regex("^[a-zA-Z0-9]+$");
+    QDir projectDir(projectPath);
+    QStringList projectDirs = projectDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+    if (projectName.isEmpty()) {
+        updateErrorLabel("Error: Project name cannot be empty.");
+    } else if (!regex.exactMatch(projectName)) {
+        updateErrorLabel("Error: Project name must contain only alphanumerics.");
+    } else if  (projectDirs.contains(projectName, Qt::CaseSensitive)){
+
+             updateErrorLabel("Warning: Project with the same name already exists in the selected path.");
+        return true;
+        } else {
+            updateErrorLabel("");  // Clear the error message if validation passes
+            return true;
+    }
+    return false;
 }
 
+void MainWindow::onBuildClicker() {
+        buildsetup buildSetupInstance;
+        QString buildfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
 
+        buildSetupInstance.getBuildFilePath(buildfile);
+}
 
-
+void MainWindow::onRunClicker() {
+        buildsetup buildSetupInstance;
+        QString runfile = ui->Project_Path_Txt->text() + QDir::separator() + ui->Project_Name_Txt->text();
+        buildSetupInstance.getRunFilePath(runfile, selectedMode);
+}

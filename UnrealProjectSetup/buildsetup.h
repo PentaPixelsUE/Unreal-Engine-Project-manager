@@ -1,6 +1,6 @@
 #ifndef BUILDSETUP_H
 #define BUILDSETUP_H
-
+#include "mainwindow.h"
 #include <QString>
 
 class buildsetup
@@ -8,12 +8,14 @@ class buildsetup
 public:
     buildsetup();
 
-    // Add member functions here if needed
-        void getBuildandrunFilePath(const QString& buildfilepath,const QString& runfilepath);
+        void getRunFilePath(const QString& runfilepath, RunMode selectedMode);
+        void getBuildFilePath(const QString& buildfilepath);
+
 
 
 private:
-         // Add member variables or private helper functions here if needed
+
+
 
 };
 
