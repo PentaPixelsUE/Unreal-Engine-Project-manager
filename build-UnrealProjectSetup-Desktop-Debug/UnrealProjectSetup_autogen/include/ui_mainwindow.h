@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -59,6 +60,7 @@ public:
     QRadioButton *Standalone_Mode_Tick;
     QRadioButton *Game_Mode_Tick;
     QSpacerItem *horizontalSpacer;
+    QCheckBox *Open_Sublime_CheckBox;
     QPushButton *Run_Btn;
     QPushButton *Build_Btn;
     QSpacerItem *verticalSpacer;
@@ -367,7 +369,7 @@ public:
 "QLabel {\n"
 "  color: rgb(97, 53, 131);\n"
 "  font-family: 'Roboto', sans-serif; \n"
-"  font-size: 17px;\n"
+"  font-size: 20px;\n"
 "  font-weight: normal;\n"
 "  padding: 5px;\n"
 "}"));
@@ -403,6 +405,11 @@ public:
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer);
+
+        Open_Sublime_CheckBox = new QCheckBox(Project_Path_Hbox);
+        Open_Sublime_CheckBox->setObjectName(QString::fromUtf8("Open_Sublime_CheckBox"));
+
+        horizontalLayout_2->addWidget(Open_Sublime_CheckBox);
 
         Run_Btn = new QPushButton(Project_Path_Hbox);
         Run_Btn->setObjectName(QString::fromUtf8("Run_Btn"));
@@ -525,6 +532,7 @@ public:
         Editor_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Editor", nullptr));
         Standalone_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Standalone", nullptr));
         Game_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Game", nullptr));
+        Open_Sublime_CheckBox->setText(QCoreApplication::translate("MainWindow", "Sublime", nullptr));
         Run_Btn->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         Build_Btn->setText(QCoreApplication::translate("MainWindow", "Build", nullptr));
         Standalone_Warning_Lbl->setText(QString());

@@ -31,9 +31,9 @@ private:
     Ui::MainWindow *ui;
     QJsonObject jsonObject;
     QString selectedProjectFolderPath;
-
+    bool openSublimeFlag;
     RunMode selectedMode;
-
+    void openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath,const QString& projectConfigPath, const QString& sublimePath);
 private slots:
     void onProjectPathBrowseBtnClicker();
     void onEngineSourcePathBtnClicker();
@@ -47,6 +47,7 @@ private slots:
     void onStandaloneMode();
     void onEditorMode();
 
+    void onOpenSublimeCheckboxToggled(bool checked);
 
 };
 #endif // MAINWINDOW_H

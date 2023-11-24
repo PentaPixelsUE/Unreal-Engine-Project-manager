@@ -11,11 +11,12 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QCoreApplication>
+#include<QThread>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-
+    ,openSublimeFlag(false)
 {
     ui->setupUi(this);
 
@@ -47,17 +48,14 @@ MainWindow::MainWindow(QWidget *parent)
     updateStandaloneLabel();
     });
 
-   // //What IS THIS  ?
+
     //Labels
 
    connect(ui->Project_Name_Txt, &QLineEdit::textChanged, this, &MainWindow::validateProjectName);
     connect(ui->Standalone_Mode_Tick, &QRadioButton::clicked, this, &MainWindow::updateStandaloneLabel);
-   QMessageBox msgBox;
-   msgBox.setWindowTitle("Title");
-   msgBox.setText("Message text");
-   msgBox.setIcon(QMessageBox::Question);
-   msgBox.addButton("Create", QMessageBox::YesRole);
-   msgBox.addButton("Ignore", QMessageBox::NoRole);
+
+//CheckBox
+    connect(ui->Open_Sublime_CheckBox, &QCheckBox::clicked,this,&MainWindow::onOpenSublimeCheckboxToggled);
 }
 
 void MainWindow::onGameMode()
@@ -199,8 +197,60 @@ void MainWindow::onBuildClicker() {
         buildSetupInstance.getBuildFilePath(buildfile);
 }
 
+
 void MainWindow::onRunClicker() {
         buildsetup buildSetupInstance;
+
         QString runfile = ui->Project_Path_Txt->text() + QDir::separator() + ui->Project_Name_Txt->text();
+        QString projectName = ui->Project_Name_Txt->text();
+        QString projectPath = ui->Project_Path_Txt->text();
+        QString enginePath = ui->UE_Source_Path_Txt->text();
+
         buildSetupInstance.getRunFilePath(runfile, selectedMode);
+
+//        //*/ Wait for the Config folder
+//        while (!buildSetupInstance.doesConfigFolderExist(projectPath, projectName)) {
+//            QThread::msleep(1000);
+//            qDebug() << "Waiting for Config folder...";
+//        }*/
+
+//        // Config folder found, now check for Sublime flag
+
+//            QThread::msleep(1000);
+//            qDebug() << "Waiting for Sublime flag...";
+//        }
+
+        // Both Config folder and Sublime flag are true, open Sublime
+        openSublimeWithFolders(enginePath + QDir::separator() + "Source" + QDir::separator() + "Runtime",
+                               projectPath + QDir::separator() + projectName + QDir::separator() + "Config",
+                               projectPath + QDir::separator() + projectName + QDir::separator() + "Source",
+                               "/opt/sublime_text/sublime_text");
 }
+
+
+
+
+void MainWindow::openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath,
+                                        const QString& projectConfigPath, const QString& sublimePath) {
+        QStringList arguments;
+        arguments.append(engineRuntimePath);
+        arguments.append(projectSourcePath);
+        arguments.append(projectConfigPath);
+        arguments.append(sublimePath);
+
+        QProcess sublimeProcess;
+        if (sublimeProcess.startDetached(sublimePath, arguments)) {
+            qDebug() << "Successfully opened Sublime Text with specified folders.";
+        } else {
+            qDebug() << "Failed to open Sublime Text. Check the path and arguments.";
+        }
+}
+
+
+void MainWindow::onOpenSublimeCheckboxToggled(bool checked)
+{
+        openSublimeFlag = checked;
+
+}
+
+

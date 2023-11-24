@@ -523,7 +523,7 @@ QLabel {
 QLabel {
   color: rgb(97, 53, 131);
   font-family: 'Roboto', sans-serif; 
-  font-size: 17px;
+  font-size: 20px;
   font-weight: normal;
   padding: 5px;
 }</string>
@@ -582,6 +582,13 @@ QLabel {
            </size>
           </property>
          </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="Open_Sublime_CheckBox">
+          <property name="text">
+           <string>Sublime</string>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="Run_Btn">

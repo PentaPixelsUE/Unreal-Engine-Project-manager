@@ -84,11 +84,19 @@ void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode
 
         QString runOutput = runProcess.readAllStandardOutput();
         QString runError = runProcess.readAllStandardError();
-
         qDebug() << "Run Script Output:\n" << runOutput;
         qDebug() << "Run Script Error:\n" << runError;
     } else {
         qDebug() << "Run file does not exist.";
     }
 }
+
+
+bool buildsetup::doesConfigFolderExist(const QString& projectPath,const QString& projectName)
+{
+    QDir configFolder(projectPath+ QDir::separator()+projectName + QDir::separator() + "Config");
+    return configFolder.exists();
+}
+
+
 
