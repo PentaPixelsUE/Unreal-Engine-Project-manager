@@ -195,6 +195,7 @@ void MainWindow::onBuildClicker() {
         QString buildfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
 
         buildSetupInstance.getBuildFilePath(buildfile);
+         QMessageBox::information(this, "Build Info", "Build Successful: ");
 }
 
 
@@ -205,37 +206,18 @@ void MainWindow::onRunClicker() {
         QString projectName = ui->Project_Name_Txt->text();
         QString projectPath = ui->Project_Path_Txt->text();
         QString enginePath = ui->UE_Source_Path_Txt->text();
+       buildSetupInstance.getRunFilePath(runfile, selectedMode,enginePath,projectPath,projectName);
 
-        buildSetupInstance.getRunFilePath(runfile, selectedMode);
-
-//        //*/ Wait for the Config folder
-//        while (!buildSetupInstance.doesConfigFolderExist(projectPath, projectName)) {
-//            QThread::msleep(1000);
-//            qDebug() << "Waiting for Config folder...";
-//        }*/
-
-//        // Config folder found, now check for Sublime flag
-
-//            QThread::msleep(1000);
-//            qDebug() << "Waiting for Sublime flag...";
-//        }
-
-        // Both Config folder and Sublime flag are true, open Sublime
-        openSublimeWithFolders(enginePath + QDir::separator() + "Source" + QDir::separator() + "Runtime",
-                               projectPath + QDir::separator() + projectName + QDir::separator() + "Config",
-                               projectPath + QDir::separator() + projectName + QDir::separator() + "Source",
-                               "/opt/sublime_text/sublime_text");
 }
 
 
 
 
-void MainWindow::openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath,
-                                        const QString& projectConfigPath, const QString& sublimePath) {
+void MainWindow::openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath, const QString& sublimePath) {
         QStringList arguments;
         arguments.append(engineRuntimePath);
         arguments.append(projectSourcePath);
-        arguments.append(projectConfigPath);
+       // arguments.append(projectConfigPath);
         arguments.append(sublimePath);
 
         QProcess sublimeProcess;

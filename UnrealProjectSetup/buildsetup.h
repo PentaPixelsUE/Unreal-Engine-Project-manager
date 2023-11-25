@@ -13,9 +13,9 @@ public:
 
 
 
-    void getRunFilePath(const QString& runfilepath, RunMode selectedMode);
+    void getRunFilePath(const QString& runfilepath, RunMode selectedMode,const QString& enginePath, const QString& projectPath, const QString& projectName);
     void getBuildFilePath(const QString& buildfilepath);
-    bool  doesConfigFolderExist(const QString& projectPath,const QString& projectName);
+  //  bool  doesConfigFolderExist(const QString& projectPath,const QString& projectName);
 
 private:
     QProcess runProcess;

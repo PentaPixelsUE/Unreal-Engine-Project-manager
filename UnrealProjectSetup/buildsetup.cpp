@@ -1,5 +1,6 @@
 #include "buildsetup.h"
 #include "mainwindow.h"
+#include <QtConcurrent/QtConcurrent>
 #include "qdir.h"
 #include <QProcess>
 #include <QDebug>
@@ -45,10 +46,9 @@ void buildsetup::getBuildFilePath(const QString& buildfilepath)
 
 
 
-void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode)
+void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode, const QString &enginePath, const QString &projectPath, const QString &projectName)
 {
-
-
+    MainWindow MainWindowInstance;
 
     QString runfile = runfilepath + QDir::separator() + "run.sh";
     qDebug() << "RunFilePath = " << runfile;
@@ -60,20 +60,19 @@ void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode
 
         QProcess runProcess;
 
-
         switch (selectedMode) {
         case GameMode:
             runProcess.start("bash", QStringList() << runfile<<"game");
             break;
         case EditorMode:
             runProcess.start("bash", QStringList() << runfile << "editor");
+
+            MainWindowInstance.openSublimeWithFolders(enginePath + QDir::separator() + "Source" + QDir::separator() + "Runtime",
+                                   projectPath + QDir::separator() + projectName + QDir::separator() + "Source",
+                                   "/opt/sublime_text/sublime_text");
             break;
         case StandaloneMode:
-
             runProcess.start("bash", QStringList() << runfile << "standalone");
-
-
-
             break;
         default:
             qDebug() << "Invalid mode selected.";
@@ -91,12 +90,6 @@ void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode
     }
 }
 
-
-bool buildsetup::doesConfigFolderExist(const QString& projectPath,const QString& projectName)
-{
-    QDir configFolder(projectPath+ QDir::separator()+projectName + QDir::separator() + "Config");
-    return configFolder.exists();
-}
 
 
 

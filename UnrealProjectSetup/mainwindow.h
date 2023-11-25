@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath, const QString& sublimePath);
 
 private:
     Ui::MainWindow *ui;
@@ -33,7 +33,7 @@ private:
     QString selectedProjectFolderPath;
     bool openSublimeFlag;
     RunMode selectedMode;
-    void openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath,const QString& projectConfigPath, const QString& sublimePath);
+
 private slots:
     void onProjectPathBrowseBtnClicker();
     void onEngineSourcePathBtnClicker();
