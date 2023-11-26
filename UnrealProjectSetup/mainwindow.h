@@ -46,6 +46,7 @@ private slots:
     void onGameMode();
     void onStandaloneMode();
     void onEditorMode();
+    void onDisablePlugin();
 
     void onOpenSublimeCheckboxToggled(bool checked);
 

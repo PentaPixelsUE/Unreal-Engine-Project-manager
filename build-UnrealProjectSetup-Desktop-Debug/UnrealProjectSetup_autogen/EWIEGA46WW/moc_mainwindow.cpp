@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[16];
-    char stringdata0[279];
+    QByteArrayData data[17];
+    char stringdata0[295];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,8 +46,9 @@ QT_MOC_LITERAL(10, 188, 12), // "onRunClicker"
 QT_MOC_LITERAL(11, 201, 10), // "onGameMode"
 QT_MOC_LITERAL(12, 212, 16), // "onStandaloneMode"
 QT_MOC_LITERAL(13, 229, 12), // "onEditorMode"
-QT_MOC_LITERAL(14, 242, 28), // "onOpenSublimeCheckboxToggled"
-QT_MOC_LITERAL(15, 271, 7) // "checked"
+QT_MOC_LITERAL(14, 242, 15), // "onDisablePlugin"
+QT_MOC_LITERAL(15, 258, 28), // "onOpenSublimeCheckboxToggled"
+QT_MOC_LITERAL(16, 287, 7) // "checked"
 
     },
     "MainWindow\0onProjectPathBrowseBtnClicker\0"
@@ -57,7 +58,8 @@ QT_MOC_LITERAL(15, 271, 7) // "checked"
     "updateErrorLabel\0errorMessage\0"
     "onBuildClicker\0onRunClicker\0onGameMode\0"
     "onStandaloneMode\0onEditorMode\0"
-    "onOpenSublimeCheckboxToggled\0checked"
+    "onDisablePlugin\0onOpenSublimeCheckboxToggled\0"
+    "checked"
 };
 #undef QT_MOC_LITERAL
 
@@ -67,7 +69,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,18 +77,19 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x08 /* Private */,
-       3,    0,   75,    2, 0x08 /* Private */,
-       4,    0,   76,    2, 0x08 /* Private */,
-       5,    0,   77,    2, 0x08 /* Private */,
-       6,    0,   78,    2, 0x08 /* Private */,
-       7,    1,   79,    2, 0x08 /* Private */,
-       9,    0,   82,    2, 0x08 /* Private */,
-      10,    0,   83,    2, 0x08 /* Private */,
-      11,    0,   84,    2, 0x08 /* Private */,
-      12,    0,   85,    2, 0x08 /* Private */,
-      13,    0,   86,    2, 0x08 /* Private */,
-      14,    1,   87,    2, 0x08 /* Private */,
+       1,    0,   79,    2, 0x08 /* Private */,
+       3,    0,   80,    2, 0x08 /* Private */,
+       4,    0,   81,    2, 0x08 /* Private */,
+       5,    0,   82,    2, 0x08 /* Private */,
+       6,    0,   83,    2, 0x08 /* Private */,
+       7,    1,   84,    2, 0x08 /* Private */,
+       9,    0,   87,    2, 0x08 /* Private */,
+      10,    0,   88,    2, 0x08 /* Private */,
+      11,    0,   89,    2, 0x08 /* Private */,
+      12,    0,   90,    2, 0x08 /* Private */,
+      13,    0,   91,    2, 0x08 /* Private */,
+      14,    0,   92,    2, 0x08 /* Private */,
+      15,    1,   93,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -100,7 +103,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   15,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   16,
 
        0        // eod
 };
@@ -123,7 +127,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->onGameMode(); break;
         case 9: _t->onStandaloneMode(); break;
         case 10: _t->onEditorMode(); break;
-        case 11: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 11: _t->onDisablePlugin(); break;
+        case 12: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -158,13 +163,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 13)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 13;
     }
     return _id;
 }

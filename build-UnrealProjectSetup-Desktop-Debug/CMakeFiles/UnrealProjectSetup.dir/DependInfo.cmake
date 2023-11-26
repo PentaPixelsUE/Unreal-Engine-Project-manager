@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp" "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o.d"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/main.cpp" "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o.d"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.cpp" "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o.d"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.cpp" "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o.d"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.cpp" "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o.d"
   )
 

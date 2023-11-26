@@ -21,6 +21,8 @@ set(PROJECT_SOURCES
         buildsetup.h
         projectjsongenerator.cpp
         projectjsongenerator.h
+        pluginsmanager.h
+        pluginsmanager.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

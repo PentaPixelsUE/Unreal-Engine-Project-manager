@@ -91,6 +91,12 @@
 			null
 		],
 		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.h",
+			"MU",
+			"EWIEGA46WW/moc_pluginsmanager.cpp",
+			null
+		],
+		[
 			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.h",
 			"MU",
 			"EWIEGA46WW/moc_projectjsongenerator.cpp",
@@ -162,6 +168,11 @@
 		],
 		[
 			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.cpp",
 			"MU",
 			null
 		],

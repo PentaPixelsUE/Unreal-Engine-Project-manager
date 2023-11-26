@@ -283,6 +283,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+pluginsmanager.o: pluginsmanager.cpp.o
+.PHONY : pluginsmanager.o
+
+# target to build an object file
+pluginsmanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o
+.PHONY : pluginsmanager.cpp.o
+
+pluginsmanager.i: pluginsmanager.cpp.i
+.PHONY : pluginsmanager.i
+
+# target to preprocess a source file
+pluginsmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.i
+.PHONY : pluginsmanager.cpp.i
+
+pluginsmanager.s: pluginsmanager.cpp.s
+.PHONY : pluginsmanager.s
+
+# target to generate assembly for a file
+pluginsmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.s
+.PHONY : pluginsmanager.cpp.s
+
 projectjsongenerator.o: projectjsongenerator.cpp.o
 .PHONY : projectjsongenerator.o
 
@@ -333,6 +357,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... pluginsmanager.o"
+	@echo "... pluginsmanager.i"
+	@echo "... pluginsmanager.s"
 	@echo "... projectjsongenerator.o"
 	@echo "... projectjsongenerator.i"
 	@echo "... projectjsongenerator.s"

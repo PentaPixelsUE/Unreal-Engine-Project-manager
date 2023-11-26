@@ -10,6 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o"
   "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o.d"
+  "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o"
+  "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o"
   "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o.d"
   "UnrealProjectSetup"

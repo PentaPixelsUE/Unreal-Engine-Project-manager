@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "buildsetup.h"
 #include "projectjsongenerator.h"
+#include "pluginsmanager.h"
 #include <QObject>
 #include <QDir>
 #include <QFileSystemModel>
@@ -24,17 +25,19 @@ MainWindow::MainWindow(QWidget *parent)
  setWindowTitle("Unreal Engine Project Manager");
 
 
-    setMinimumSize(900, 350);
-    setMaximumSize(900,350);
+    setMinimumSize(900, 550);
+
 
     //Main UI
 
     connect(ui->Project_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onProjectPathBrowseBtnClicker);
     connect(ui->UE_Source_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onEngineSourcePathBtnClicker);
     connect(ui->Generate_Project_Files_Btn,&QPushButton::clicked,this, &::MainWindow::onSetupProjectFilesBtnClicker);
-
     connect(ui->Build_Btn,&QPushButton::clicked,this,&MainWindow::onBuildClicker);
     connect(ui->Run_Btn,&QPushButton::clicked,this,&MainWindow::onRunClicker);
+    connect(ui->To_Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePlugin);
+
+
 
     //Radio Buttons
     connect(ui->Standalone_Mode_Tick, &QRadioButton::clicked, this, [=]() {// Lambda Function
@@ -103,15 +106,29 @@ void MainWindow::onProjectPathBrowseBtnClicker()
 
 //Set The Engine Source Path
 
-void MainWindow::onEngineSourcePathBtnClicker()
-{
-    QString EnginePath = QFileDialog::getExistingDirectory(this,"Select Engine Folder",QDir::homePath(),QFileDialog::ShowDirsOnly);
+// mainwindow.cpp
+void MainWindow::onEngineSourcePathBtnClicker() {
+    QString EnginePath = QFileDialog::getExistingDirectory(this, "Select Engine Folder", QDir::homePath(), QFileDialog::ShowDirsOnly);
 
     ui->UE_Source_Path_Txt->setText(EnginePath);
     QMessageBox::information(this, "Folder Selected", "Engine Source folder set to: " + EnginePath);
 
+    QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
+    PluginManager::getInstance().setEnginePath(pluginPath);
 
+    // Clear the existing models
+    ui->Enabled_Plugins_List->setModel(nullptr);
+    ui->Disabled_Plugins_List->setModel(nullptr);
+
+    // Populate the models
+    PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getPluginsModel()->invisibleRootItem(), pluginPath);
+    PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(), pluginPath);
+
+    // Set the models to the list views
+    ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getPluginsModel());
+    ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsModel());
 }
+
 
 
 //Project files setup;
@@ -235,4 +252,7 @@ void MainWindow::onOpenSublimeCheckboxToggled(bool checked)
 
 }
 
+void MainWindow::onDisablePlugin() {
 
+
+}
