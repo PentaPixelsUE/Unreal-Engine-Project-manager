@@ -4,12 +4,17 @@
 
 #include <QString>
 #include <QStandardItemModel>
+#include <QSortFilterProxyModel>
 
 class PluginManager {
 public:
     static PluginManager& getInstance() {
         static PluginManager instance;
         return instance;
+    }
+
+    QSortFilterProxyModel* getDisabledPluginsProxyModel() const {
+        return disabledPluginsProxyModel;
     }
 
     const QString& getEnginePath() const {
@@ -36,7 +41,14 @@ private:
     QStandardItemModel* pluginsModel;
     QStandardItemModel* disabledPluginsModel;
 
+    QSortFilterProxyModel* disabledPluginsProxyModel;
+
+    void setupProxyModels() ;
+
+
+
     // Make the constructor private to enforce the singleton pattern
+
     PluginManager();
     ~PluginManager();
     PluginManager(const PluginManager&) = delete;

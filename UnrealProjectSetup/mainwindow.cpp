@@ -3,6 +3,8 @@
 #include "buildsetup.h"
 #include "projectjsongenerator.h"
 #include "pluginsmanager.h"
+#include <QSortFilterProxyModel>
+
 #include <QObject>
 #include <QDir>
 #include <QFileSystemModel>
@@ -14,19 +16,27 @@
 #include <QCoreApplication>
 #include<QThread>
 
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     ,openSublimeFlag(false)
+    ,filterProxyModel(new QSortFilterProxyModel(this))
+
 {
     ui->setupUi(this);
 
+
+    //filterProxyModel->setSourceModel(PluginManager::getInstance().getPluginsModel());
 
  setWindowTitle("Unreal Engine Project Manager");
 
 
     setMinimumSize(900, 550);
 
+    filterProxyModel = new QSortFilterProxyModel(this);
 
     //Main UI
 
@@ -35,9 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Generate_Project_Files_Btn,&QPushButton::clicked,this, &::MainWindow::onSetupProjectFilesBtnClicker);
     connect(ui->Build_Btn,&QPushButton::clicked,this,&MainWindow::onBuildClicker);
     connect(ui->Run_Btn,&QPushButton::clicked,this,&MainWindow::onRunClicker);
-    connect(ui->To_Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePlugin);
-
-
+    connect(ui->To_Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePluginClickr);
 
     //Radio Buttons
     connect(ui->Standalone_Mode_Tick, &QRadioButton::clicked, this, [=]() {// Lambda Function
@@ -59,6 +67,13 @@ MainWindow::MainWindow(QWidget *parent)
 
 //CheckBox
     connect(ui->Open_Sublime_CheckBox, &QCheckBox::clicked,this,&MainWindow::onOpenSublimeCheckboxToggled);
+//Plugin Filters
+
+    connect(ui->Plugins_Filter, &QLineEdit::textChanged, this, &MainWindow::onFilterPluginsUpdate);
+
+
+
+
 }
 
 void MainWindow::onGameMode()
@@ -81,6 +96,8 @@ void MainWindow::onStandaloneMode()
 MainWindow::~MainWindow()
 {
     delete ui;
+
+    delete filterProxyModel;
 }
 
 
@@ -106,7 +123,7 @@ void MainWindow::onProjectPathBrowseBtnClicker()
 
 //Set The Engine Source Path
 
-// mainwindow.cpp
+
 void MainWindow::onEngineSourcePathBtnClicker() {
     QString EnginePath = QFileDialog::getExistingDirectory(this, "Select Engine Folder", QDir::homePath(), QFileDialog::ShowDirsOnly);
 
@@ -127,6 +144,8 @@ void MainWindow::onEngineSourcePathBtnClicker() {
     // Set the models to the list views
     ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getPluginsModel());
     ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsModel());
+
+
 }
 
 
@@ -252,7 +271,51 @@ void MainWindow::onOpenSublimeCheckboxToggled(bool checked)
 
 }
 
-void MainWindow::onDisablePlugin() {
+void MainWindow::onDisablePluginClickr() {
 
 
 }
+
+
+void MainWindow::onFilterPluginsUpdate() {
+        QString filterText = ui->Plugins_Filter->text();
+        QRegExp regExp(filterText, Qt::CaseInsensitive, QRegExp::Wildcard);
+
+        filterProxyModel->setFilterRegExp(regExp);
+
+        // Set filtered models for both lists
+        ui->Enabled_Plugins_List->setModel(filterProxyModel);
+        ui->Disabled_Plugins_List->setModel(filterProxyModel);
+
+        // Update your UI or perform any other actions when the filter changes
+        updateEnabledPluginsList();
+        updateDisabledPluginsList();
+}
+
+void MainWindow::updateEnabledPluginsList() {
+        qDebug() << "Updating Enabled Plugins List";
+
+        // Assuming you have a QStandardItemModel for the enabled plugins list
+        QStandardItemModel* enabledPluginsModel = PluginManager::getInstance().getPluginsModel();
+
+        // Set the filtered model for the enabled plugins list
+        ui->Enabled_Plugins_List->setModel(filterProxyModel);
+
+        // If using a filter proxy model, set the source model
+        filterProxyModel->setSourceModel(enabledPluginsModel);
+}
+
+void MainWindow::updateDisabledPluginsList() {
+        qDebug() << "Updating Disabled Plugins List";
+
+        // Assuming you have a QStandardItemModel for the disabled plugins list
+        QStandardItemModel* disabledPluginsModel = PluginManager::getInstance().getDisabledPluginsModel();
+
+        // Set the filtered model for the disabled plugins list
+        ui->Disabled_Plugins_List->setModel(filterProxyModel);
+
+        // If using a filter proxy model, set the source model
+        filterProxyModel->setSourceModel(disabledPluginsModel);
+}
+
+

@@ -14,13 +14,16 @@
 #include <QFile>
 #include <QTextStream>
 
-PluginManager::PluginManager() : pluginsModel(new QStandardItemModel), disabledPluginsModel(new QStandardItemModel) {
+PluginManager::PluginManager() : pluginsModel(new QStandardItemModel), disabledPluginsModel(nullptr), disabledPluginsProxyModel(nullptr) {
+    setupProxyModels();
 }
 
 PluginManager::~PluginManager() {
     delete pluginsModel;
     delete disabledPluginsModel;
+    delete disabledPluginsProxyModel;
 }
+
 
 
 void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory) {
@@ -69,6 +72,14 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
     }
 }
 
+void PluginManager::setupProxyModels() {
+    // Initialize disabled plugins model
+    disabledPluginsModel = new QStandardItemModel;
+
+    // Initialize disabled plugins proxy model
+    disabledPluginsProxyModel = new QSortFilterProxyModel;
+    disabledPluginsProxyModel->setSourceModel(disabledPluginsModel);
+}
 
 
 

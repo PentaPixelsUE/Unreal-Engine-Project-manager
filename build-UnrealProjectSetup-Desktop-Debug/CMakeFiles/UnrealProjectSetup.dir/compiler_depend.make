@@ -242,6 +242,8 @@ CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cp
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -296,6 +298,7 @@ CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cp
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
@@ -1126,6 +1129,8 @@ CMakeFiles/UnrealProjectSetup.dir/main.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -1183,6 +1188,7 @@ CMakeFiles/UnrealProjectSetup.dir/main.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
@@ -1500,10 +1506,12 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSortFilterProxyModel \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QThread \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -1572,6 +1580,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
@@ -1945,9 +1954,11 @@ CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o: /media/saif/a6fc8aae-38f
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QDir \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QFileInfo \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSortFilterProxyModel \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QTextStream \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -1994,12 +2005,14 @@ CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o: /media/saif/a6fc8aae-38f
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
@@ -2692,6 +2705,8 @@ CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o: /media/saif/a6fc8a
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QStandardItemModel:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QSortFilterProxyModel:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonArray:
@@ -2833,6 +2848,10 @@ UnrealProjectSetup_autogen/mocs_compilation.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtConcurrent/qtconcurrentmap.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhistorystate.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
@@ -3068,6 +3087,12 @@ UnrealProjectSetup_autogen/mocs_compilation.cpp:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
 /usr/include/c++/13/bits/ostream.tcc:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
@@ -3284,12 +3309,6 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 
 /usr/include/c++/13/cerrno:
 
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
 /usr/include/c++/13/bits/stl_numeric.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
@@ -3349,14 +3368,6 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/c++/13/memory:
 
@@ -3429,6 +3440,14 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /usr/include/c++/13/bits/refwrap.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtConcurrent/qtconcurrentfilterkernel.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatetime.h:
 
@@ -3519,6 +3538,10 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydataops.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h:
+
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/include/nlohmann/detail/exceptions.hpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h:
 
@@ -3762,10 +3785,6 @@ UnrealProjectSetup_autogen/include/ui_mainwindow.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qhistorystate.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h:
-
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qanimationgroup.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydatapointer.h:
@@ -3885,10 +3904,6 @@ UnrealProjectSetup_autogen/include/ui_mainwindow.h:
 /usr/include/c++/13/bits/range_access.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedvaluerollback.h:
-
-/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/include/nlohmann/detail/exceptions.hpp:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qsortfilterproxymodel.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstandardpaths.h:
 

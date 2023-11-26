@@ -2,17 +2,14 @@
 #define MAINWINDOW_H
 
 #include "qjsonobject.h"
+#include "qsortfilterproxymodel.h"
 #include <QMainWindow>
-
-
 
 enum RunMode {
     GameMode,
     EditorMode,
     StandaloneMode,
-
 };
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,30 +22,67 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    // Open Sublime Text with specified folders
     void openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath, const QString& sublimePath);
 
 private:
+
     Ui::MainWindow *ui;
     QJsonObject jsonObject;
     QString selectedProjectFolderPath;
-    bool openSublimeFlag;
+    QSortFilterProxyModel* filterProxyModel;
+
     RunMode selectedMode;
 
+    // Update the list of enabled plugins
+    void updateEnabledPluginsList();
+    bool openSublimeFlag;
+    // Update the list of disabled plugins
+    void updateDisabledPluginsList();
+
 private slots:
+    // Slot for handling the "Browse" button click to select the project path
     void onProjectPathBrowseBtnClicker();
+
+    // Slot for handling the "Browse" button click to select the engine source path
     void onEngineSourcePathBtnClicker();
+
+    // Slot for setting up project files
     void onSetupProjectFilesBtnClicker();
+
+    // Validate the project name
     bool validateProjectName();
+
+    // Update the label for standalone mode
     void updateStandaloneLabel();
+
+    // Update the error label with a given error message
     void updateErrorLabel(const QString& errorMessage);
+
+    // Slot for handling the "Build" button click
     void onBuildClicker();
+
+    // Slot for handling the "Run" button click
     void onRunClicker();
+
+    // Slot for switching to game mode
     void onGameMode();
+
+    // Slot for switching to standalone mode
     void onStandaloneMode();
+
+    // Slot for switching to editor mode
     void onEditorMode();
-    void onDisablePlugin();
 
+    // Slot for disabling a plugin
+    void onDisablePluginClickr();
+
+    // Slot for updating the plugins list based on the filter
+    void onFilterPluginsUpdate();
+
+    // Slot for toggling the "Open Sublime" checkbox
     void onOpenSublimeCheckboxToggled(bool checked);
-
 };
+
 #endif // MAINWINDOW_H
