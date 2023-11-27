@@ -885,22 +885,6 @@ QPushButton:disabled {
               </layout>
              </item>
              <item>
-              <widget class="QLineEdit" name="Plugins_Filter">
-               <property name="autoFillBackground">
-                <bool>false</bool>
-               </property>
-               <property name="inputMask">
-                <string/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="placeholderText">
-                <string>filter</string>
-               </property>
-              </widget>
-             </item>
-             <item>
               <layout class="QHBoxLayout" name="horizontalLayout">
                <property name="rightMargin">
                 <number>0</number>
@@ -1010,6 +994,22 @@ QPushButton:disabled {
                 </widget>
                </item>
               </layout>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="Plugins_Filter">
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>filter</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>

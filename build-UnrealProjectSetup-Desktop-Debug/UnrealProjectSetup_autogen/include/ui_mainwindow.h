@@ -95,7 +95,6 @@ public:
     QSpacerItem *horizontalSpacer_4;
     QLabel *Plugins_Available_Lbl;
     QSpacerItem *horizontalSpacer_5;
-    QLineEdit *Plugins_Filter;
     QHBoxLayout *horizontalLayout;
     QScrollArea *Enabled_Plugins_Scroll_Area;
     QWidget *Enabled_Plugins_Area;
@@ -111,6 +110,7 @@ public:
     QWidget *Disabled_Pluginsl_Area;
     QGridLayout *gridLayout_2;
     QListView *Disabled_Plugins_List;
+    QLineEdit *Plugins_Filter;
     QMenuBar *menubar;
     QStatusBar *statusBar;
 
@@ -631,12 +631,6 @@ public:
 
         verticalLayout->addLayout(PLugins_Lables_HBOX);
 
-        Plugins_Filter = new QLineEdit(Plugins_Frame);
-        Plugins_Filter->setObjectName(QString::fromUtf8("Plugins_Filter"));
-        Plugins_Filter->setAutoFillBackground(false);
-
-        verticalLayout->addWidget(Plugins_Filter);
-
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(-1, -1, 0, -1);
@@ -705,6 +699,12 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
+        Plugins_Filter = new QLineEdit(Plugins_Frame);
+        Plugins_Filter->setObjectName(QString::fromUtf8("Plugins_Filter"));
+        Plugins_Filter->setAutoFillBackground(false);
+
+        verticalLayout->addWidget(Plugins_Filter);
+
 
         verticalLayout_2->addWidget(Plugins_Frame);
 
@@ -756,11 +756,11 @@ public:
         Standalone_Warning_Lbl->setText(QString());
         Plugins_Enabled_Lbl->setText(QCoreApplication::translate("MainWindow", "Enabled Plugins", nullptr));
         Plugins_Available_Lbl->setText(QCoreApplication::translate("MainWindow", "Disabled Plugins", nullptr));
+        To_Enable_Plugins_List->setText(QCoreApplication::translate("MainWindow", "<<", nullptr));
+        To_Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", ">>", nullptr));
         Plugins_Filter->setInputMask(QString());
         Plugins_Filter->setText(QString());
         Plugins_Filter->setPlaceholderText(QCoreApplication::translate("MainWindow", "filter", nullptr));
-        To_Enable_Plugins_List->setText(QCoreApplication::translate("MainWindow", "<<", nullptr));
-        To_Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", ">>", nullptr));
         Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Build_Setup_Tab), QCoreApplication::translate("MainWindow", "Build Setup", nullptr));
     } // retranslateUi
 

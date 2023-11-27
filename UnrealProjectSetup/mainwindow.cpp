@@ -138,11 +138,11 @@ void MainWindow::onEngineSourcePathBtnClicker() {
     ui->Disabled_Plugins_List->setModel(nullptr);
 
     // Populate the models
-    PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getPluginsModel()->invisibleRootItem(), pluginPath);
+    PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(), pluginPath);
     PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(), pluginPath);
 
     // Set the models to the list views
-    ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getPluginsModel());
+    ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsModel());
     ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsModel());
 
 
@@ -277,45 +277,64 @@ void MainWindow::onDisablePluginClickr() {
 }
 
 
-void MainWindow::onFilterPluginsUpdate() {
-        QString filterText = ui->Plugins_Filter->text();
-        QRegExp regExp(filterText, Qt::CaseInsensitive, QRegExp::Wildcard);
 
-        filterProxyModel->setFilterRegExp(regExp);
+
+void MainWindow::onFilterPluginsUpdate() {
+        qDebug() << "Filter function called!";
+
+        QString filterText = ui->Plugins_Filter->text();
+        qDebug() << "Typed" << filterText;
+
+        QRegularExpression regExp(filterText, QRegularExpression::CaseInsensitiveOption);
+        qDebug() << "Typed" << regExp;
+        // Set the filter on the source models of both lists
+
+        PluginManager::getInstance().getEnabledPluginsProxyModel()->setFilterRegularExpression(regExp);
+        PluginManager::getInstance().getDisabledPluginsProxyModel()->setFilterRegularExpression(regExp);
 
         // Set filtered models for both lists
-        ui->Enabled_Plugins_List->setModel(filterProxyModel);
-        ui->Disabled_Plugins_List->setModel(filterProxyModel);
+        ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
+        ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
+
+        // Print row counts for debugging
+        qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
+        qDebug() << "Enabled Plugins Proxy Row Count: " << PluginManager::getInstance().getEnabledPluginsProxyModel()->rowCount();
+
+        qDebug() << "Disabled Plugins Row Count: " << PluginManager::getInstance().getDisabledPluginsModel()->rowCount();
+        qDebug() << "Disabled Plugins Proxy Row Count: " << PluginManager::getInstance().getDisabledPluginsProxyModel()->rowCount();
 
         // Update your UI or perform any other actions when the filter changes
         updateEnabledPluginsList();
         updateDisabledPluginsList();
 }
 
+
+
+
 void MainWindow::updateEnabledPluginsList() {
         qDebug() << "Updating Enabled Plugins List";
 
-        // Assuming you have a QStandardItemModel for the enabled plugins list
-        QStandardItemModel* enabledPluginsModel = PluginManager::getInstance().getPluginsModel();
+        QSortFilterProxyModel* enabledPluginsProxyModel = PluginManager::getInstance().getEnabledPluginsProxyModel();
+        enabledPluginsProxyModel->setSourceModel(PluginManager::getInstance().getEnabledPluginsModel());
 
-        // Set the filtered model for the enabled plugins list
-        ui->Enabled_Plugins_List->setModel(filterProxyModel);
+        ui->Enabled_Plugins_List->setModel(enabledPluginsProxyModel);
 
-        // If using a filter proxy model, set the source model
-        filterProxyModel->setSourceModel(enabledPluginsModel);
+        qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
+        qDebug() << "Enabled Plugins Proxy Row Count: " << enabledPluginsProxyModel->rowCount();
 }
 
 void MainWindow::updateDisabledPluginsList() {
         qDebug() << "Updating Disabled Plugins List";
 
-        // Assuming you have a QStandardItemModel for the disabled plugins list
-        QStandardItemModel* disabledPluginsModel = PluginManager::getInstance().getDisabledPluginsModel();
+        QSortFilterProxyModel* disabledPluginsProxyModel = PluginManager::getInstance().getDisabledPluginsProxyModel();
+        disabledPluginsProxyModel->setSourceModel(PluginManager::getInstance().getDisabledPluginsModel());
 
-        // Set the filtered model for the disabled plugins list
-        ui->Disabled_Plugins_List->setModel(filterProxyModel);
+        ui->Disabled_Plugins_List->setModel(disabledPluginsProxyModel);
 
-        // If using a filter proxy model, set the source model
-        filterProxyModel->setSourceModel(disabledPluginsModel);
+        qDebug() << "Disabled Plugins Row Count: " << PluginManager::getInstance().getDisabledPluginsModel()->rowCount();
+        qDebug() << "Disabled Plugins Proxy Row Count: " << disabledPluginsProxyModel->rowCount();
 }
+
+
 
 

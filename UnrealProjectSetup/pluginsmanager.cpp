@@ -14,12 +14,13 @@
 #include <QFile>
 #include <QTextStream>
 
-PluginManager::PluginManager() : pluginsModel(new QStandardItemModel), disabledPluginsModel(nullptr), disabledPluginsProxyModel(nullptr) {
+
+PluginManager::PluginManager() : enabledPluginsModel(new QStandardItemModel), disabledPluginsModel(new QStandardItemModel), disabledPluginsProxyModel(nullptr), enabledPluginsProxyModel(nullptr) {
     setupProxyModels();
 }
 
 PluginManager::~PluginManager() {
-    delete pluginsModel;
+    delete enabledPluginsModel;
     delete disabledPluginsModel;
     delete disabledPluginsProxyModel;
 }
@@ -52,12 +53,28 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
             }
             file.close();
 
-            // Add to the appropriate list
-            QStandardItem* item = new QStandardItem(upluginFile);
-            if (isEnabledByDefault) {
-                PluginManager::getInstance().getPluginsModel()->appendRow(item);
-            } else {
-                PluginManager::getInstance().getDisabledPluginsModel()->appendRow(item);
+            // Check if the item is already present in the list to avoid duplicates
+            QStandardItemModel* pluginsModel = isEnabledByDefault ?
+                                                   PluginManager::getInstance().getEnabledPluginsModel() :
+                                                   PluginManager::getInstance().getDisabledPluginsModel();
+
+            bool itemFound = false;
+            for (int row = 0; row < pluginsModel->rowCount(); ++row) {
+                QStandardItem* item = pluginsModel->item(row);
+                if (item && item->text() == upluginFile) {
+                    itemFound = true;
+                    break;
+                }
+            }
+
+            // Add to the appropriate list only if not found
+            if (!itemFound) {
+                QStandardItem* item = new QStandardItem(upluginFile);
+                if (isEnabledByDefault) {
+                    PluginManager::getInstance().getEnabledPluginsModel()->appendRow(item);
+                } else {
+                    PluginManager::getInstance().getDisabledPluginsModel()->appendRow(item);
+                }
             }
         }
     }
@@ -73,13 +90,19 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
 }
 
 void PluginManager::setupProxyModels() {
+    // Initialize enabled plugins model
+    enabledPluginsModel = new QStandardItemModel;
+
     // Initialize disabled plugins model
     disabledPluginsModel = new QStandardItemModel;
+
+    // Initialize enabled plugins proxy model
+    enabledPluginsProxyModel = new QSortFilterProxyModel;
+    enabledPluginsProxyModel->setSourceModel(enabledPluginsModel);
 
     // Initialize disabled plugins proxy model
     disabledPluginsProxyModel = new QSortFilterProxyModel;
     disabledPluginsProxyModel->setSourceModel(disabledPluginsModel);
 }
-
 
 

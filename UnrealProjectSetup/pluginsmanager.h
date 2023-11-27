@@ -12,9 +12,13 @@ public:
         static PluginManager instance;
         return instance;
     }
-
+//PROXY MODELS
     QSortFilterProxyModel* getDisabledPluginsProxyModel() const {
         return disabledPluginsProxyModel;
+    }
+
+    QSortFilterProxyModel* getEnabledPluginsProxyModel() const {
+        return enabledPluginsProxyModel;
     }
 
     const QString& getEnginePath() const {
@@ -24,24 +28,27 @@ public:
     void setEnginePath(const QString& path) {
         enginePath = path;
     }
-
-    void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
-    void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
-
-    QStandardItemModel* getPluginsModel() const {
-        return pluginsModel;
+//Plugin Models
+    QStandardItemModel* getEnabledPluginsModel() const {
+        return enabledPluginsModel;
     }
 
     QStandardItemModel* getDisabledPluginsModel() const {
         return disabledPluginsModel;
     }
 
+    void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
+    void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
+
+
 private:
+
     QString enginePath;
-    QStandardItemModel* pluginsModel;
+    QStandardItemModel* enabledPluginsModel;
+     QSortFilterProxyModel* enabledPluginsProxyModel;
+    QSortFilterProxyModel* disabledPluginsProxyModel;
     QStandardItemModel* disabledPluginsModel;
 
-    QSortFilterProxyModel* disabledPluginsProxyModel;
 
     void setupProxyModels() ;
 
