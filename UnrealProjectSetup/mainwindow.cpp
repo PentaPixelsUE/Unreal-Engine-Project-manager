@@ -71,6 +71,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->Plugins_Filter, &QLineEdit::textChanged, this, &MainWindow::onFilterPluginsUpdate);
 
+ //Plugins Buttons
+
 
 
 
@@ -103,28 +105,27 @@ MainWindow::~MainWindow()
 
 //Set The Project Path
 
-void MainWindow::onProjectPathBrowseBtnClicker()
-{
+void MainWindow::onProjectPathBrowseBtnClicker() {
     QString selectedProjectFolderPath = QFileDialog::getExistingDirectory(this, "Select Project Folder", QDir::homePath(), QFileDialog::ShowDirsOnly);
 
-    if (!selectedProjectFolderPath.isEmpty())
-    {
+    if (!selectedProjectFolderPath.isEmpty()) {
         // Set the selected folder path to the QLineEdit
         ui->Project_Path_Txt->setText(selectedProjectFolderPath);
+
         QMessageBox::information(this, "Folder Selected", "Project folder set to: " + selectedProjectFolderPath);
-    }
-    else
-    {
+
+
+    } else {
         QMessageBox::critical(this, "Folder Selected", "Please select a folder");
     }
 }
-
 
 
 //Set The Engine Source Path
 
 
 void MainWindow::onEngineSourcePathBtnClicker() {
+
     QString EnginePath = QFileDialog::getExistingDirectory(this, "Select Engine Folder", QDir::homePath(), QFileDialog::ShowDirsOnly);
 
     ui->UE_Source_Path_Txt->setText(EnginePath);
@@ -211,20 +212,45 @@ bool MainWindow::validateProjectName() {
     QRegExp regex("^[a-zA-Z0-9]+$");
     QDir projectDir(projectPath);
     QStringList projectDirs = projectDir.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+
     if (projectName.isEmpty()) {
         updateErrorLabel("Error: Project name cannot be empty.");
     } else if (!regex.exactMatch(projectName)) {
         updateErrorLabel("Error: Project name must contain only alphanumerics.");
-    } else if  (projectDirs.contains(projectName, Qt::CaseSensitive)){
+    } else if (projectDirs.contains(projectName, Qt::CaseSensitive)) {
+        updateErrorLabel("Warning: Project with the same name already exists in the selected path.");
 
-             updateErrorLabel("Warning: Project with the same name already exists in the selected path.");
+        QString uprojectPath = projectPath + QDir::separator() + projectName;
+
+        // Check if the uprojectPath has changed
+        if (uprojectPath != PluginManager::getInstance().getUProjectPath()) {
+            // Clear the model before updating
+            qDebug() <<uprojectPath <<" COMPARING" <<PluginManager::getInstance().getUProjectPath();
+
+            ui->Project_Plugins_List->setModel(nullptr);
+
+            // Update the model and set the project path
+            PluginManager::getInstance().setUProjectPath(uprojectPath);
+            PluginManager::getInstance().setProjectName(projectName);
+            PluginManager::getInstance().FillProjectPluginsList(uprojectPath, projectName, PluginManager::getInstance().getProjectPluginsModel()->invisibleRootItem());
+            ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsModel());
+        }
+
         return true;
-        } else {
-            updateErrorLabel("");  // Clear the error message if validation passes
-            return true;
     }
+
+    updateErrorLabel("");  // Clear the error message if validation passes
+
+    // If validation fails, clear the model
+    ui->Project_Plugins_List->setModel(nullptr);
+
     return false;
 }
+
+
+
+
+
 
 void MainWindow::onBuildClicker() {
         buildsetup buildSetupInstance;
@@ -291,11 +317,11 @@ void MainWindow::onFilterPluginsUpdate() {
 
         PluginManager::getInstance().getEnabledPluginsProxyModel()->setFilterRegularExpression(regExp);
         PluginManager::getInstance().getDisabledPluginsProxyModel()->setFilterRegularExpression(regExp);
-
+        PluginManager::getInstance().getProjectPluginsProxyModel()->setFilterRegularExpression(regExp);
         // Set filtered models for both lists
         ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
         ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
-
+        ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
         // Print row counts for debugging
         qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
         qDebug() << "Enabled Plugins Proxy Row Count: " << PluginManager::getInstance().getEnabledPluginsProxyModel()->rowCount();
@@ -306,6 +332,7 @@ void MainWindow::onFilterPluginsUpdate() {
         // Update your UI or perform any other actions when the filter changes
         updateEnabledPluginsList();
         updateDisabledPluginsList();
+        UpdateProjectPluginsList();
 }
 
 
@@ -323,6 +350,7 @@ void MainWindow::updateEnabledPluginsList() {
         qDebug() << "Enabled Plugins Proxy Row Count: " << enabledPluginsProxyModel->rowCount();
 }
 
+
 void MainWindow::updateDisabledPluginsList() {
         qDebug() << "Updating Disabled Plugins List";
 
@@ -335,6 +363,13 @@ void MainWindow::updateDisabledPluginsList() {
         qDebug() << "Disabled Plugins Proxy Row Count: " << disabledPluginsProxyModel->rowCount();
 }
 
+void MainWindow::UpdateProjectPluginsList(){
+
+        qDebug() <<"Updating Project plugin List()";
+        QSortFilterProxyModel* projectPluginProxyModel = PluginManager::getInstance().getProjectPluginsProxyModel();
+        projectPluginProxyModel->setSourceModel(PluginManager::getInstance().getProjectPluginsModel());
+
+        ui->Project_Plugins_List->setModel(projectPluginProxyModel);
 
 
-
+}

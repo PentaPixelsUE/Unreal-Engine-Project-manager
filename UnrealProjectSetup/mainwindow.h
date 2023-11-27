@@ -60,6 +60,9 @@ private slots:
     // Update the error label with a given error message
     void updateErrorLabel(const QString& errorMessage);
 
+    //Update the Project Plugin Lists
+    void UpdateProjectPluginsList();
+
     // Slot for handling the "Build" button click
     void onBuildClicker();
 
@@ -83,6 +86,8 @@ private slots:
 
     // Slot for toggling the "Open Sublime" checkbox
     void onOpenSublimeCheckboxToggled(bool checked);
+
+
 };
 
 #endif // MAINWINDOW_H

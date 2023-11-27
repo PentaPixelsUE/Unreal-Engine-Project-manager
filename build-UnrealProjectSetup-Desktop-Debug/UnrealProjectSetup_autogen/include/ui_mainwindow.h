@@ -91,25 +91,32 @@ public:
     QFrame *Plugins_Frame;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *PLugins_Lables_HBOX;
-    QLabel *Plugins_Enabled_Lbl;
-    QSpacerItem *horizontalSpacer_4;
     QLabel *Plugins_Available_Lbl;
+    QSpacerItem *horizontalSpacer_4;
+    QLabel *Plugins_Enabled_Lbl;
     QSpacerItem *horizontalSpacer_5;
     QHBoxLayout *horizontalLayout;
-    QScrollArea *Enabled_Plugins_Scroll_Area;
-    QWidget *Enabled_Plugins_Area;
-    QGridLayout *gridLayout;
-    QListView *Enabled_Plugins_List;
-    QVBoxLayout *Plugins_In_Out_Button_VBOX;
-    QSpacerItem *verticalSpacer_10;
-    QPushButton *To_Enable_Plugins_List;
-    QSpacerItem *verticalSpacer_2;
-    QPushButton *To_Disable_Plugins_Btn;
-    QSpacerItem *verticalSpacer_9;
     QScrollArea *Disabled_Plugins_Scroll_Area;
     QWidget *Disabled_Pluginsl_Area;
     QGridLayout *gridLayout_2;
     QListView *Disabled_Plugins_List;
+    QVBoxLayout *Plugins_In_Out_Button_VBOX;
+    QSpacerItem *verticalSpacer_10;
+    QPushButton *Enable_Global_Plugin;
+    QSpacerItem *verticalSpacer_2;
+    QPushButton *Enable_Projectbutton_Plugin;
+    QSpacerItem *verticalSpacer_9;
+    QPushButton *To_Disable_Plugins_Btn;
+    QVBoxLayout *verticalLayout_3;
+    QScrollArea *Enabled_Plugins_Scroll_Area;
+    QWidget *Enabled_Plugins_Area;
+    QGridLayout *gridLayout;
+    QListView *Enabled_Plugins_List;
+    QLabel *label;
+    QScrollArea *Project_Plugins_Scroll_Area;
+    QWidget *scrollAreaWidgetContents_2;
+    QVBoxLayout *verticalLayout_4;
+    QListView *Project_Plugins_List;
     QLineEdit *Plugins_Filter;
     QMenuBar *menubar;
     QStatusBar *statusBar;
@@ -610,21 +617,21 @@ public:
         PLugins_Lables_HBOX = new QHBoxLayout();
         PLugins_Lables_HBOX->setObjectName(QString::fromUtf8("PLugins_Lables_HBOX"));
         PLugins_Lables_HBOX->setContentsMargins(-1, -1, -1, 0);
-        Plugins_Enabled_Lbl = new QLabel(Plugins_Frame);
-        Plugins_Enabled_Lbl->setObjectName(QString::fromUtf8("Plugins_Enabled_Lbl"));
-
-        PLugins_Lables_HBOX->addWidget(Plugins_Enabled_Lbl);
-
-        horizontalSpacer_4 = new QSpacerItem(376, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-        PLugins_Lables_HBOX->addItem(horizontalSpacer_4);
-
         Plugins_Available_Lbl = new QLabel(Plugins_Frame);
         Plugins_Available_Lbl->setObjectName(QString::fromUtf8("Plugins_Available_Lbl"));
 
         PLugins_Lables_HBOX->addWidget(Plugins_Available_Lbl);
 
-        horizontalSpacer_5 = new QSpacerItem(286, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+        horizontalSpacer_4 = new QSpacerItem(400, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        PLugins_Lables_HBOX->addItem(horizontalSpacer_4);
+
+        Plugins_Enabled_Lbl = new QLabel(Plugins_Frame);
+        Plugins_Enabled_Lbl->setObjectName(QString::fromUtf8("Plugins_Enabled_Lbl"));
+
+        PLugins_Lables_HBOX->addWidget(Plugins_Enabled_Lbl);
+
+        horizontalSpacer_5 = new QSpacerItem(224, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         PLugins_Lables_HBOX->addItem(horizontalSpacer_5);
 
@@ -634,67 +641,106 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(-1, -1, 0, -1);
-        Enabled_Plugins_Scroll_Area = new QScrollArea(Plugins_Frame);
-        Enabled_Plugins_Scroll_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Scroll_Area"));
-        Enabled_Plugins_Scroll_Area->setWidgetResizable(true);
-        Enabled_Plugins_Area = new QWidget();
-        Enabled_Plugins_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Area"));
-        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 425, 370));
-        gridLayout = new QGridLayout(Enabled_Plugins_Area);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        Enabled_Plugins_List = new QListView(Enabled_Plugins_Area);
-        Enabled_Plugins_List->setObjectName(QString::fromUtf8("Enabled_Plugins_List"));
-
-        gridLayout->addWidget(Enabled_Plugins_List, 1, 2, 1, 1);
-
-        Enabled_Plugins_Scroll_Area->setWidget(Enabled_Plugins_Area);
-
-        horizontalLayout->addWidget(Enabled_Plugins_Scroll_Area);
-
-        Plugins_In_Out_Button_VBOX = new QVBoxLayout();
-        Plugins_In_Out_Button_VBOX->setObjectName(QString::fromUtf8("Plugins_In_Out_Button_VBOX"));
-        Plugins_In_Out_Button_VBOX->setContentsMargins(-1, -1, 0, -1);
-        verticalSpacer_10 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_10);
-
-        To_Enable_Plugins_List = new QPushButton(Plugins_Frame);
-        To_Enable_Plugins_List->setObjectName(QString::fromUtf8("To_Enable_Plugins_List"));
-
-        Plugins_In_Out_Button_VBOX->addWidget(To_Enable_Plugins_List);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_2);
-
-        To_Disable_Plugins_Btn = new QPushButton(Plugins_Frame);
-        To_Disable_Plugins_Btn->setObjectName(QString::fromUtf8("To_Disable_Plugins_Btn"));
-
-        Plugins_In_Out_Button_VBOX->addWidget(To_Disable_Plugins_Btn);
-
-        verticalSpacer_9 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_9);
-
-
-        horizontalLayout->addLayout(Plugins_In_Out_Button_VBOX);
-
         Disabled_Plugins_Scroll_Area = new QScrollArea(Plugins_Frame);
         Disabled_Plugins_Scroll_Area->setObjectName(QString::fromUtf8("Disabled_Plugins_Scroll_Area"));
         Disabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Disabled_Pluginsl_Area = new QWidget();
         Disabled_Pluginsl_Area->setObjectName(QString::fromUtf8("Disabled_Pluginsl_Area"));
-        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 425, 370));
+        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 400, 370));
         gridLayout_2 = new QGridLayout(Disabled_Pluginsl_Area);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         Disabled_Plugins_List = new QListView(Disabled_Pluginsl_Area);
         Disabled_Plugins_List->setObjectName(QString::fromUtf8("Disabled_Plugins_List"));
+        Disabled_Plugins_List->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        Disabled_Plugins_List->setProperty("showDropIndicator", QVariant(false));
 
         gridLayout_2->addWidget(Disabled_Plugins_List, 0, 0, 1, 1);
 
         Disabled_Plugins_Scroll_Area->setWidget(Disabled_Pluginsl_Area);
 
         horizontalLayout->addWidget(Disabled_Plugins_Scroll_Area);
+
+        Plugins_In_Out_Button_VBOX = new QVBoxLayout();
+        Plugins_In_Out_Button_VBOX->setObjectName(QString::fromUtf8("Plugins_In_Out_Button_VBOX"));
+        Plugins_In_Out_Button_VBOX->setContentsMargins(-1, -1, 0, -1);
+        verticalSpacer_10 = new QSpacerItem(20, 82, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_10);
+
+        Enable_Global_Plugin = new QPushButton(Plugins_Frame);
+        Enable_Global_Plugin->setObjectName(QString::fromUtf8("Enable_Global_Plugin"));
+
+        Plugins_In_Out_Button_VBOX->addWidget(Enable_Global_Plugin);
+
+        verticalSpacer_2 = new QSpacerItem(20, 199, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_2);
+
+        Enable_Projectbutton_Plugin = new QPushButton(Plugins_Frame);
+        Enable_Projectbutton_Plugin->setObjectName(QString::fromUtf8("Enable_Projectbutton_Plugin"));
+
+        Plugins_In_Out_Button_VBOX->addWidget(Enable_Projectbutton_Plugin);
+
+        verticalSpacer_9 = new QSpacerItem(20, 45, QSizePolicy::Minimum, QSizePolicy::Fixed);
+
+        Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_9);
+
+        To_Disable_Plugins_Btn = new QPushButton(Plugins_Frame);
+        To_Disable_Plugins_Btn->setObjectName(QString::fromUtf8("To_Disable_Plugins_Btn"));
+
+        Plugins_In_Out_Button_VBOX->addWidget(To_Disable_Plugins_Btn);
+
+
+        horizontalLayout->addLayout(Plugins_In_Out_Button_VBOX);
+
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(-1, -1, 0, 0);
+        Enabled_Plugins_Scroll_Area = new QScrollArea(Plugins_Frame);
+        Enabled_Plugins_Scroll_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Scroll_Area"));
+        Enabled_Plugins_Scroll_Area->setWidgetResizable(true);
+        Enabled_Plugins_Area = new QWidget();
+        Enabled_Plugins_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Area"));
+        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 397, 210));
+        gridLayout = new QGridLayout(Enabled_Plugins_Area);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        Enabled_Plugins_List = new QListView(Enabled_Plugins_Area);
+        Enabled_Plugins_List->setObjectName(QString::fromUtf8("Enabled_Plugins_List"));
+        Enabled_Plugins_List->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        Enabled_Plugins_List->setProperty("showDropIndicator", QVariant(false));
+
+        gridLayout->addWidget(Enabled_Plugins_List, 1, 2, 1, 1);
+
+        Enabled_Plugins_Scroll_Area->setWidget(Enabled_Plugins_Area);
+
+        verticalLayout_3->addWidget(Enabled_Plugins_Scroll_Area);
+
+        label = new QLabel(Plugins_Frame);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        verticalLayout_3->addWidget(label);
+
+        Project_Plugins_Scroll_Area = new QScrollArea(Plugins_Frame);
+        Project_Plugins_Scroll_Area->setObjectName(QString::fromUtf8("Project_Plugins_Scroll_Area"));
+        Project_Plugins_Scroll_Area->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 397, 127));
+        verticalLayout_4 = new QVBoxLayout(scrollAreaWidgetContents_2);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        Project_Plugins_List = new QListView(scrollAreaWidgetContents_2);
+        Project_Plugins_List->setObjectName(QString::fromUtf8("Project_Plugins_List"));
+        Project_Plugins_List->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        Project_Plugins_List->setProperty("showDropIndicator", QVariant(false));
+
+        verticalLayout_4->addWidget(Project_Plugins_List);
+
+        Project_Plugins_Scroll_Area->setWidget(scrollAreaWidgetContents_2);
+
+        verticalLayout_3->addWidget(Project_Plugins_Scroll_Area);
+
+
+        horizontalLayout->addLayout(verticalLayout_3);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -754,10 +800,12 @@ public:
         Run_Btn->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         Build_Btn->setText(QCoreApplication::translate("MainWindow", "Build", nullptr));
         Standalone_Warning_Lbl->setText(QString());
-        Plugins_Enabled_Lbl->setText(QCoreApplication::translate("MainWindow", "Enabled Plugins", nullptr));
         Plugins_Available_Lbl->setText(QCoreApplication::translate("MainWindow", "Disabled Plugins", nullptr));
-        To_Enable_Plugins_List->setText(QCoreApplication::translate("MainWindow", "<<", nullptr));
-        To_Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", ">>", nullptr));
+        Plugins_Enabled_Lbl->setText(QCoreApplication::translate("MainWindow", "Enabled Plugins (Global)", nullptr));
+        Enable_Global_Plugin->setText(QCoreApplication::translate("MainWindow", "Enable Global", nullptr));
+        Enable_Projectbutton_Plugin->setText(QCoreApplication::translate("MainWindow", "Enable For Project", nullptr));
+        To_Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", "Disable", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Project Plugins", nullptr));
         Plugins_Filter->setInputMask(QString());
         Plugins_Filter->setText(QString());
         Plugins_Filter->setPlaceholderText(QCoreApplication::translate("MainWindow", "filter", nullptr));

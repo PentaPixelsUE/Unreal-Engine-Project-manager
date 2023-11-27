@@ -21,6 +21,11 @@ public:
         return enabledPluginsProxyModel;
     }
 
+    QSortFilterProxyModel* getProjectPluginsProxyModel() const {
+        return projectPluginsProxyModel;
+    }
+
+  //Getters and setters for paths
     const QString& getEnginePath() const {
         return enginePath;
     }
@@ -28,6 +33,24 @@ public:
     void setEnginePath(const QString& path) {
         enginePath = path;
     }
+
+
+    const QString& getUProjectPath() const {
+        return uprojectPath;
+    }
+
+    void setUProjectPath(const QString& path) {
+        uprojectPath = path;
+    }
+
+    const QString& getProjectName() const {
+        return projectName;
+    }
+
+    void setProjectName(const QString& name) {
+        projectName = name;
+    }
+
 //Plugin Models
     QStandardItemModel* getEnabledPluginsModel() const {
         return enabledPluginsModel;
@@ -36,18 +59,25 @@ public:
     QStandardItemModel* getDisabledPluginsModel() const {
         return disabledPluginsModel;
     }
+    QStandardItemModel* getProjectPluginsModel() const {
+        return projectPluginsModel;
+    }
+
 
     void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
     void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
-
+    void FillProjectPluginsList(const QString& uprojectPath,const QString& projectName,QStandardItem* parent);
 
 private:
-
+    QString projectName;
     QString enginePath;
+    QString uprojectPath;
     QStandardItemModel* enabledPluginsModel;
      QSortFilterProxyModel* enabledPluginsProxyModel;
     QSortFilterProxyModel* disabledPluginsProxyModel;
     QStandardItemModel* disabledPluginsModel;
+    QStandardItemModel* projectPluginsModel;
+    QSortFilterProxyModel* projectPluginsProxyModel;
 
 
     void setupProxyModels() ;

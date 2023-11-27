@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[18];
-    char stringdata0[323];
+    QByteArrayData data[19];
+    char stringdata0[348];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,15 +41,16 @@ QT_MOC_LITERAL(5, 101, 19), // "validateProjectName"
 QT_MOC_LITERAL(6, 121, 21), // "updateStandaloneLabel"
 QT_MOC_LITERAL(7, 143, 16), // "updateErrorLabel"
 QT_MOC_LITERAL(8, 160, 12), // "errorMessage"
-QT_MOC_LITERAL(9, 173, 14), // "onBuildClicker"
-QT_MOC_LITERAL(10, 188, 12), // "onRunClicker"
-QT_MOC_LITERAL(11, 201, 10), // "onGameMode"
-QT_MOC_LITERAL(12, 212, 16), // "onStandaloneMode"
-QT_MOC_LITERAL(13, 229, 12), // "onEditorMode"
-QT_MOC_LITERAL(14, 242, 21), // "onDisablePluginClickr"
-QT_MOC_LITERAL(15, 264, 21), // "onFilterPluginsUpdate"
-QT_MOC_LITERAL(16, 286, 28), // "onOpenSublimeCheckboxToggled"
-QT_MOC_LITERAL(17, 315, 7) // "checked"
+QT_MOC_LITERAL(9, 173, 24), // "UpdateProjectPluginsList"
+QT_MOC_LITERAL(10, 198, 14), // "onBuildClicker"
+QT_MOC_LITERAL(11, 213, 12), // "onRunClicker"
+QT_MOC_LITERAL(12, 226, 10), // "onGameMode"
+QT_MOC_LITERAL(13, 237, 16), // "onStandaloneMode"
+QT_MOC_LITERAL(14, 254, 12), // "onEditorMode"
+QT_MOC_LITERAL(15, 267, 21), // "onDisablePluginClickr"
+QT_MOC_LITERAL(16, 289, 21), // "onFilterPluginsUpdate"
+QT_MOC_LITERAL(17, 311, 28), // "onOpenSublimeCheckboxToggled"
+QT_MOC_LITERAL(18, 340, 7) // "checked"
 
     },
     "MainWindow\0onProjectPathBrowseBtnClicker\0"
@@ -57,9 +58,10 @@ QT_MOC_LITERAL(17, 315, 7) // "checked"
     "onSetupProjectFilesBtnClicker\0"
     "validateProjectName\0updateStandaloneLabel\0"
     "updateErrorLabel\0errorMessage\0"
-    "onBuildClicker\0onRunClicker\0onGameMode\0"
-    "onStandaloneMode\0onEditorMode\0"
-    "onDisablePluginClickr\0onFilterPluginsUpdate\0"
+    "UpdateProjectPluginsList\0onBuildClicker\0"
+    "onRunClicker\0onGameMode\0onStandaloneMode\0"
+    "onEditorMode\0onDisablePluginClickr\0"
+    "onFilterPluginsUpdate\0"
     "onOpenSublimeCheckboxToggled\0checked"
 };
 #undef QT_MOC_LITERAL
@@ -70,7 +72,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -78,20 +80,21 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   84,    2, 0x08 /* Private */,
-       3,    0,   85,    2, 0x08 /* Private */,
-       4,    0,   86,    2, 0x08 /* Private */,
-       5,    0,   87,    2, 0x08 /* Private */,
-       6,    0,   88,    2, 0x08 /* Private */,
-       7,    1,   89,    2, 0x08 /* Private */,
-       9,    0,   92,    2, 0x08 /* Private */,
-      10,    0,   93,    2, 0x08 /* Private */,
-      11,    0,   94,    2, 0x08 /* Private */,
-      12,    0,   95,    2, 0x08 /* Private */,
-      13,    0,   96,    2, 0x08 /* Private */,
-      14,    0,   97,    2, 0x08 /* Private */,
-      15,    0,   98,    2, 0x08 /* Private */,
-      16,    1,   99,    2, 0x08 /* Private */,
+       1,    0,   89,    2, 0x08 /* Private */,
+       3,    0,   90,    2, 0x08 /* Private */,
+       4,    0,   91,    2, 0x08 /* Private */,
+       5,    0,   92,    2, 0x08 /* Private */,
+       6,    0,   93,    2, 0x08 /* Private */,
+       7,    1,   94,    2, 0x08 /* Private */,
+       9,    0,   97,    2, 0x08 /* Private */,
+      10,    0,   98,    2, 0x08 /* Private */,
+      11,    0,   99,    2, 0x08 /* Private */,
+      12,    0,  100,    2, 0x08 /* Private */,
+      13,    0,  101,    2, 0x08 /* Private */,
+      14,    0,  102,    2, 0x08 /* Private */,
+      15,    0,  103,    2, 0x08 /* Private */,
+      16,    0,  104,    2, 0x08 /* Private */,
+      17,    1,  105,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -107,7 +110,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   17,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,   18,
 
        0        // eod
 };
@@ -125,14 +129,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
         case 4: _t->updateStandaloneLabel(); break;
         case 5: _t->updateErrorLabel((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 6: _t->onBuildClicker(); break;
-        case 7: _t->onRunClicker(); break;
-        case 8: _t->onGameMode(); break;
-        case 9: _t->onStandaloneMode(); break;
-        case 10: _t->onEditorMode(); break;
-        case 11: _t->onDisablePluginClickr(); break;
-        case 12: _t->onFilterPluginsUpdate(); break;
-        case 13: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 6: _t->UpdateProjectPluginsList(); break;
+        case 7: _t->onBuildClicker(); break;
+        case 8: _t->onRunClicker(); break;
+        case 9: _t->onGameMode(); break;
+        case 10: _t->onStandaloneMode(); break;
+        case 11: _t->onEditorMode(); break;
+        case 12: _t->onDisablePluginClickr(); break;
+        case 13: _t->onFilterPluginsUpdate(); break;
+        case 14: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -167,13 +172,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 15)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        _id -= 15;
     }
     return _id;
 }

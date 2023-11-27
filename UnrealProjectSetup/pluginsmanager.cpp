@@ -14,15 +14,36 @@
 #include <QFile>
 #include <QTextStream>
 
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonDocument>
 
-PluginManager::PluginManager() : enabledPluginsModel(new QStandardItemModel), disabledPluginsModel(new QStandardItemModel), disabledPluginsProxyModel(nullptr), enabledPluginsProxyModel(nullptr) {
+
+PluginManager::PluginManager() : projectPluginsModel(new QStandardItemModel),
+
+                                                                 enabledPluginsModel(new QStandardItemModel),
+
+                                                                  disabledPluginsModel(new QStandardItemModel),
+
+                                                                   disabledPluginsProxyModel(nullptr),
+
+                                                                enabledPluginsProxyModel(nullptr) ,
+
+                                                                projectPluginsProxyModel(nullptr)  {
     setupProxyModels();
 }
 
 PluginManager::~PluginManager() {
+
     delete enabledPluginsModel;
+    delete enabledPluginsProxyModel;
+
     delete disabledPluginsModel;
     delete disabledPluginsProxyModel;
+
+    delete projectPluginsProxyModel;
+    delete projectPluginsModel;
+
 }
 
 
@@ -69,7 +90,10 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
 
             // Add to the appropriate list only if not found
             if (!itemFound) {
-                QStandardItem* item = new QStandardItem(upluginFile);
+                // Remove ".uplugin" extension
+                QString pluginName = upluginFile.left(upluginFile.lastIndexOf('.'));
+
+                QStandardItem* item = new QStandardItem(pluginName);
                 if (isEnabledByDefault) {
                     PluginManager::getInstance().getEnabledPluginsModel()->appendRow(item);
                 } else {
@@ -89,12 +113,71 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
     }
 }
 
+void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QString& projectName, QStandardItem* parent) {
+    qDebug() << "Trying to open UProject file: " << uprojectPath;
+
+    QString uprojectFilePath = uprojectPath + QDir::separator() + projectName + ".uproject";
+    QFile uprojectFile(uprojectFilePath);
+
+    if (!uprojectFile.exists()) {
+        qDebug() << "UProject file not found.";
+        return;
+    }
+
+    if (!uprojectFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open UProject file. Error: " << uprojectFile.errorString();
+        return;
+    }
+
+    QTextStream in(&uprojectFile);
+    QString uprojectContent = in.readAll();
+    uprojectFile.close();
+
+    qDebug() << "UProject content read successfully.";
+
+    // Clear the existing model
+    parent->removeRows(0, parent->rowCount());
+
+    // Look for the "Plugins" key
+    int pluginsIndex = uprojectContent.indexOf("\"Plugins\":");
+    if (pluginsIndex == -1) {
+        qDebug() << "No 'Plugins' entry found in UProject file.";
+        return;
+    }
+
+    QStringList lines = uprojectContent.mid(pluginsIndex).split('\n');
+
+    // Skip the first line
+    bool skipFirstPlugin = true;
+
+    for (const QString& line : lines) {
+        if (skipFirstPlugin) {
+            // Skip the first plugin
+            skipFirstPlugin = false;
+            continue;
+        }
+
+        if (line.contains("Name")) {
+            QString pluginName = line.split(":")[1].trimmed().remove(QRegExp("[\",]"));
+            // Add the plugin name to the list
+            QStandardItem* pluginItem = new QStandardItem(pluginName);
+            parent->appendRow(pluginItem);
+        }
+    }
+}
+
+
+
+
 void PluginManager::setupProxyModels() {
     // Initialize enabled plugins model
     enabledPluginsModel = new QStandardItemModel;
 
     // Initialize disabled plugins model
     disabledPluginsModel = new QStandardItemModel;
+
+    //Initialize Project plugins Model
+    projectPluginsModel = new QStandardItemModel;
 
     // Initialize enabled plugins proxy model
     enabledPluginsProxyModel = new QSortFilterProxyModel;
@@ -103,6 +186,8 @@ void PluginManager::setupProxyModels() {
     // Initialize disabled plugins proxy model
     disabledPluginsProxyModel = new QSortFilterProxyModel;
     disabledPluginsProxyModel->setSourceModel(disabledPluginsModel);
-}
 
+    projectPluginsProxyModel = new QSortFilterProxyModel;
+    projectPluginsProxyModel->setSourceModel(projectPluginsModel);
+}
 

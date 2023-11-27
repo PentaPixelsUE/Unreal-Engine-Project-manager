@@ -837,9 +837,9 @@ QPushButton:disabled {
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="Plugins_Enabled_Lbl">
+                <widget class="QLabel" name="Plugins_Available_Lbl">
                  <property name="text">
-                  <string>Enabled Plugins</string>
+                  <string>Disabled Plugins</string>
                  </property>
                 </widget>
                </item>
@@ -853,16 +853,16 @@ QPushButton:disabled {
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>376</width>
+                   <width>400</width>
                    <height>20</height>
                   </size>
                  </property>
                 </spacer>
                </item>
                <item>
-                <widget class="QLabel" name="Plugins_Available_Lbl">
+                <widget class="QLabel" name="Plugins_Enabled_Lbl">
                  <property name="text">
-                  <string>Disabled Plugins</string>
+                  <string>Enabled Plugins (Global)</string>
                  </property>
                 </widget>
                </item>
@@ -876,7 +876,7 @@ QPushButton:disabled {
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>286</width>
+                   <width>224</width>
                    <height>20</height>
                   </size>
                  </property>
@@ -890,22 +890,29 @@ QPushButton:disabled {
                 <number>0</number>
                </property>
                <item>
-                <widget class="QScrollArea" name="Enabled_Plugins_Scroll_Area">
+                <widget class="QScrollArea" name="Disabled_Plugins_Scroll_Area">
                  <property name="widgetResizable">
                   <bool>true</bool>
                  </property>
-                 <widget class="QWidget" name="Enabled_Plugins_Area">
+                 <widget class="QWidget" name="Disabled_Pluginsl_Area">
                   <property name="geometry">
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>425</width>
+                    <width>400</width>
                     <height>370</height>
                    </rect>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout">
-                   <item row="1" column="2">
-                    <widget class="QListView" name="Enabled_Plugins_List"/>
+                  <layout class="QGridLayout" name="gridLayout_2">
+                   <item row="0" column="0">
+                    <widget class="QListView" name="Disabled_Plugins_List">
+                     <property name="editTriggers">
+                      <set>QAbstractItemView::NoEditTriggers</set>
+                     </property>
+                     <property name="showDropIndicator" stdset="0">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -921,18 +928,21 @@ QPushButton:disabled {
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>20</width>
-                     <height>40</height>
+                     <height>82</height>
                     </size>
                    </property>
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="To_Enable_Plugins_List">
+                  <widget class="QPushButton" name="Enable_Global_Plugin">
                    <property name="text">
-                    <string>&lt;&lt;</string>
+                    <string>Enable Global</string>
                    </property>
                   </widget>
                  </item>
@@ -941,18 +951,21 @@ QPushButton:disabled {
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>20</width>
-                     <height>40</height>
+                     <height>199</height>
                     </size>
                    </property>
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="To_Disable_Plugins_Btn">
+                  <widget class="QPushButton" name="Enable_Projectbutton_Plugin">
                    <property name="text">
-                    <string>&gt;&gt;</string>
+                    <string>Enable For Project</string>
                    </property>
                   </widget>
                  </item>
@@ -961,37 +974,100 @@ QPushButton:disabled {
                    <property name="orientation">
                     <enum>Qt::Vertical</enum>
                    </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
                    <property name="sizeHint" stdset="0">
                     <size>
                      <width>20</width>
-                     <height>40</height>
+                     <height>45</height>
                     </size>
                    </property>
                   </spacer>
                  </item>
+                 <item>
+                  <widget class="QPushButton" name="To_Disable_Plugins_Btn">
+                   <property name="text">
+                    <string>Disable</string>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </item>
                <item>
-                <widget class="QScrollArea" name="Disabled_Plugins_Scroll_Area">
-                 <property name="widgetResizable">
-                  <bool>true</bool>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <property name="rightMargin">
+                  <number>0</number>
                  </property>
-                 <widget class="QWidget" name="Disabled_Pluginsl_Area">
-                  <property name="geometry">
-                   <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>425</width>
-                    <height>370</height>
-                   </rect>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_2">
-                   <item row="0" column="0">
-                    <widget class="QListView" name="Disabled_Plugins_List"/>
-                   </item>
-                  </layout>
-                 </widget>
-                </widget>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QScrollArea" name="Enabled_Plugins_Scroll_Area">
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="Enabled_Plugins_Area">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>397</width>
+                      <height>210</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout">
+                     <item row="1" column="2">
+                      <widget class="QListView" name="Enabled_Plugins_List">
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::NoEditTriggers</set>
+                       </property>
+                       <property name="showDropIndicator" stdset="0">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>Project Plugins</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QScrollArea" name="Project_Plugins_Scroll_Area">
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>397</width>
+                      <height>127</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_4">
+                     <item>
+                      <widget class="QListView" name="Project_Plugins_List">
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::NoEditTriggers</set>
+                       </property>
+                       <property name="showDropIndicator" stdset="0">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
                </item>
               </layout>
              </item>
