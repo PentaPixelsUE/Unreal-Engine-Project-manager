@@ -34,9 +34,12 @@ MainWindow::MainWindow(QWidget *parent)
  setWindowTitle("Unreal Engine Project Manager");
 
 
-    setMinimumSize(900, 550);
+    setMinimumSize(900, 750);
 
     filterProxyModel = new QSortFilterProxyModel(this);
+
+
+
 
     //Main UI
 
@@ -45,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Generate_Project_Files_Btn,&QPushButton::clicked,this, &::MainWindow::onSetupProjectFilesBtnClicker);
     connect(ui->Build_Btn,&QPushButton::clicked,this,&MainWindow::onBuildClicker);
     connect(ui->Run_Btn,&QPushButton::clicked,this,&MainWindow::onRunClicker);
-    connect(ui->To_Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePluginClickr);
+
 
     //Radio Buttons
     connect(ui->Standalone_Mode_Tick, &QRadioButton::clicked, this, [=]() {// Lambda Function
@@ -72,8 +75,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Plugins_Filter, &QLineEdit::textChanged, this, &MainWindow::onFilterPluginsUpdate);
 
  //Plugins Buttons
+    connect(ui->Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePluginClickr);
+    connect(ui->Enable_Project_Plugins_Button, &QPushButton::clicked,this, &MainWindow::onEnablePluginForProjectBtnClickr);
 
 
+
+    //Plugins Lists
 
 
 }
@@ -111,7 +118,14 @@ void MainWindow::onProjectPathBrowseBtnClicker() {
     if (!selectedProjectFolderPath.isEmpty()) {
         // Set the selected folder path to the QLineEdit
         ui->Project_Path_Txt->setText(selectedProjectFolderPath);
+        ui->Enabled_Plugins_List->clearSelection();
+        ui->Disabled_Plugins_List->clearSelection();
+        ui->Project_Plugins_List->clearSelection();
 
+        // Set filtered models for both lists
+        ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
+        ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
+        ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
         QMessageBox::information(this, "Folder Selected", "Project folder set to: " + selectedProjectFolderPath);
 
 
@@ -141,10 +155,13 @@ void MainWindow::onEngineSourcePathBtnClicker() {
     // Populate the models
     PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(), pluginPath);
     PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(), pluginPath);
+    RefreshEnabledDisabledPluginLists();
+//    // Set the models to the list views
+//    ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsModel());
+//    ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsModel());
 
-    // Set the models to the list views
-    ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsModel());
-    ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsModel());
+//    PluginManager::getInstance().setupListView(ui->Disabled_Plugins_List, PluginManager::getInstance().getDisabledPluginsProxyModel());
+//    PluginManager::getInstance().setupListView(ui->Enabled_Plugins_List, PluginManager::getInstance().getEnabledPluginsProxyModel());
 
 
 }
@@ -193,18 +210,10 @@ void MainWindow::updateErrorLabel(const QString& errorMessage) {
     ui->Project_Name_Error->setText(errorMessage);
 }
 
-
-void MainWindow::updateStandaloneLabel() {
-    if (ui->Standalone_Mode_Tick->isChecked()) {
-        ui->Standalone_Warning_Lbl->setText("This Mode Uses the 'Cook' Command , It can Take A while ! ");
-    }else{
-        ui->Standalone_Warning_Lbl->setText("");
-    }
-}
-
-
-
 bool MainWindow::validateProjectName() {
+    // Clear the error label at the beginning of the function
+    updateErrorLabel("");
+
     QString projectName = ui->Project_Name_Txt->text();
     QString projectPath = ui->Project_Path_Txt->text();
 
@@ -215,8 +224,10 @@ bool MainWindow::validateProjectName() {
 
     if (projectName.isEmpty()) {
         updateErrorLabel("Error: Project name cannot be empty.");
+        return false;
     } else if (!regex.exactMatch(projectName)) {
         updateErrorLabel("Error: Project name must contain only alphanumerics.");
+        return false;
     } else if (projectDirs.contains(projectName, Qt::CaseSensitive)) {
         updateErrorLabel("Warning: Project with the same name already exists in the selected path.");
 
@@ -225,27 +236,35 @@ bool MainWindow::validateProjectName() {
         // Check if the uprojectPath has changed
         if (uprojectPath != PluginManager::getInstance().getUProjectPath()) {
             // Clear the model before updating
-            qDebug() <<uprojectPath <<" COMPARING" <<PluginManager::getInstance().getUProjectPath();
-
+            qDebug() << uprojectPath << " COMPARING" << PluginManager::getInstance().getUProjectPath();
             ui->Project_Plugins_List->setModel(nullptr);
 
             // Update the model and set the project path
             PluginManager::getInstance().setUProjectPath(uprojectPath);
             PluginManager::getInstance().setProjectName(projectName);
             PluginManager::getInstance().FillProjectPluginsList(uprojectPath, projectName, PluginManager::getInstance().getProjectPluginsModel()->invisibleRootItem());
-            ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsModel());
+            RefreshProjectPluginList();
         }
 
         return true;
     }
 
-    updateErrorLabel("");  // Clear the error message if validation passes
-
     // If validation fails, clear the model
     ui->Project_Plugins_List->setModel(nullptr);
-
     return false;
 }
+
+
+
+
+void MainWindow::updateStandaloneLabel() {
+    if (ui->Standalone_Mode_Tick->isChecked()) {
+        ui->Standalone_Warning_Lbl->setText("This Mode Uses the 'Cook' Command , It can Take A while ! ");
+    }else{
+        ui->Standalone_Warning_Lbl->setText("");
+    }
+}
+
 
 
 
@@ -297,13 +316,6 @@ void MainWindow::onOpenSublimeCheckboxToggled(bool checked)
 
 }
 
-void MainWindow::onDisablePluginClickr() {
-
-
-}
-
-
-
 
 void MainWindow::onFilterPluginsUpdate() {
         qDebug() << "Filter function called!";
@@ -312,20 +324,31 @@ void MainWindow::onFilterPluginsUpdate() {
         qDebug() << "Typed" << filterText;
 
         QRegularExpression regExp(filterText, QRegularExpression::CaseInsensitiveOption);
-        qDebug() << "Typed" << regExp;
-        // Set the filter on the source models of both lists
 
+        // Set the filter on the source models of both lists
         PluginManager::getInstance().getEnabledPluginsProxyModel()->setFilterRegularExpression(regExp);
         PluginManager::getInstance().getDisabledPluginsProxyModel()->setFilterRegularExpression(regExp);
         PluginManager::getInstance().getProjectPluginsProxyModel()->setFilterRegularExpression(regExp);
-        // Set filtered models for both lists
-        ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
-        ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
-        ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
+
+
+
+        RefreshEnabledDisabledPluginLists();
+        RefreshProjectPluginList();
+//        // Set filtered models for both lists
+//        ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
+//        ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
+//        ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
+//        // Call the setupListView function after changing the filter
+//        ui->Enabled_Plugins_List->clearSelection();
+//        ui->Disabled_Plugins_List->clearSelection();
+//        ui->Project_Plugins_List->clearSelection();
+//        PluginManager::getInstance().setupListView(ui->Disabled_Plugins_List, PluginManager::getInstance().getDisabledPluginsProxyModel());
+//        PluginManager::getInstance().setupListView(ui->Enabled_Plugins_List, PluginManager::getInstance().getEnabledPluginsProxyModel());
+//        PluginManager::getInstance().setupListView(ui->Project_Plugins_List, PluginManager::getInstance().getProjectPluginsProxyModel());
+
         // Print row counts for debugging
         qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
         qDebug() << "Enabled Plugins Proxy Row Count: " << PluginManager::getInstance().getEnabledPluginsProxyModel()->rowCount();
-
         qDebug() << "Disabled Plugins Row Count: " << PluginManager::getInstance().getDisabledPluginsModel()->rowCount();
         qDebug() << "Disabled Plugins Proxy Row Count: " << PluginManager::getInstance().getDisabledPluginsProxyModel()->rowCount();
 
@@ -334,6 +357,7 @@ void MainWindow::onFilterPluginsUpdate() {
         updateDisabledPluginsList();
         UpdateProjectPluginsList();
 }
+
 
 
 
@@ -348,6 +372,8 @@ void MainWindow::updateEnabledPluginsList() {
 
         qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
         qDebug() << "Enabled Plugins Proxy Row Count: " << enabledPluginsProxyModel->rowCount();
+
+
 }
 
 
@@ -361,6 +387,7 @@ void MainWindow::updateDisabledPluginsList() {
 
         qDebug() << "Disabled Plugins Row Count: " << PluginManager::getInstance().getDisabledPluginsModel()->rowCount();
         qDebug() << "Disabled Plugins Proxy Row Count: " << disabledPluginsProxyModel->rowCount();
+
 }
 
 void MainWindow::UpdateProjectPluginsList(){
@@ -370,6 +397,64 @@ void MainWindow::UpdateProjectPluginsList(){
         projectPluginProxyModel->setSourceModel(PluginManager::getInstance().getProjectPluginsModel());
 
         ui->Project_Plugins_List->setModel(projectPluginProxyModel);
+}
 
+
+
+
+
+void MainWindow::RefreshEnabledDisabledPluginLists() {
+        // Set filtered models for both lists
+        ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
+        ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
+
+        // Clear selections
+        ui->Enabled_Plugins_List->clearSelection();
+        ui->Disabled_Plugins_List->clearSelection();
+
+        // Call the setupListView function after changing the filter
+        PluginManager::getInstance().setupListView(ui->Disabled_Plugins_List, PluginManager::getInstance().getDisabledPluginsProxyModel());
+        PluginManager::getInstance().setupListView(ui->Enabled_Plugins_List, PluginManager::getInstance().getEnabledPluginsProxyModel());
+}
+
+// Function to update the project-specific plugin list
+void MainWindow::RefreshProjectPluginList() {
+        // Set filtered model for the project list
+        ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
+
+        // Clear selection
+        ui->Project_Plugins_List->clearSelection();
+
+        // Call the setupListView function after changing the filter
+        PluginManager::getInstance().setupListView(ui->Project_Plugins_List, PluginManager::getInstance().getProjectPluginsProxyModel());
+}
+void MainWindow::onEnablePluginForProjectBtnClickr() {
+
+        QString projectName = ui->Project_Name_Txt->text();
+
+        // Get the selected item from the Disabled Plugins List
+        QModelIndexList selectedIndexes = ui->Disabled_Plugins_List->selectionModel()->selectedIndexes();
+
+        if (!selectedIndexes.isEmpty()) {
+            // Get the selected item's text (plugin name)
+            QString pluginName = PluginManager::getInstance().getDisabledPluginsProxyModel()->data(
+                                                                                                PluginManager::getInstance().getDisabledPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
+                                                                                                ).toString();
+
+            // Call EnablePluginForProject with the selected project name and plugin name
+            PluginManager::getInstance().EnablePluginForProject(projectName, pluginName);
+        } else {
+            qDebug() << "No item selected in the Disabled Plugins List.";
+        }
+}
+
+
+void MainWindow::onDisablePluginClickr(){
 
 }
+
+
+
+
+
+

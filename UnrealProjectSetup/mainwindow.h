@@ -35,13 +35,17 @@ private:
 
     RunMode selectedMode;
 
-    // Update the list of enabled plugins
-    void updateEnabledPluginsList();
+
     bool openSublimeFlag;
     // Update the list of disabled plugins
     void updateDisabledPluginsList();
+    void updateEnabledPluginsList();
+    void RefreshEnabledDisabledPluginLists();
+    void RefreshProjectPluginList();
 
 private slots:
+    //Slot for handeling the "Enable Plugin For Project" Button Clicker
+    void onEnablePluginForProjectBtnClickr();
     // Slot for handling the "Browse" button click to select the project path
     void onProjectPathBrowseBtnClicker();
 

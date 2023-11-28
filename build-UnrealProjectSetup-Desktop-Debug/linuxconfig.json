@@ -4,7 +4,7 @@
     
     
     "run.sh": "#!/bin/bash\nUNREAL_EDITOR_EXEC='~Engine-Path~/Binaries/Linux/UnrealEditor'\nUPROJECT_PATH='~Project_Path~/~Project_Name~/~Project_Name~.uproject'\nCMD_PATH='~Engine-Path~/Binaries/Linux/UnrealEditor-Cmd'\nMODE=$1\nif [ \"$MODE\" = \"editor\" ]; then\n  ${UNREAL_EDITOR_EXEC} ${UPROJECT_PATH} -log\nelif [ \"$MODE\" = \"game\" ]; then\n${UNREAL_EDITOR_EXEC} ${UPROJECT_PATH} -game -log -windowed -resx=1200 -resy=720\nelif [ \"$MODE\" = \"standalone\" ]; then\n${CMD_PATH} ${UPROJECT_PATH} -run=cook -targetplatform=Linux\n# Additional commands for standalone mode\nelse\necho Invalid mode selected.\nfi",
-    "~Project_Name~.uproject": "{\n    \"FileVersion\": 3,\n    \"EngineAssociation\": \"F63141F7-1CBA-46C8-8D97-8ADFBBFD2048\",\n    \"Category\": \"\",\n    \"Description\": \"\",\n    \"Modules\": [\n        {\n            \"Name\": \"~Project_Name~Core\",\n            \"Type\": \"Runtime\",\n            \"LoadingPhase\": \"Default\",\n            \"AdditionalDependencies\": [\n                \"Engine\"\n            ]\n        }\n    ]\n}",
+    "~Project_Name~.uproject": "{\n    \"FileVersion\": 3,\n    \"EngineAssociation\": \"F63141F7-1CBA-46C8-8D97-8ADFBBFD2048\",\n    \"Category\": \"\",\n    \"Description\": \"\",\n    \"Modules\": [\n        {\n            \"Name\": \"~Project_Name~Core\",\n            \"Type\": \"Runtime\",\n            \"LoadingPhase\": \"Default\",\n            \"AdditionalDependencies\": [\n                \"Engine\"\n            ]\n        }\n    ],\n\"Plugins\":[\n]\n}",
     "Source": {
       "~Project_Name~Core": {
         "Public": {

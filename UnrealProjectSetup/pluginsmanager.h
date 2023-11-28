@@ -5,12 +5,17 @@
 #include <QString>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
+#include <QListView>
 
 class PluginManager {
 public:
     static PluginManager& getInstance() {
         static PluginManager instance;
         return instance;
+    }
+
+    QItemSelectionModel* getAllListsSelectionModel() const {
+        return AllListsSelectionModel;
     }
 //PROXY MODELS
     QSortFilterProxyModel* getDisabledPluginsProxyModel() const {
@@ -63,10 +68,11 @@ public:
         return projectPluginsModel;
     }
 
-
+    void setupListView(QListView* listView,QSortFilterProxyModel* proxyModel);
     void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
     void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
     void FillProjectPluginsList(const QString& uprojectPath,const QString& projectName,QStandardItem* parent);
+    void EnablePluginForProject(const QString& projectName, const QString& pluginName);
 
 private:
     QString projectName;
@@ -78,6 +84,7 @@ private:
     QStandardItemModel* disabledPluginsModel;
     QStandardItemModel* projectPluginsModel;
     QSortFilterProxyModel* projectPluginsProxyModel;
+    QItemSelectionModel* AllListsSelectionModel;
 
 
     void setupProxyModels() ;

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[19];
-    char stringdata0[348];
+    QByteArrayData data[20];
+    char stringdata0[382];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,28 +33,30 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 29), // "onProjectPathBrowseBtnClicker"
-QT_MOC_LITERAL(2, 41, 0), // ""
-QT_MOC_LITERAL(3, 42, 28), // "onEngineSourcePathBtnClicker"
-QT_MOC_LITERAL(4, 71, 29), // "onSetupProjectFilesBtnClicker"
-QT_MOC_LITERAL(5, 101, 19), // "validateProjectName"
-QT_MOC_LITERAL(6, 121, 21), // "updateStandaloneLabel"
-QT_MOC_LITERAL(7, 143, 16), // "updateErrorLabel"
-QT_MOC_LITERAL(8, 160, 12), // "errorMessage"
-QT_MOC_LITERAL(9, 173, 24), // "UpdateProjectPluginsList"
-QT_MOC_LITERAL(10, 198, 14), // "onBuildClicker"
-QT_MOC_LITERAL(11, 213, 12), // "onRunClicker"
-QT_MOC_LITERAL(12, 226, 10), // "onGameMode"
-QT_MOC_LITERAL(13, 237, 16), // "onStandaloneMode"
-QT_MOC_LITERAL(14, 254, 12), // "onEditorMode"
-QT_MOC_LITERAL(15, 267, 21), // "onDisablePluginClickr"
-QT_MOC_LITERAL(16, 289, 21), // "onFilterPluginsUpdate"
-QT_MOC_LITERAL(17, 311, 28), // "onOpenSublimeCheckboxToggled"
-QT_MOC_LITERAL(18, 340, 7) // "checked"
+QT_MOC_LITERAL(1, 11, 33), // "onEnablePluginForProjectBtnCl..."
+QT_MOC_LITERAL(2, 45, 0), // ""
+QT_MOC_LITERAL(3, 46, 29), // "onProjectPathBrowseBtnClicker"
+QT_MOC_LITERAL(4, 76, 28), // "onEngineSourcePathBtnClicker"
+QT_MOC_LITERAL(5, 105, 29), // "onSetupProjectFilesBtnClicker"
+QT_MOC_LITERAL(6, 135, 19), // "validateProjectName"
+QT_MOC_LITERAL(7, 155, 21), // "updateStandaloneLabel"
+QT_MOC_LITERAL(8, 177, 16), // "updateErrorLabel"
+QT_MOC_LITERAL(9, 194, 12), // "errorMessage"
+QT_MOC_LITERAL(10, 207, 24), // "UpdateProjectPluginsList"
+QT_MOC_LITERAL(11, 232, 14), // "onBuildClicker"
+QT_MOC_LITERAL(12, 247, 12), // "onRunClicker"
+QT_MOC_LITERAL(13, 260, 10), // "onGameMode"
+QT_MOC_LITERAL(14, 271, 16), // "onStandaloneMode"
+QT_MOC_LITERAL(15, 288, 12), // "onEditorMode"
+QT_MOC_LITERAL(16, 301, 21), // "onDisablePluginClickr"
+QT_MOC_LITERAL(17, 323, 21), // "onFilterPluginsUpdate"
+QT_MOC_LITERAL(18, 345, 28), // "onOpenSublimeCheckboxToggled"
+QT_MOC_LITERAL(19, 374, 7) // "checked"
 
     },
-    "MainWindow\0onProjectPathBrowseBtnClicker\0"
-    "\0onEngineSourcePathBtnClicker\0"
+    "MainWindow\0onEnablePluginForProjectBtnClickr\0"
+    "\0onProjectPathBrowseBtnClicker\0"
+    "onEngineSourcePathBtnClicker\0"
     "onSetupProjectFilesBtnClicker\0"
     "validateProjectName\0updateStandaloneLabel\0"
     "updateErrorLabel\0errorMessage\0"
@@ -72,7 +74,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -80,29 +82,31 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   89,    2, 0x08 /* Private */,
-       3,    0,   90,    2, 0x08 /* Private */,
-       4,    0,   91,    2, 0x08 /* Private */,
-       5,    0,   92,    2, 0x08 /* Private */,
-       6,    0,   93,    2, 0x08 /* Private */,
-       7,    1,   94,    2, 0x08 /* Private */,
-       9,    0,   97,    2, 0x08 /* Private */,
-      10,    0,   98,    2, 0x08 /* Private */,
-      11,    0,   99,    2, 0x08 /* Private */,
-      12,    0,  100,    2, 0x08 /* Private */,
-      13,    0,  101,    2, 0x08 /* Private */,
-      14,    0,  102,    2, 0x08 /* Private */,
-      15,    0,  103,    2, 0x08 /* Private */,
-      16,    0,  104,    2, 0x08 /* Private */,
-      17,    1,  105,    2, 0x08 /* Private */,
+       1,    0,   94,    2, 0x08 /* Private */,
+       3,    0,   95,    2, 0x08 /* Private */,
+       4,    0,   96,    2, 0x08 /* Private */,
+       5,    0,   97,    2, 0x08 /* Private */,
+       6,    0,   98,    2, 0x08 /* Private */,
+       7,    0,   99,    2, 0x08 /* Private */,
+       8,    1,  100,    2, 0x08 /* Private */,
+      10,    0,  103,    2, 0x08 /* Private */,
+      11,    0,  104,    2, 0x08 /* Private */,
+      12,    0,  105,    2, 0x08 /* Private */,
+      13,    0,  106,    2, 0x08 /* Private */,
+      14,    0,  107,    2, 0x08 /* Private */,
+      15,    0,  108,    2, 0x08 /* Private */,
+      16,    0,  109,    2, 0x08 /* Private */,
+      17,    0,  110,    2, 0x08 /* Private */,
+      18,    1,  111,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Bool,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    8,
+    QMetaType::Void, QMetaType::QString,    9,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -111,7 +115,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,   18,
+    QMetaType::Void, QMetaType::Bool,   19,
 
        0        // eod
 };
@@ -122,22 +126,23 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->onProjectPathBrowseBtnClicker(); break;
-        case 1: _t->onEngineSourcePathBtnClicker(); break;
-        case 2: _t->onSetupProjectFilesBtnClicker(); break;
-        case 3: { bool _r = _t->validateProjectName();
+        case 0: _t->onEnablePluginForProjectBtnClickr(); break;
+        case 1: _t->onProjectPathBrowseBtnClicker(); break;
+        case 2: _t->onEngineSourcePathBtnClicker(); break;
+        case 3: _t->onSetupProjectFilesBtnClicker(); break;
+        case 4: { bool _r = _t->validateProjectName();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 4: _t->updateStandaloneLabel(); break;
-        case 5: _t->updateErrorLabel((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 6: _t->UpdateProjectPluginsList(); break;
-        case 7: _t->onBuildClicker(); break;
-        case 8: _t->onRunClicker(); break;
-        case 9: _t->onGameMode(); break;
-        case 10: _t->onStandaloneMode(); break;
-        case 11: _t->onEditorMode(); break;
-        case 12: _t->onDisablePluginClickr(); break;
-        case 13: _t->onFilterPluginsUpdate(); break;
-        case 14: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 5: _t->updateStandaloneLabel(); break;
+        case 6: _t->updateErrorLabel((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 7: _t->UpdateProjectPluginsList(); break;
+        case 8: _t->onBuildClicker(); break;
+        case 9: _t->onRunClicker(); break;
+        case 10: _t->onGameMode(); break;
+        case 11: _t->onStandaloneMode(); break;
+        case 12: _t->onEditorMode(); break;
+        case 13: _t->onDisablePluginClickr(); break;
+        case 14: _t->onFilterPluginsUpdate(); break;
+        case 15: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -172,13 +177,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 16;
     }
     return _id;
 }
