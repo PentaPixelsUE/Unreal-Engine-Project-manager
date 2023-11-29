@@ -32,19 +32,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 46,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 62,
+				"line" : 63,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 52,
+				"line" : 53,
 				"parent" : 0
 			},
 			{
@@ -82,13 +82,13 @@
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 73,
+				"line" : 74,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 81,
+				"line" : 82,
 				"parent" : 0
 			}
 		]
@@ -178,7 +178,8 @@
 				2,
 				5,
 				7,
-				10
+				10,
+				13
 			]
 		}
 	],
@@ -252,7 +253,8 @@
 				2,
 				5,
 				7,
-				10
+				10,
+				13
 			]
 		},
 		{
@@ -263,14 +265,22 @@
 				6,
 				8,
 				9,
-				11
+				12
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				4
+				4,
+				11
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				14
 			]
 		}
 	],
@@ -339,10 +349,28 @@
 			"sourceGroupIndex" : 0
 		},
 		{
+			"backtrace" : 1,
+			"path" : "QtDesign_Resources/UE5Logo.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/UnrealProjectSetup_autogen/include/ui_mainwindow.h",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.rule",
+			"sourceGroupIndex" : 3
 		}
 	],
 	"type" : "EXECUTABLE"

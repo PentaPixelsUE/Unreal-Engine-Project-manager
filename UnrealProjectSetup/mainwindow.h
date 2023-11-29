@@ -90,8 +90,7 @@ private slots:
 
     // Slot for toggling the "Open Sublime" checkbox
     void onOpenSublimeCheckboxToggled(bool checked);
-
-
+    void onEnableDisablePluginClickr(bool enable);
 };
 
 #endif // MAINWINDOW_H

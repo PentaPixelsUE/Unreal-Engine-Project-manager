@@ -39,7 +39,6 @@ PluginManager::~PluginManager() {
 
 }
 
-
 void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory) {
     QDir dir(directory);
     QStringList nameFilters;
@@ -158,9 +157,6 @@ void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QS
     }
 }
 
-
-
-
 void PluginManager::setupProxyModels() {
     // Clear existing models if they exist
     delete enabledPluginsModel;
@@ -218,9 +214,10 @@ void PluginManager::setupListView(QListView* listView, QSortFilterProxyModel* pr
     });
 }
 
-
 void PluginManager::EnablePluginForProject(const QString& projectName, const QString& pluginName) {
+
     QString uprojectPath = getUProjectPath()+ QDir::separator() + projectName + ".uproject";
+
     qDebug() <<getUProjectPath()<<" DIRECTORY .......";
     if (uprojectPath.isEmpty()) {
         qDebug() << "Error: UProject path is empty for project" << projectName;
@@ -276,4 +273,59 @@ void PluginManager::EnablePluginForProject(const QString& projectName, const QSt
 
     qDebug() << "Plugin" << pluginName << "enabled for project" << projectName;
 }
+void PluginManager::DisablePluginForProject(const QString& projectName, const QString& pluginName) {
+    QString uprojectPath = getUProjectPath() + QDir::separator() + projectName + ".uproject";
 
+    if (uprojectPath.isEmpty()) {
+        qDebug() << "Error: UProject path is empty for project" << projectName;
+        return;
+    }
+
+    QFile uprojectFile(uprojectPath);
+
+    if (!uprojectFile.exists()) {
+        qDebug() << "Error: UProject file not found for project" << projectName;
+        return;
+    }
+
+    if (!uprojectFile.open(QIODevice::ReadWrite | QIODevice::Text)) {
+        qDebug() << "Error: Failed to open UProject file for writing. Error: " << uprojectFile.errorString();
+        return;
+    }
+
+    // Read the content from the .uproject file
+    QTextStream in(&uprojectFile);
+    QString uprojectContent = in.readAll();
+
+    uprojectFile.close();  // Close the file before making changes
+
+    // Create a QJsonDocument from the JSON-like content
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(uprojectContent.toUtf8());
+    QJsonObject jsonObj = jsonDoc.object();
+
+    // Modify jsonObj to remove the plugin entry
+    QJsonArray pluginsArray = jsonObj["Plugins"].toArray();
+
+    for (int i = 0; i < pluginsArray.size(); ++i) {
+        QJsonObject pluginObject = pluginsArray[i].toObject();
+        if (pluginObject["Name"].toString() == pluginName) {
+            pluginsArray.removeAt(i);
+            break;
+        }
+    }
+
+    jsonObj["Plugins"] = pluginsArray;
+
+    // Convert the modified QJsonObject back to a JSON-like string
+    uprojectContent = QString::fromUtf8(QJsonDocument(jsonObj).toJson());
+
+    // Write the changes back to the .uproject file
+    if (uprojectFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream out(&uprojectFile);
+        out << uprojectContent;
+        uprojectFile.close();
+        qDebug() << "Plugin" << pluginName << "deleted for project" << projectName;
+    } else {
+        qDebug() << "Error: Failed to write changes to UProject file. Error: " << uprojectFile.errorString();
+    }
+}

@@ -27,7 +27,15 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
+    QPixmap originalPixmap(":/UE5Logo.qrc/UE5Logo.png");
 
+    // Set the desired size (e.g., 100x100)
+    QSize newSize(10   , 10);
+
+    // Resize the pixmap
+    QPixmap scaledPixmap = originalPixmap.scaled(newSize, Qt::KeepAspectRatio);
+
+    ui->UE5_Logo_Lbl->setPixmap(scaledPixmap);
 
     //filterProxyModel->setSourceModel(PluginManager::getInstance().getPluginsModel());
 
@@ -143,28 +151,36 @@ void MainWindow::onEngineSourcePathBtnClicker() {
     QString EnginePath = QFileDialog::getExistingDirectory(this, "Select Engine Folder", QDir::homePath(), QFileDialog::ShowDirsOnly);
 
     ui->UE_Source_Path_Txt->setText(EnginePath);
-    QMessageBox::information(this, "Folder Selected", "Engine Source folder set to: " + EnginePath);
-
     QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
     PluginManager::getInstance().setEnginePath(pluginPath);
+
+
+    QMessageBox* loadingBox = new QMessageBox(this);
+    loadingBox->setWindowTitle("Loading");
+    loadingBox->setText("Loading Plugins...");
+
+    Qt::WindowFlags flags = loadingBox->windowFlags();
+    flags |= Qt::CustomizeWindowHint;
+    loadingBox->setWindowFlags(flags);
+
+    loadingBox->show();
+    QApplication::processEvents();  // Ensure the message box is displayed
 
     // Clear the existing models
     ui->Enabled_Plugins_List->setModel(nullptr);
     ui->Disabled_Plugins_List->setModel(nullptr);
 
-    // Populate the models
     PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(), pluginPath);
     PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(), pluginPath);
     RefreshEnabledDisabledPluginLists();
-//    // Set the models to the list views
-//    ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsModel());
-//    ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsModel());
 
-//    PluginManager::getInstance().setupListView(ui->Disabled_Plugins_List, PluginManager::getInstance().getDisabledPluginsProxyModel());
-//    PluginManager::getInstance().setupListView(ui->Enabled_Plugins_List, PluginManager::getInstance().getEnabledPluginsProxyModel());
+     // Close the loading message box
+    loadingBox->close();
+    delete loadingBox;
+
+ }
 
 
-}
 
 
 
@@ -318,6 +334,8 @@ void MainWindow::onOpenSublimeCheckboxToggled(bool checked)
 
 
 void MainWindow::onFilterPluginsUpdate() {
+
+
         qDebug() << "Filter function called!";
 
         QString filterText = ui->Plugins_Filter->text();
@@ -334,17 +352,6 @@ void MainWindow::onFilterPluginsUpdate() {
 
         RefreshEnabledDisabledPluginLists();
         RefreshProjectPluginList();
-//        // Set filtered models for both lists
-//        ui->Enabled_Plugins_List->setModel(PluginManager::getInstance().getEnabledPluginsProxyModel());
-//        ui->Disabled_Plugins_List->setModel(PluginManager::getInstance().getDisabledPluginsProxyModel());
-//        ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
-//        // Call the setupListView function after changing the filter
-//        ui->Enabled_Plugins_List->clearSelection();
-//        ui->Disabled_Plugins_List->clearSelection();
-//        ui->Project_Plugins_List->clearSelection();
-//        PluginManager::getInstance().setupListView(ui->Disabled_Plugins_List, PluginManager::getInstance().getDisabledPluginsProxyModel());
-//        PluginManager::getInstance().setupListView(ui->Enabled_Plugins_List, PluginManager::getInstance().getEnabledPluginsProxyModel());
-//        PluginManager::getInstance().setupListView(ui->Project_Plugins_List, PluginManager::getInstance().getProjectPluginsProxyModel());
 
         // Print row counts for debugging
         qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
@@ -417,7 +424,6 @@ void MainWindow::RefreshEnabledDisabledPluginLists() {
         PluginManager::getInstance().setupListView(ui->Enabled_Plugins_List, PluginManager::getInstance().getEnabledPluginsProxyModel());
 }
 
-// Function to update the project-specific plugin list
 void MainWindow::RefreshProjectPluginList() {
         // Set filtered model for the project list
         ui->Project_Plugins_List->setModel(PluginManager::getInstance().getProjectPluginsProxyModel());
@@ -425,36 +431,58 @@ void MainWindow::RefreshProjectPluginList() {
         // Clear selection
         ui->Project_Plugins_List->clearSelection();
 
+        // Update the selection model directly from the list view
+        ui->Project_Plugins_List->setSelectionModel(ui->Project_Plugins_List->selectionModel());
+
         // Call the setupListView function after changing the filter
         PluginManager::getInstance().setupListView(ui->Project_Plugins_List, PluginManager::getInstance().getProjectPluginsProxyModel());
 }
-void MainWindow::onEnablePluginForProjectBtnClickr() {
 
+
+void MainWindow::onEnableDisablePluginClickr(bool enable) {
         QString projectName = ui->Project_Name_Txt->text();
+        QString projectPath = ui->Project_Path_Txt->text();
 
-        // Get the selected item from the Disabled Plugins List
-        QModelIndexList selectedIndexes = ui->Disabled_Plugins_List->selectionModel()->selectedIndexes();
+        QModelIndexList selectedIndexes = enable ?
+                                              ui->Disabled_Plugins_List->selectionModel()->selectedIndexes() :
+                                              ui->Project_Plugins_List->selectionModel()->selectedIndexes();
 
         if (!selectedIndexes.isEmpty()) {
-            // Get the selected item's text (plugin name)
-            QString pluginName = PluginManager::getInstance().getDisabledPluginsProxyModel()->data(
-                                                                                                PluginManager::getInstance().getDisabledPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
-                                                                                                ).toString();
+            QString pluginName = enable ?
+                                     PluginManager::getInstance().getDisabledPluginsProxyModel()->data(
+                                                                                                    PluginManager::getInstance().getDisabledPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
+                                                                                                    ).toString() :
+                                     PluginManager::getInstance().getProjectPluginsProxyModel()->data(
+                                                                                                   PluginManager::getInstance().getProjectPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
+                                                                                                   ).toString();
 
-            // Call EnablePluginForProject with the selected project name and plugin name
+            QString uprojectPath = projectPath + QDir::separator() + projectName;
+
+            if (enable) {
             PluginManager::getInstance().EnablePluginForProject(projectName, pluginName);
+            } else {
+            PluginManager::getInstance().DisablePluginForProject(projectName, pluginName);
+            }
+
+            PluginManager::getInstance().setUProjectPath(uprojectPath);
+            PluginManager::getInstance().setProjectName(projectName);
+            PluginManager::getInstance().FillProjectPluginsList(uprojectPath, projectName, PluginManager::getInstance().getProjectPluginsModel()->invisibleRootItem());
+
+            RefreshEnabledDisabledPluginLists();
+            RefreshProjectPluginList();
+            updateEnabledPluginsList();
+            updateDisabledPluginsList();
+            UpdateProjectPluginsList();
         } else {
-            qDebug() << "No item selected in the Disabled Plugins List.";
+            qDebug() << "No item selected.";
         }
 }
 
-
-void MainWindow::onDisablePluginClickr(){
-
+void MainWindow::onEnablePluginForProjectBtnClickr() {
+        onEnableDisablePluginClickr(true);
 }
 
-
-
-
-
+void MainWindow::onDisablePluginClickr() {
+        onEnableDisablePluginClickr(false);
+}
 

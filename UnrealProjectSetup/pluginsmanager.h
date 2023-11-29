@@ -73,6 +73,7 @@ public:
     void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
     void FillProjectPluginsList(const QString& uprojectPath,const QString& projectName,QStandardItem* parent);
     void EnablePluginForProject(const QString& projectName, const QString& pluginName);
+    void DisablePluginForProject(const QString& projectName, const QString& pluginName) ;
 
 private:
     QString projectName;

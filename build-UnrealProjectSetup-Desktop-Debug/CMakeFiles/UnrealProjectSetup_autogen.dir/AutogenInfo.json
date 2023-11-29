@@ -71,7 +71,8 @@
 		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/nlohmann_jsonConfigVersion.cmake",
 		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/nlohmann_jsonConfig.cmake",
 		"/usr/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake",
-		"/usr/share/cmake-3.27/Modules/FindPackageMessage.cmake"
+		"/usr/share/cmake-3.27/Modules/FindPackageMessage.cmake",
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup",
 	"DEP_FILE" : "",

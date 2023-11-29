@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnrealProjectSetup_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/UnrealProjectSetup_autogen.dir/ParseCache.txt"
   "UnrealProjectSetup_autogen"
+  "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o"
+  "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o"
@@ -16,6 +18,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o.d"
   "UnrealProjectSetup"
   "UnrealProjectSetup.pdb"
+  "UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

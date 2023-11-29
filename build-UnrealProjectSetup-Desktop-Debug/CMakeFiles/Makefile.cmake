@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeLists.txt"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.qrc"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeLists.txt"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/cmake/config.cmake.in"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/cmake/nlohmann_jsonConfigVersion.cmake.in"
@@ -90,6 +91,7 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/UnrealProjectSetup_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Info.json"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "json-develop/nlohmann_json.pc"
   "json-develop/nlohmann_jsonConfigVersion.cmake"

@@ -282,6 +282,9 @@
 			"path" : "/usr/share/cmake-3.27/Modules/FindPackageMessage.cmake"
 		},
 		{
+			"path" : "QtDesign_Resources/UE5Logo.qrc"
+		},
+		{
 			"path" : "json-develop/CMakeLists.txt"
 		},
 		{

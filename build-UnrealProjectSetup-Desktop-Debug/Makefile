@@ -187,6 +187,30 @@ UnrealProjectSetup_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup_autogen.dir/build.make CMakeFiles/UnrealProjectSetup_autogen.dir/build
 .PHONY : UnrealProjectSetup_autogen/fast
 
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.o: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.o
+
+# target to build an object file
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
+
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.i: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.i
+
+# target to preprocess a source file
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i
+
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.s: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.s
+
+# target to generate assembly for a file
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s
+
 UnrealProjectSetup_autogen/mocs_compilation.o: UnrealProjectSetup_autogen/mocs_compilation.cpp.o
 .PHONY : UnrealProjectSetup_autogen/mocs_compilation.o
 
@@ -345,6 +369,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... UnrealProjectSetup_autogen"
 	@echo "... UnrealProjectSetup"
+	@echo "... UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.o"
+	@echo "... UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.i"
+	@echo "... UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.s"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.o"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.i"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.s"

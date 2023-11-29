@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="UE5Logo">
+    <file>UE5Logo.png</file>
+  </qresource>
+</RCC>
