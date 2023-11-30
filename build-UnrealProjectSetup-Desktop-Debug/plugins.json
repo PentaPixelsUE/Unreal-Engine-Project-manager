@@ -1,0 +1,1997 @@
+[
+    {
+        "IsEnabled": true,
+        "PluginName": "SmartSnapping",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/2D/Paper2D/Paper2D.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AISupportModule",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/AISupport/AISupport.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AISupport",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/EnvironmentQueryEditor/EnvironmentQueryEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "HTNTestSuite",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/HTNPlanner/HTNPlanner.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "StateTree",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/MassAI/MassAI.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "StructUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/MassCrowd/MassCrowd.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NNE",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/MLAdapter/MLAdapter.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ACLPluginEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/ACLPlugin/ACLPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ControlRig",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/AnimationData/AnimationData.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AnimationLocomotionLibraryEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/AnimationLocomotionLibrary/AnimationLocomotionLibrary.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AnimationModifierLibrary",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/AnimationModifierLibrary/AnimationModifierLibrary.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AnimationModifierLibrary",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/AnimationWarping/AnimationWarping.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "BlendSpaceMotionAnalysis",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/BlendSpaceMotionAnalysis/BlendSpaceMotionAnalysis.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "SequencerScripting",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/ControlRig/ControlRig.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ComputeFramework",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/DeformerGraph/DeformerGraph.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RewindDebuggerVLog",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/GameplayInsights/GameplayInsights.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "FullBodyIK",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/IKRig/IKRig.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ConcertSyncClient",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/LiveLink/LiveLink.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LiveLink",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/LiveLinkCurveDebugUI/LiveLinkCurveDebugUI.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MLDeformerFramework",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/MLDeformer/ChaosClothGenerator/ChaosClothGenerator.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GeometryCache",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/MLDeformer/MLDeformerFramework/MLDeformerFramework.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MotionWarping",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/MotionWarping/MotionWarping.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ControlRig",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/RigLogic/RigLogic.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AudioGameplay",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AudioGameplay/AudioGameplay.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "BlueprintFileUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/BlueprintFileUtils/BlueprintFileUtils.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "EditorScriptingUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Bridge/Bridge.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GameplayCameras",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Cameras/CameraShakePreviewer/CameraShakePreviewer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "TemplateSequence",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Cameras/GameplayCameras/GameplayCameras.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ActorLayerUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Compositing/Composure/Composure.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LensDistortion",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Compositing/LensDistortion/LensDistortion.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpenColorIOEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Compositing/OpenColorIO/OpenColorIO.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpenCV",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Compositing/OpenCVLensDistortion/OpenCVLensDistortion.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "OodleNetworkHandlerComponent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Compression/OodleNetwork/OodleNetwork.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "SignificanceManager",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/AnimationSharing/AnimationSharing.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "BlankPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/BlankPlugin/BlankPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CLionSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/CLionSourceCodeAccess/CLionSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CodeLiteSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/CodeLiteSourceCodeAccess/CodeLiteSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ConcertSharedSlate",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertApp/DisasterRecoveryClient/DisasterRecoveryClient.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MultiUserTakes",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertApp/MultiUserClient/MultiUserClient.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ConcertSyncServer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertApp/MultiUserServer/MultiUserServer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ConcertTransport",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertMain/ConcertMain.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ConcertMain",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertSync/ConcertSyncClient/ConcertSyncClient.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SQLiteCore",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertSync/ConcertSyncCore/ConcertSyncCore.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ConcertSyncCore",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/Concert/ConcertSync/ConcertSyncServer/ConcertSyncServer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "DumpGPUServices",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/DumpGPUServices/DumpGPUServices.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GitSourceControl",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/GitSourceControl/GitSourceControl.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "KDevelopSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/KDevelopSourceCodeAccess/KDevelopSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "N10XSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/N10XSourceCodeAccess/N10XSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "NullSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/NullSourceCodeAccess/NullSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OneSkyLocalizationService",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/OneSkyLocalizationService/OneSkyLocalizationService.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PerforceSourceControl",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/PerforceSourceControl/PerforceSourceControl.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PixWinPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/PixWinPlugin/PixWinPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PlasticSourceControl",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/PlasticSourceControl/PlasticSourceControl.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PluginUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/PluginUtils/PluginUtils.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PropertyAccessEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/PropertyAccessNode/PropertyAccessNode.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "RenderDocPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/RenderDocPlugin/RenderDocPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "RiderSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/RiderSourceCodeAccess/RiderSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "SubversionSourceControl",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/SubversionSourceControl/SubversionSourceControl.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "TextureFormatOodle",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/TextureFormatOodle/TextureFormatOodle.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "TraceDataFiltering",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/TraceDataFiltering/TraceDataFilters.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GameplayInsights",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/TraceSourceFiltering/TraceSourceFilters.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "UObjectPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/UObjectPlugin/UObjectPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "VisualStudioCodeSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/VisualStudioCodeSourceCodeAccess/VisualStudioCodeSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/VisualStudioSourceCodeAccess/VisualStudioSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "XcodeGPUDebuggerPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/XcodeGPUDebuggerPlugin/XcodeGPUDebuggerPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "XCodeSourceCodeAccess",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Developer/XCodeSourceCodeAccess/XCodeSourceCodeAccess.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AssetManagerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/AssetManagerEditor/AssetManagerEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DataValidation",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/AssetReferenceRestrictions/AssetReferenceRestrictions.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "BlueprintHeaderView",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/BlueprintHeaderView/BlueprintHeaderView.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "BlueprintMaterialTextureNodes",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/BlueprintMaterialTextureNodes/BlueprintMaterialTextureNodes.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ChangelistReview",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ChangelistReview/ChangelistReview.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ContentBrowserAssetDataSource",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ContentBrowser/ContentBrowserAliasDataSoure/ContentBrowserAliasDataSource.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ContentBrowserAssetDataSource",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ContentBrowser/ContentBrowserAssetDataSource/ContentBrowserAssetDataSource.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ContentBrowserClassDataSource",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ContentBrowser/ContentBrowserClassDataSource/ContentBrowserClassDataSource.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ContentBrowserFileDataSource",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ContentBrowser/ContentBrowserFileDataSource/ContentBrowserFileDataSource.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CryptoKeysOpenSSL",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/CryptoKeys/CryptoKeys.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CurveEditorTools",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/CurveEditorTools/CurveEditorTools.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "DataValidation",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/DataValidation/DataValidation.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "UdpMessaging",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/DisplayClusterLaunch/DisplayClusterLaunch.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "EditorDebugTools",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/EditorDebugTools/EditorDebugTools.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EditorPerformanceModule",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/EditorPerformanceModule/EditorPerformanceModule.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EditorScriptingUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/EditorScriptingUtilities/EditorScriptingUtilities.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "EngineAssetDefinitions",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/EngineAssetDefinitions/EngineAssetDefinitions.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "FacialAnimationEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/FacialAnimation/FacialAnimation.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GameplayTagsEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/GameplayTagsEditor/GameplayTagsEditor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "TextureAlignMode",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/GeometryMode/GeometryMode.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "IntroTutorials",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/GuidedTutorials/GuidedTutorials.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LiveUpdateForSlate",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/LiveUpdateForSlate/LiveUpdateForSlate.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ContentBrowserFileDataSource",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/Localization/PortableObjectFileDataSource/PortableObjectFileDataSource.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MacGraphicsSwitching",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/MacGraphicsSwitching/MacGraphicsSwitching.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MobileLauncherProfileWizard",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/MobileLauncherProfileWizard/MobileLauncherProfileWizard.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ToolPresets",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ModelingToolsEditorMode/ModelingToolsEditorMode.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ObjectMixer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ObjectMixer/LightMixer/LightMixer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ObjectMixerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/ObjectMixer/ObjectMixer/ObjectMixer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "SpeedTreeImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/SpeedTreeImporter/SpeedTreeImporter.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "StylusInput",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/StylusInput/StylusInput.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MeshModelingToolsetExp",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/UVEditor/UVEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AudioWidgets",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/WaveformEditor/WaveformEditor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "WorldPartitionHLODUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Editor/WorldPartitionHLODUtilities/WorldPartitionHLODUtilities.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "InputEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/EnhancedInput/EnhancedInput.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AxFImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/AxFImporter/AxFImporter.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "VariantManagerContent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/DataprepEditor/DataprepEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DatasmithImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/DatasmithC4DImporter/DatasmithC4DImporter.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GeometryProcessing",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/DatasmithCADImporter/DatasmithCADImporter.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "VariantManagerContent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/DatasmithContent/DatasmithContent.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DatasmithContent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/DatasmithFBXImporter/DatasmithFBXImporter.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ChaosClothAsset",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/DatasmithImporter/DatasmithImporter.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LidarPointCloudEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/LidarPointCloud/LidarPointCloud.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MDLImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/MDLImporter/MDLImporter.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "VariantManagerContentEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Enterprise/VariantManagerContent/VariantManagerContent.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GameplayAbilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AbilitySystemGameFeatureActions/AbilitySystemGameFeatureActions.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ActorPalette",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ActorPalette/ActorPalette.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "IKRig",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Animation/ContextualAnimation/ContextualAnimation.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CurveExpressionEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Animation/CurveExpression/CurveExpression.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PoseSearch",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Animation/MotionTrajectory/MotionTrajectory.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DeformerGraph",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Animation/Optimus/Optimus.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ModelingToolsEditorMode",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Animation/SkeletalMeshModelingTools/SkeletalMeshModelingTools.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PythonScriptPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AnimNext/AnimNext.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AnimToTextureEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AnimToTexture/AnimToTexture.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AppleImageUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AppleVision/AppleVision.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PointCloud",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AR/PointCloud/PointCloud.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AssetPlacementEdMode",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AssetPlacementEdMode/AssetPlacementEdMode.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AutomationUtilsEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AutomationUtils/AutomationUtils.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AVCodecsCore",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AVCodecs/AMFCodecs/AMFCodecs.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AVCodecsCoreRHI",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/AVCodecs/AVCodecsCore/AVCodecsCore.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "BackChannel",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/BackChannel/BackChannel.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "BlueprintSnapNodes",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/BlueprintSnapNodes/BlueprintSnapNodes.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "BlueprintStats",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/BlueprintStats/BlueprintStats.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Takes",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosCaching/ChaosCaching.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ChaosCaching",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosCloth/ChaosCloth.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DatasmithCloTranslator",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosClothAssetEditor/ChaosClothAssetEditor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ChaosCloth",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosClothEditor/ChaosClothEditor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "Fracture",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosEditor/ChaosEditor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ChaosSolverPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosNiagara/ChaosNiagara.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ChaosSolverEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosSolverPlugin/ChaosSolverPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ChaosUserDataPT",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosUserDataPT/ChaosUserDataPT.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ChaosVehiclesEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ChaosVehiclesPlugin/ChaosVehiclesPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CharacterAI",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CharacterAI/CharacterAI.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MeshModelingToolset",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CharacterFXEditor/BaseCharacterFXEditor/BaseCharacterFXEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MeshModelingToolsetExp",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CharacterFXEditor/ExampleCharacterFXEditor/ExampleCharacterFXEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LevelSequenceEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CineCameraRigs/CineCameraRigs.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpenColorIO",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CineCameraSceneCapture/CineCameraSceneCapture.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MovieRenderPipeline",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CinematicPrestreaming/CinematicPrestreaming.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CodeEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CodeEditor/CodeEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CodeView",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CodeView/CodeView.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "nDisplayModularFeatures",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ColorCorrectRegions/ColorCorrectRegions.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GameFeatures",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/CommonConversation/CommonConversation.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ControlFlows",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ControlFlows/ControlFlows.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GeometryProcessing",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Dataflow/Dataflow.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DefaultInstallBundleManager",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/DefaultInstallBundleManager/DefaultInstallBundleManager.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ProxyLODPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Enterprise/DataprepGeometryOperations/DataprepGeometryOperations.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Interchange",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Enterprise/DatasmithInterchange/DatasmithInterchange.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "FieldSystemEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/FieldSystemPlugin/FieldSystemPlugin.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PlanarCut",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Fracture/Fracture.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PluginUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/GameFeatures/GameFeatures.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GameplayGraph",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/GameplayGraph/GameplayGraph.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Gauntlet",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Gauntlet/Gauntlet.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Fracture",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/GeometryCollectionPlugin/GeometryCollectionPlugin.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LightGizmos",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/GizmoEdMode/GizmoEdMode.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GizmoEdMode",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/GizmoFramework/GizmoFramework.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GPULightmassEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/GPULightmass/GPULightmass.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "HairStrands",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/HairModelingToolset/HairModelingToolset.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ImagePlateEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ImagePlate/ImagePlate.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Iris",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Iris/Iris.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PlatformCrypto",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/JWT/JWT.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LandmassEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Landmass/Landmass.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LandscapePatchEditorOnly",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/LandscapePatch/LandscapePatch.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PythonFoundationPackages",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/LearningAgents/LearningAgents.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "StructUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/LocalizableMessage/LocalizableMessage.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ModularGameplay",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ModularGameplay/ModularGameplay.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MotoSynth",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/MotorSimOutputMotoSynth/MotorSimOutputMotoSynth.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MotoSynthEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/MotoSynth/MotoSynth.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NaniteDisplacedMeshEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/NaniteDisplacedMesh/NaniteDisplacedMesh.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NNEEditorTools",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/NNE/NNE.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NNERuntimeORTCpu",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/NNERuntimeORTGpu/NNERuntimeORTGpu.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "OpenImageDenoise",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/OpenImageDenoise/OpenImageDenoise.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OptiXDenoise",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/OptiXDenoise/OptiXDenoise.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PanoramicCapture",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PanoramicCapture/PanoramicCapture.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AlembicImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PCGExternalDataInterop/PCGExternalDataInterop.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GeometryScripting",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PCGGeometryScriptInterop/PCGGeometryScriptInterop.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PhysicsControlEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PhysicsControl/PhysicsControl.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "TextureMediaPlayer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PixelStreamingPlayer/PixelStreamingPlayer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PlatformCryptoOpenSSL",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PlatformCrypto/PlatformCrypto.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PluginReferenceViewer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PluginAudit/PluginAudit.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PluginBrowser",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/PluginReferenceViewer/PluginReferenceViewer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ProxyLODMeshReduction",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ProxyLODPlugin/ProxyLODPlugin.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MsQuic",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/QuicMessaging/QuicMessaging.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RawInput",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/RawInput/RawInput.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "XRBase",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/RemoteSession/RemoteSession.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SampleToolsEditorMode",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/SampleToolsEditorMode/SampleToolsEditorMode.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "TextToSpeech",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ScreenReader/ScreenReader.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EditorScriptableToolsFramework",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ScriptableToolsFramework/ScriptableToolsFramework.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "SkeletalMeshReduction",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/SkeletalReduction/SkeletalReduction.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ScreenReader",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/SlateScreenReader/SlateScreenReader.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PropertyAccessEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/StructUtils/StructUtils.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ElectraUtil",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/TextureMediaPlayer/TextureMediaPlayer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ToolPresetEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/ToolPresets/ToolPresets.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SlateScripting",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/UserToolBoxCore/UserToolBoxCore.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CineCameraRigs",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/VirtualCamera/VirtualCamera.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PixelCapture",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/VirtualCameraCore/VirtualCameraCore.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "VirtualHeightfieldMeshEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/VirtualHeightfieldMesh/VirtualHeightfieldMesh.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GameplayTagsEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/VirtualProduction/VPRoles/VPRoles.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "VPSettings",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/VirtualProduction/VPSettings/VPSettings.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpenXR",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/VirtualScouting/VirtualScouting.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Landmass",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Volumetrics/Volumetrics.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Water",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/WaterExtras/WaterExtras.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WaveFunctionCollapse",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/WaveFunctionCollapse/WaveFunctionCollapse.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WebSocketNetworking",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/Web/WebAPI/WebAPI.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WidgetEditorToolPalette",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/WidgetEditorToolPalette/WidgetEditorToolPalette.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MultiUserClient",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/XRCreativeFramework/XRCreativeFramework.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "Fab",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Fab/Fab.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "FastBuildController",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/FastBuildController/FastBuildController.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Niagara",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/FX/ExampleCustomDataInterface/ExampleCustomDataInterface.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "PythonScriptPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/FX/Niagara/Niagara.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GeometryCache",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Importers/AlembicImporter/AlembicImporter.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "USDImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Importers/USDMultiUser/USDMultiUser.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "Interchange",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Interchange/Editor/InterchangeEditor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "VariantManager",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Interchange/Runtime/Interchange.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "JsonBlueprintGraph",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/JsonBlueprintUtilities/JsonBlueprintUtilities.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LightWeightInstancesEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/LightWeightInstancesEditor/LightWeightInstancesEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MediaIOFramework",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/AjaMedia/AjaMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AndroidCameraFactory",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/AndroidCamera/AndroidCamera.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AndroidMediaFactory",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/AndroidMedia/AndroidMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ElectraCodecs",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/AppleProResDecoderElectra/AppleProResDecoderElectra.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LinearTimecode",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/AudioCaptureTimecodeProvider/AudioCaptureTimecodeProvider.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AvfMediaCapture",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/AvfMedia/AvfMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "BinkMediaPlayerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/BinkMedia/BinkMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ElectraCDM",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/ElectraCDM/ElectraCDM.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpusDecoderElectra",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/ElectraPlayer/ElectraPlayer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ElectraHTTPStream",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/ElectraUtil/ElectraUtil.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WmfMedia",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/HAPMedia/HAPMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EncoderNVENC",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/HardwareEncoders/HardwareEncoders.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MediaPlayerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/ImgMedia/ImgMedia.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ImgMedia",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/MediaCompositing/MediaCompositing.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MediaMovieStreamer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/MediaMovieStreamer/MediaMovieStreamer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MeshModelingToolset",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/MediaPlate/MediaPlate.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MediaPlayerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/MediaPlayerEditor/MediaPlayerEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MfMediaFactory",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/MfMedia/MfMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PixelCaptureShaders",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/PixelCapture/PixelCapture.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WebMMediaFactory",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/WebMMedia/WebMMedia.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "WmfMediaFactory",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Media/WmfMedia/WmfMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MemoryUsageQueries",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MemoryUsageQueries/MemoryUsageQueries.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "InterchangeEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MeshPainting/MeshPainting.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MessagingDebugger",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Messaging/MessagingDebugger/MessagingDebugger.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "TcpMessaging",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Messaging/TcpMessaging/TcpMessaging.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "UdpMessaging",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Messaging/UdpMessaging/UdpMessaging.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ActorSequenceEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MovieScene/ActorSequence/ActorSequence.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CustomizableSequencerTracksEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MovieScene/CustomizableSequencerTracks/CustomizableSequencerTracks.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MovieSceneTextTrackEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MovieScene/MovieSceneTextTrack/MovieSceneTextTrack.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ReplayTracksEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MovieScene/ReplayTracks/ReplayTracks.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SequencerScriptingEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/MovieScene/SequencerScripting/SequencerScripting.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NetcodeUnitTest",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/NetcodeUnitTest/NetcodeUnitTest/NetcodeUnitTest.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AndroidBackgroundService",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/Android/AndroidFetchBackgroundDownload/AndroidFetchBackgroundDownload.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AndroidPermission",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/Android/OnlineSubsystemGooglePlay/OnlineSubsystemGooglePlay.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EOSShared",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/EOSShared/EOSShared.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OnlineSubsystem",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/IOS/OnlineSubsystemIOS/OnlineSubsystemIOS.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "OnlineBase",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineBase/OnlineBase.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OnlineSubsystemUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineFramework/OnlineFramework.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OnlineBase",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineServices/OnlineServices.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SocketSubsystemEOS",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineServicesEOSGS/OnlineServicesEOSGS.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "OnlineSubsystemUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineSubsystemNull/OnlineSubsystemNull.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SteamShared",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineSubsystemSteam/OnlineSubsystemSteam.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OnlineFramework",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineSubsystemTencent/OnlineSubsystemTencent.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "OnlineServices",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/OnlineSubsystemUtils/OnlineSubsystemUtils.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "VoiceChat",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/VoiceChat/VoiceChat/VoiceChat.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WebAuth",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Online/WebAuth/WebAuth.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PerformanceMonitor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Performance/PerformanceMonitor/PerformanceMonitor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "LauncherChunkInstaller",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Portal/LauncherChunkInstaller/LauncherChunkInstaller.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "JsonBlueprintUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Protocols/MQTT/MQTT.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RenderGraphInsights",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/RenderGraphInsights/RenderGraphInsights.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ActorLayerUtilitiesEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ActorLayerUtilities/ActorLayerUtilities.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "IOSTapJoy",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Advertising/IOSTapJoy/IOSTapJoy.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "IOSAdjust",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/Adjust/Adjust.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AnalyticsBlueprintLibrary",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/AnalyticsBlueprintLibrary/AnalyticsBlueprintLibrary.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AnalyticsMulticast",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/AnalyticsMulticast/AnalyticsMulticast.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "FileLogging",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/FileLogging/FileLogging.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "IOSFlurry",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/Flurry/Flurry.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AndroidDeviceProfileSelectorRuntime",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AndroidDeviceProfileSelector/AndroidDeviceProfileSelector.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AndroidFileServerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AndroidFileServer/AndroidFileServer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AndroidMoviePlayer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AndroidMoviePlayer/AndroidMoviePlayer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AnimationBudgetAllocator",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AnimationBudgetAllocator/AnimationBudgetAllocator.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ApexDestructionEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ApexDestruction/ApexDestruction.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AppleImageUtilsBlueprintSupport",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AppleImageUtils/AppleImageUtils.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AppleMoviePlayer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AppleMoviePlayer/AppleMoviePlayer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ARUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AR/AppleAR/AppleARKit/AppleARKit.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AzureSpatialAnchors",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AR/AzureSpatialAnchors/AzureSpatialAnchors.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "GoogleARCore",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AR/AzureSpatialAnchorsForARCore/AzureSpatialAnchorsForARCore.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AppleARKit",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AR/AzureSpatialAnchorsForARKit/AzureSpatialAnchorsForARKit.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ArchVisCharacter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ArchVisCharacter/ArchVisCharacter.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AssetTags",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AssetTags/AssetTags.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AudioCaptureEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AudioCapture/AudioCapture.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WaveTable",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AudioModulation/AudioModulation.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AudioMotorSimStandardComponents",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AudioMotorSim/AudioMotorSim.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AudioSynesthesiaEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AudioSynesthesia/AudioSynesthesia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AudioSynesthesia",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/AudioWidgets/AudioWidgets.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CableComponent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/CableComponent/CableComponent.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ChunkDownloader",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ChunkDownloader/ChunkDownloader.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EnhancedInput",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/CommonUI/CommonUI.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ComputeFrameworkEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ComputeFramework/ComputeFramework.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "CustomMeshComponent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/CustomMeshComponent/CustomMeshComponent.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DatabaseSupport",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Database/ADOSupport/ADOSupport.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ExampleDeviceProfileSelector",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ExampleDeviceProfileSelector/ExampleDeviceProfileSelector.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Firebase",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Firebase/Firebase.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DataRegistry",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GameplayAbilities/GameplayAbilities.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SmartObjects",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GameplayBehaviorSmartObjects/GameplayBehaviorSmartObjects.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NavCorridor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GameplayInteractions/GameplayInteractions.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "Niagara",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GeometryCache/GeometryCache.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DynamicMesh",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GeometryProcessing/GeometryProcessing.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GoogleCloudMessaging",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GoogleCloudMessaging/GoogleCloudMessaging.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "GooglePADEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/GooglePAD/GooglePAD.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "HDRIBackdrop",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/HDRIBackdrop/HDRIBackdrop.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "HTTPChunkInstaller",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/HTTPChunkInstaller/HTTPChunkInstaller.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "InputDebuggingEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/InputDebugging/InputDebugging.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "IOSDeviceProfileSelector",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/IOSDeviceProfileSelector/IOSDeviceProfileSelector.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "IOSReplayKit",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/IOSReplayKit/IOSReplayKit.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "LinuxDeviceProfileSelector",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/LinuxDeviceProfileSelector/LinuxDeviceProfileSelector.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "nDisplay",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/LiveLinkOvernDisplay/LiveLinkOverNDisplay.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AndroidPermission",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/LocationServicesAndroidImpl/LocationServicesAndroidImpl.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "LocationServicesBPLibrary",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/LocationServicesBPLibrary/LocationServicesBPLibrary.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LocationServicesBPLibrary",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/LocationServicesIOSImpl/LocationServicesIOSImpl.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DummyMeshReconstructor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/MeshReconstruction/DummyMeshReconstructor/DummyMeshReconstructor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "WaveTable",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Metasound/Metasound.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MicrosoftSpatialSound",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/MicrosoftSpatialAudio/MicroSoftSpatialSound.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MIDIDevice",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/MIDIDevice/MIDIDevice.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "MobileFSR",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/MobileFSR/MobileFSR.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MobilePatchingUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/MobilePatchingUtils/MobilePatchingUtils.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ModelViewViewModelDebuggerEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ModelViewViewModel/ModelViewViewModel.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "MsQuicRuntime",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/MsQuic/MsQuic.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DisplayClusterLightCardExtender",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/nDisplayModularFeatures/nDisplayModularFeatures.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NetworkPrediction",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/NetworkPrediction/NetworkPrediction.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "NetworkPredictionInsights",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/NetworkPredictionInsights/NetworkPredictionInsights.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CommonUI",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Nvidia/GeForceNOWWrapper/GeForceNOWWrapper.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "Reflex",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Nvidia/Reflex/Reflex.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OculusAudioEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Oculus/OculusAudio/OculusAudio.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpenCVHelper",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/OpenCV/OpenCV.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OptionalMobileFeaturesBPLibrary",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/OptionalMobileFeaturesBPLibrary/OptionalMobileFeaturesBPLibrary.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OSC",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/OSC/OSC.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DTLSHandlerComponent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/PacketHandlers/DTLSHandlerComponent/DTLSHandlerComponent.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "PreLoadScreenMoviePlayer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/PreLoadScreenMoviePlayer/PreLoadScreenMoviePlayer.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ProceduralMeshComponentEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ProceduralMeshComponent/ProceduralMeshComponent.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RenderTrace",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/RenderTrace/RenderTrace.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ReplicationGraph",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ReplicationGraph/ReplicationGraph.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ReplicationSystemTestPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ReplicationSystemTestPlugin/ReplicationSystemTestPlugin.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "ProceduralMeshComponent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ResonanceAudio/ResonanceAudio.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "RigVMEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/RigVM/RigVM.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SignificanceManager",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SignificanceManager/SignificanceManager.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SkeletalMerging",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SkeletalMerging/SkeletalMerging.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WorldConditions",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SmartObjects/SmartObjects.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SoundCueTemplatesEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SoundCueTemplates/SoundCueTemplates.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "SoundFields",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SoundFields/SoundFields.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SoundModImporter",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SoundMod/SoundMod.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SoundscapeEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Soundscape/Soundscape.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SoundUtilitiesEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SoundUtilities/SoundUtilities.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SpatializationEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Spatialization/Spatialization.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SteamAudio",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Steam/SteamAudio/SteamAudio.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SunPosition",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/SunPosition/SunPosition.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "AudioSynesthesia",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Synthesis/Synthesis.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WarpUtils",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WarpUtils/WarpUtils.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WaveTableEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WaveTable/WaveTable.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WebBrowserNativeProxy",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WebBrowserNativeProxy/WebBrowserNativeProxy.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WebBrowserWidget",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WebBrowserWidget/WebBrowserWidget.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "WebMMedia",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WebMMoviePlayer/WebMMoviePlayer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "WinDualShock",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Windows/WinDualShock/WinDualShock.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "WindowsDeviceProfileSelector",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WindowsDeviceProfileSelector/WindowsDeviceProfileSelector.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "WindowsMoviePlayer",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/WindowsMoviePlayer/WindowsMoviePlayer.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ProceduralMeshComponent",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/XR/XRVisualization/XRVisualization.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "XRBaseEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/XRBase/XRBase.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ZoneGraphDebug",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/ZoneGraph/ZoneGraph.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ScriptEditorPlugin",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/ScriptPlugin/ScriptPlugin.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SlateInsights",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Slate/SlateInsights/SlateInsights.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "SlateScriptingCommands",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Slate/SlateScripting/SlateScripting.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "AutomationDriverTests",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/AutomationDriverTests/AutomationDriverTests.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CQTestTests",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/CQTest/CQTest.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "EditorTests",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/EditorTests/EditorTests.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "FbxAutomationTestBuilder",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/FbxAutomationTestBuilder/FbxAutomationTestBuilder.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "FunctionalTestingEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/FunctionalTestingEditor/FunctionalTestingEditor.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RHITests",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/RHITests/RHITests.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RuntimeTests",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/RuntimeTests/RuntimeTests.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "TestFramework",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/TestFramework/TestFramework.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "TestSamples",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Tests/TestSamples/TestSamples.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "EditorTraceUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/TraceUtilities/TraceUtilities.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "OpenCVLensDistortion",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/CameraCalibration/CameraCalibration.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CompositePlane",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/CompositePlane/CompositePlane.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DataChartsEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/DataCharts/DataCharts.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DMXEngine",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/DMX/DMXControlConsole/DMXControlConsole.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DMXFixtureActorInterface",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/DMX/DMXModularFeatures/DMXModularFeatures.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "DMXProtocolBlueprintGraph",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/DMX/DMXProtocol/DMXProtocol.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "ICVFXTesting",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/ICVFX/ICVFX.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "nDisplaySupport",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/LevelSnapshots/LevelSnapshots.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "CameraCalibrationCore",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/LiveLinkCamera/LiveLinkCamera.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LiveLinkMasterLockitEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/LiveLinkMasterLockit/LiveLinkMasterLockit.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "LiveLinkPrestonMDREditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/LiveLinkPrestonMDR/LiveLinkPrestonMDR.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RemoteControlInterception",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/RemoteControlInterception/RemoteControlInterception.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RemoteControl",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/RemoteControlWebInterface/RemoteControlWebInterface.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RivermaxCore",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/Rivermax/RivermaxMedia/RivermaxMedia.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "RivermaxMedia",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/Rivermax/RivermaxSync/RivermaxSync.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "VirtualProductionUtilities",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/StageMonitoring/StageMonitoring.uplugin"
+    },
+    {
+        "IsEnabled": false,
+        "PluginName": "TimedDataMonitorEditor",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/VirtualProduction/TimedDataMonitor/TimedDataMonitor.uplugin"
+    },
+    {
+        "IsEnabled": true,
+        "PluginName": "XGEController",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/XGEController/XGEController.uplugin"
+    }
+]

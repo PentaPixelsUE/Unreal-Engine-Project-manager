@@ -71,6 +71,7 @@ include CMakeFiles/UnrealProjectSetup.dir/flags.make
 
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.qrc
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Info.json
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/Saveicon.png
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.png
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /usr/lib/qt5/bin/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic RCC for QtDesign_Resources/UE5Logo.qrc"

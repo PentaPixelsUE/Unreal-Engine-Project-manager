@@ -45,6 +45,10 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QFrame *Plugins_Frame;
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *Search_Plugin_Lbl;
+    QLineEdit *Plugins_Filter;
+    QSpacerItem *horizontalSpacer_8;
     QHBoxLayout *PLugins_Lables_HBOX;
     QLabel *Plugins_Available_Lbl;
     QSpacerItem *horizontalSpacer_4;
@@ -57,9 +61,10 @@ public:
     QListView *Disabled_Plugins_List;
     QVBoxLayout *Plugins_In_Out_Button_VBOX;
     QSpacerItem *verticalSpacer_10;
-    QPushButton *Enable_Global_Plugin_Btn;
+    QPushButton *Toggle_Global_Plugin_Btn;
     QSpacerItem *verticalSpacer_2;
     QPushButton *Enable_Project_Plugins_Button;
+    QPushButton *Disable_Plugins_Btn;
     QSpacerItem *verticalSpacer_9;
     QVBoxLayout *verticalLayout_3;
     QScrollArea *Enabled_Plugins_Scroll_Area;
@@ -71,10 +76,6 @@ public:
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *verticalLayout_4;
     QListView *Project_Plugins_List;
-    QHBoxLayout *horizontalLayout_4;
-    QLabel *Search_Plugin_Lbl;
-    QLineEdit *Plugins_Filter;
-    QPushButton *Disable_Plugins_Btn;
     QWidget *Project_Structure_Tab;
     QHBoxLayout *horizontalLayout_5;
     QScrollArea *scrollArea;
@@ -102,6 +103,7 @@ public:
     QVBoxLayout *Build_SetupButtons_VBOX;
     QSpacerItem *verticalSpacer_5;
     QPushButton *Project_Path_Browse_Btn;
+    QHBoxLayout *horizontalLayout_8;
     QPushButton *UE_Source_Path_Browse_Btn;
     QPushButton *Generate_Project_Files_Btn;
     QSpacerItem *verticalSpacer_4;
@@ -121,8 +123,8 @@ public:
     QRadioButton *Game_Mode_Tick;
     QSpacerItem *horizontalSpacer;
     QCheckBox *Open_Sublime_CheckBox;
-    QPushButton *Run_Btn;
     QPushButton *Build_Btn;
+    QPushButton *Run_Btn;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *Standalone_Warning_HBOX;
     QSpacerItem *horizontalSpacer_3;
@@ -200,6 +202,44 @@ public:
         Plugins_Frame->setFrameShadow(QFrame::Raised);
         verticalLayout = new QVBoxLayout(Plugins_Frame);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(-1, -1, -1, 0);
+        Search_Plugin_Lbl = new QLabel(Plugins_Frame);
+        Search_Plugin_Lbl->setObjectName(QString::fromUtf8("Search_Plugin_Lbl"));
+        Search_Plugin_Lbl->setMinimumSize(QSize(150, 34));
+        Search_Plugin_Lbl->setStyleSheet(QString::fromUtf8("/* Label */\n"
+"QLabel {\n"
+"  color:rgb(214, 187, 152);/* Electric blue text */\n"
+"  font-family: 'Roboto', sans-serif; /* Modern font */\n"
+"  font-size: 17px;\n"
+"  font-weight: normal;\n"
+"  padding: 5px;\n"
+"}"));
+
+        horizontalLayout_4->addWidget(Search_Plugin_Lbl);
+
+        Plugins_Filter = new QLineEdit(Plugins_Frame);
+        Plugins_Filter->setObjectName(QString::fromUtf8("Plugins_Filter"));
+        Plugins_Filter->setMinimumSize(QSize(0, 34));
+        Plugins_Filter->setAutoFillBackground(false);
+        Plugins_Filter->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    background-color: #333333;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 3px;\n"
+"}"));
+
+        horizontalLayout_4->addWidget(Plugins_Filter);
+
+        horizontalSpacer_8 = new QSpacerItem(592, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_8);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
+
         PLugins_Lables_HBOX = new QHBoxLayout();
         PLugins_Lables_HBOX->setObjectName(QString::fromUtf8("PLugins_Lables_HBOX"));
         PLugins_Lables_HBOX->setContentsMargins(-1, -1, -1, 0);
@@ -249,7 +289,7 @@ public:
         Disabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Disabled_Pluginsl_Area = new QWidget();
         Disabled_Pluginsl_Area->setObjectName(QString::fromUtf8("Disabled_Pluginsl_Area"));
-        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 416, 422));
+        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 404, 461));
         gridLayout_2 = new QGridLayout(Disabled_Pluginsl_Area);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         Disabled_Plugins_List = new QListView(Disabled_Pluginsl_Area);
@@ -298,9 +338,9 @@ public:
 
         Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_10);
 
-        Enable_Global_Plugin_Btn = new QPushButton(Plugins_Frame);
-        Enable_Global_Plugin_Btn->setObjectName(QString::fromUtf8("Enable_Global_Plugin_Btn"));
-        Enable_Global_Plugin_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
+        Toggle_Global_Plugin_Btn = new QPushButton(Plugins_Frame);
+        Toggle_Global_Plugin_Btn->setObjectName(QString::fromUtf8("Toggle_Global_Plugin_Btn"));
+        Toggle_Global_Plugin_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
 "QPushButton {\n"
 "    background-color: #2a2a2a;\n"
 "    color: #ffffff;\n"
@@ -327,7 +367,7 @@ public:
 "}\n"
 ""));
 
-        Plugins_In_Out_Button_VBOX->addWidget(Enable_Global_Plugin_Btn);
+        Plugins_In_Out_Button_VBOX->addWidget(Toggle_Global_Plugin_Btn);
 
         verticalSpacer_2 = new QSpacerItem(20, 199, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
@@ -364,6 +404,38 @@ public:
 
         Plugins_In_Out_Button_VBOX->addWidget(Enable_Project_Plugins_Button);
 
+        Disable_Plugins_Btn = new QPushButton(Plugins_Frame);
+        Disable_Plugins_Btn->setObjectName(QString::fromUtf8("Disable_Plugins_Btn"));
+        Disable_Plugins_Btn->setMinimumSize(QSize(146, 34));
+        Disable_Plugins_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: rgb(214, 187, 152);\n"
+"  border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color:  rgb(240, 125, 126);\n"
+"  border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"  background-color: #52565a;\n"
+"  border-color: #64686c;\n"
+"  color: #888888;\n"
+"}\n"
+""));
+
+        Plugins_In_Out_Button_VBOX->addWidget(Disable_Plugins_Btn);
+
         verticalSpacer_9 = new QSpacerItem(20, 45, QSizePolicy::Minimum, QSizePolicy::Fixed);
 
         Plugins_In_Out_Button_VBOX->addItem(verticalSpacer_9);
@@ -379,7 +451,7 @@ public:
         Enabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Enabled_Plugins_Area = new QWidget();
         Enabled_Plugins_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Area"));
-        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 413, 187));
+        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 402, 206));
         gridLayout = new QGridLayout(Enabled_Plugins_Area);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         Enabled_Plugins_List = new QListView(Enabled_Plugins_Area);
@@ -441,7 +513,7 @@ public:
         Project_Plugins_Scroll_Area->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 413, 187));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 402, 207));
         verticalLayout_4 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         Project_Plugins_List = new QListView(scrollAreaWidgetContents_2);
@@ -487,72 +559,6 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(-1, -1, -1, 0);
-        Search_Plugin_Lbl = new QLabel(Plugins_Frame);
-        Search_Plugin_Lbl->setObjectName(QString::fromUtf8("Search_Plugin_Lbl"));
-        Search_Plugin_Lbl->setMinimumSize(QSize(150, 34));
-        Search_Plugin_Lbl->setStyleSheet(QString::fromUtf8("/* Label */\n"
-"QLabel {\n"
-"  color:rgb(214, 187, 152);/* Electric blue text */\n"
-"  font-family: 'Roboto', sans-serif; /* Modern font */\n"
-"  font-size: 17px;\n"
-"  font-weight: normal;\n"
-"  padding: 5px;\n"
-"}"));
-
-        horizontalLayout_4->addWidget(Search_Plugin_Lbl);
-
-        Plugins_Filter = new QLineEdit(Plugins_Frame);
-        Plugins_Filter->setObjectName(QString::fromUtf8("Plugins_Filter"));
-        Plugins_Filter->setMinimumSize(QSize(0, 34));
-        Plugins_Filter->setAutoFillBackground(false);
-        Plugins_Filter->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
-"    background-color: #333333;\n"
-"    color: #ffffff;\n"
-"    border: 1px solid #ffffff;\n"
-"    border-radius: 5px;\n"
-"    padding: 3px;\n"
-"}"));
-
-        horizontalLayout_4->addWidget(Plugins_Filter);
-
-        Disable_Plugins_Btn = new QPushButton(Plugins_Frame);
-        Disable_Plugins_Btn->setObjectName(QString::fromUtf8("Disable_Plugins_Btn"));
-        Disable_Plugins_Btn->setMinimumSize(QSize(146, 34));
-        Disable_Plugins_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
-"QPushButton {\n"
-"    background-color: #2a2a2a;\n"
-"    color: #ffffff;\n"
-"    border: 1px solid #ffffff;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"  background-color: rgb(214, 187, 152);\n"
-"  border-color: #585c62;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"  background-color:  rgb(240, 125, 126);\n"
-"  border-color: #72767a;\n"
-"}\n"
-"\n"
-"QPushButton:disabled {\n"
-"  background-color: #52565a;\n"
-"  border-color: #64686c;\n"
-"  color: #888888;\n"
-"}\n"
-""));
-
-        horizontalLayout_4->addWidget(Disable_Plugins_Btn);
-
-
-        verticalLayout->addLayout(horizontalLayout_4);
-
 
         horizontalLayout_3->addWidget(Plugins_Frame);
 
@@ -567,7 +573,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1004, 524));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1004, 563));
         horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         treeWidget = new QTreeWidget(scrollAreaWidgetContents);
@@ -604,6 +610,7 @@ public:
 
         Project_Path_Label = new QLabel(PathsFrame);
         Project_Path_Label->setObjectName(QString::fromUtf8("Project_Path_Label"));
+        Project_Path_Label->setMinimumSize(QSize(150, 34));
         Project_Path_Label->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
 "  color:rgb(214, 187, 152);/* Electric blue text */\n"
@@ -631,6 +638,7 @@ public:
 
         Project_Name_Label = new QLabel(PathsFrame);
         Project_Name_Label->setObjectName(QString::fromUtf8("Project_Name_Label"));
+        Project_Name_Label->setMinimumSize(QSize(0, 34));
         Project_Name_Label->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
 "  color:rgb(214, 187, 152);/* Electric blue text */\n"
@@ -775,6 +783,9 @@ public:
 
         Build_SetupButtons_VBOX->addWidget(Project_Path_Browse_Btn);
 
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        horizontalLayout_8->setContentsMargins(-1, -1, 0, 0);
         UE_Source_Path_Browse_Btn = new QPushButton(PathsFrame);
         UE_Source_Path_Browse_Btn->setObjectName(QString::fromUtf8("UE_Source_Path_Browse_Btn"));
         sizePolicy1.setHeightForWidth(UE_Source_Path_Browse_Btn->sizePolicy().hasHeightForWidth());
@@ -810,7 +821,10 @@ public:
 ""));
         UE_Source_Path_Browse_Btn->setIconSize(QSize(16, 18));
 
-        Build_SetupButtons_VBOX->addWidget(UE_Source_Path_Browse_Btn);
+        horizontalLayout_8->addWidget(UE_Source_Path_Browse_Btn);
+
+
+        Build_SetupButtons_VBOX->addLayout(horizontalLayout_8);
 
         Generate_Project_Files_Btn = new QPushButton(PathsFrame);
         Generate_Project_Files_Btn->setObjectName(QString::fromUtf8("Generate_Project_Files_Btn"));
@@ -860,13 +874,15 @@ public:
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         horizontalLayout_7->setContentsMargins(-1, -1, -1, 0);
-        horizontalSpacer_7 = new QSpacerItem(251, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+        horizontalSpacer_7 = new QSpacerItem(300, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_7->addItem(horizontalSpacer_7);
 
         UE5_Logo_Lbl = new QLabel(PathsFrame);
         UE5_Logo_Lbl->setObjectName(QString::fromUtf8("UE5_Logo_Lbl"));
-        UE5_Logo_Lbl->setMinimumSize(QSize(1, 73));
+        UE5_Logo_Lbl->setMinimumSize(QSize(1, 34));
+        UE5_Logo_Lbl->setMaximumSize(QSize(70, 64));
+        UE5_Logo_Lbl->setPixmap(QPixmap(QString::fromUtf8(":/UE5Logo/UE5Logo.png")));
         UE5_Logo_Lbl->setScaledContents(true);
         UE5_Logo_Lbl->setAlignment(Qt::AlignCenter);
         UE5_Logo_Lbl->setWordWrap(false);
@@ -889,7 +905,7 @@ public:
 
         horizontalLayout_7->addWidget(label_3);
 
-        horizontalSpacer_6 = new QSpacerItem(606, 20, QSizePolicy::Preferred, QSizePolicy::Minimum);
+        horizontalSpacer_6 = new QSpacerItem(300, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_7->addItem(horizontalSpacer_6);
 
@@ -971,6 +987,7 @@ public:
 "    border: 1px solid rgb(214, 187, 152); /* Border color for disabled state */\n"
 "}\n"
 ""));
+        Editor_Mode_Tick->setChecked(true);
 
         Modes_Build_Run_HBOX->addWidget(Editor_Mode_Tick);
 
@@ -1111,38 +1128,6 @@ public:
 
         Modes_Build_Run_HBOX->addWidget(Open_Sublime_CheckBox);
 
-        Run_Btn = new QPushButton(Build_Setup_Frame);
-        Run_Btn->setObjectName(QString::fromUtf8("Run_Btn"));
-        Run_Btn->setMinimumSize(QSize(146, 34));
-        Run_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
-"QPushButton {\n"
-"    background-color: #2a2a2a;\n"
-"    color: #ffffff;\n"
-"    border: 1px solid #ffffff;\n"
-"    border-radius: 5px;\n"
-"    padding: 5px;\n"
-"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"  background-color: rgb(214, 187, 152);\n"
-"  border-color: #585c62;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"  background-color:  rgb(240, 125, 126);\n"
-"  border-color: #72767a;\n"
-"}\n"
-"\n"
-"QPushButton:disabled {\n"
-"  background-color: #52565a;\n"
-"  border-color: #64686c;\n"
-"  color: #888888;\n"
-"}\n"
-""));
-
-        Modes_Build_Run_HBOX->addWidget(Run_Btn);
-
         Build_Btn = new QPushButton(Build_Setup_Frame);
         Build_Btn->setObjectName(QString::fromUtf8("Build_Btn"));
         Build_Btn->setMinimumSize(QSize(146, 34));
@@ -1174,6 +1159,38 @@ public:
 ""));
 
         Modes_Build_Run_HBOX->addWidget(Build_Btn);
+
+        Run_Btn = new QPushButton(Build_Setup_Frame);
+        Run_Btn->setObjectName(QString::fromUtf8("Run_Btn"));
+        Run_Btn->setMinimumSize(QSize(146, 34));
+        Run_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: rgb(214, 187, 152);\n"
+"  border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color:  rgb(240, 125, 126);\n"
+"  border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"  background-color: #52565a;\n"
+"  border-color: #64686c;\n"
+"  color: #888888;\n"
+"}\n"
+""));
+
+        Modes_Build_Run_HBOX->addWidget(Run_Btn);
 
 
         Build_Setup_VBOX->addLayout(Modes_Build_Run_HBOX);
@@ -1234,17 +1251,17 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        Plugins_Available_Lbl->setText(QCoreApplication::translate("MainWindow", "Disabled Plugins", nullptr));
-        Plugins_Enabled_Lbl->setText(QCoreApplication::translate("MainWindow", "Enabled Plugins (Global)", nullptr));
-        Enable_Global_Plugin_Btn->setText(QCoreApplication::translate("MainWindow", "Enable Global", nullptr));
-        Enable_Project_Plugins_Button->setText(QCoreApplication::translate("MainWindow", "Enable For Project", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Project Plugins", nullptr));
         Search_Plugin_Lbl->setText(QCoreApplication::translate("MainWindow", "Search Plugin", nullptr));
         Plugins_Filter->setInputMask(QString());
         Plugins_Filter->setText(QString());
         Plugins_Filter->setPlaceholderText(QCoreApplication::translate("MainWindow", "filter", nullptr));
-        Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", "Disable", nullptr));
-        Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Build_Page), QCoreApplication::translate("MainWindow", "Project Build", nullptr));
+        Plugins_Available_Lbl->setText(QCoreApplication::translate("MainWindow", "Disabled Plugins", nullptr));
+        Plugins_Enabled_Lbl->setText(QCoreApplication::translate("MainWindow", "Enabled Plugins (Global)", nullptr));
+        Toggle_Global_Plugin_Btn->setText(QCoreApplication::translate("MainWindow", "Set Default", nullptr));
+        Enable_Project_Plugins_Button->setText(QCoreApplication::translate("MainWindow", "Enable For Project", nullptr));
+        Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", "Remove From Project", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Project Plugins", nullptr));
+        Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Build_Page), QCoreApplication::translate("MainWindow", "Plugins Setup", nullptr));
         QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
         ___qtreewidgetitem->setText(0, QCoreApplication::translate("MainWindow", "Project Folder Structure (Game/)", nullptr));
         Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Project_Structure_Tab), QCoreApplication::translate("MainWindow", "Project Structure", nullptr));
@@ -1263,8 +1280,8 @@ public:
         Standalone_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Standalone", nullptr));
         Game_Mode_Tick->setText(QCoreApplication::translate("MainWindow", "Game", nullptr));
         Open_Sublime_CheckBox->setText(QCoreApplication::translate("MainWindow", "Sublime", nullptr));
-        Run_Btn->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         Build_Btn->setText(QCoreApplication::translate("MainWindow", "Build", nullptr));
+        Run_Btn->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         Standalone_Warning_Lbl->setText(QString());
     } // retranslateUi
 

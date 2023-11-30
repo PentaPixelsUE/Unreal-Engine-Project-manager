@@ -2,10 +2,13 @@
 #ifndef PLUGINSMANAGER_H
 #define PLUGINSMANAGER_H
 
+#include "mainwindow.h"
+#include "qjsonarray.h"
 #include <QString>
 #include <QStandardItemModel>
 #include <QSortFilterProxyModel>
 #include <QListView>
+
 
 class PluginManager {
 public:
@@ -13,6 +16,8 @@ public:
         static PluginManager instance;
         return instance;
     }
+
+     QModelIndex FindModelIndex(QStandardItemModel* model, const QString& pluginName) const;
 
     QItemSelectionModel* getAllListsSelectionModel() const {
         return AllListsSelectionModel;
@@ -67,15 +72,21 @@ public:
     QStandardItemModel* getProjectPluginsModel() const {
         return projectPluginsModel;
     }
-
+        void setMainWindowInstance(MainWindow* mainWindow);
     void setupListView(QListView* listView,QSortFilterProxyModel* proxyModel);
-    void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
-    void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
+   void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory, QJsonArray& pluginsArray);
+    //void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
     void FillProjectPluginsList(const QString& uprojectPath,const QString& projectName,QStandardItem* parent);
     void EnablePluginForProject(const QString& projectName, const QString& pluginName);
     void DisablePluginForProject(const QString& projectName, const QString& pluginName) ;
+    void DisableEnablePluginsGlobal(const QString& projectName, const QString& pluginName, bool isDisabled);
+    bool set_list_flag()const;
+
+
 
 private:
+     QJsonArray pluginsArray;
+    bool enableFlag;
     QString projectName;
     QString enginePath;
     QString uprojectPath;
@@ -87,7 +98,7 @@ private:
     QSortFilterProxyModel* projectPluginsProxyModel;
     QItemSelectionModel* AllListsSelectionModel;
 
-
+    MainWindow* mainWindowInstance;
     void setupProxyModels() ;
 
 

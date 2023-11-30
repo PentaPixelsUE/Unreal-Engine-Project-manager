@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="UE5Logo">
+    <file>Saveicon.png</file>
     <file>UE5Logo.png</file>
   </qresource>
 </RCC>

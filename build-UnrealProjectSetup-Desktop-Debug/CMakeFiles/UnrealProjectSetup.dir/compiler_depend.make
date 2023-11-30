@@ -273,6 +273,7 @@ CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cp
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
@@ -1163,6 +1164,7 @@ CMakeFiles/UnrealProjectSetup.dir/main.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
@@ -1509,6 +1511,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonDocument \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QJsonObject \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSettings \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QSortFilterProxyModel \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QThread \
@@ -1579,6 +1582,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsettings.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
@@ -1714,6 +1718,7 @@ CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o: /media/saif/a6fc8aae-38f2-48
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.cpp \
+  /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.h \
   /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -2070,6 +2075,7 @@ CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o: /media/saif/a6fc8aae-38f
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qvalidator.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QListView \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemview.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
@@ -2077,6 +2083,7 @@ CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o: /media/saif/a6fc8aae-38f
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h \
@@ -3233,6 +3240,8 @@ UnrealProjectSetup_autogen/EWIEGA46WW/moc_mainwindow.cpp:
 
 /usr/include/c++/13/bits/alloc_traits.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QSettings:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h:
@@ -3512,6 +3521,10 @@ UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
@@ -3896,10 +3909,6 @@ UnrealProjectSetup_autogen/include/ui_mainwindow.h:
 /usr/include/c++/13/bits/specfun.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qisenum.h:
-
-/usr/include/c++/13/bits/stl_tree.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsondocument.h:
 

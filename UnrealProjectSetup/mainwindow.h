@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "qjsonarray.h"
 #include "qjsonobject.h"
 #include "qsortfilterproxymodel.h"
 #include <QMainWindow>
@@ -25,16 +26,21 @@ public:
 
     // Open Sublime Text with specified folders
     void openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath, const QString& sublimePath);
+    void writeJsonFile(const QJsonArray& jsonArray, const QString& filePath);
 
+    void updateJsonArray();
+    QJsonArray getJsonArray() const ;
+
+    void     setJsonArray(const QJsonArray& array);
 private:
 
     Ui::MainWindow *ui;
     QJsonObject jsonObject;
+     QJsonArray jsonArray;
     QString selectedProjectFolderPath;
     QSortFilterProxyModel* filterProxyModel;
 
     RunMode selectedMode;
-
 
     bool openSublimeFlag;
     // Update the list of disabled plugins
@@ -42,6 +48,7 @@ private:
     void updateEnabledPluginsList();
     void RefreshEnabledDisabledPluginLists();
     void RefreshProjectPluginList();
+    void loadengineplugins();
 
 private slots:
     //Slot for handeling the "Enable Plugin For Project" Button Clicker
@@ -91,6 +98,8 @@ private slots:
     // Slot for toggling the "Open Sublime" checkbox
     void onOpenSublimeCheckboxToggled(bool checked);
     void onEnableDisablePluginClickr(bool enable);
+    void onToggleDefaultPluginSettingBtnClickr();
+
 };
 
 #endif // MAINWINDOW_H

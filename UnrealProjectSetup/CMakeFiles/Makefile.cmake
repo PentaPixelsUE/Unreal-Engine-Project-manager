@@ -10,6 +10,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.27.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.4/CMakeSystem.cmake"
   "CMakeLists.txt"
+  "QtDesign_Resources/UE5Logo.qrc"
+  "json-develop/CMakeLists.txt"
+  "json-develop/cmake/config.cmake.in"
+  "json-develop/cmake/nlohmann_jsonConfigVersion.cmake.in"
+  "json-develop/cmake/pkg-config.pc.in"
+  "json-develop/nlohmann_jsonConfig.cmake"
+  "json-develop/nlohmann_jsonConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake"
@@ -54,17 +61,24 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.27/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake"
+  "/usr/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeParseArguments.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/share/cmake-3.27/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.27/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.27/Modules/ExternalProject.cmake"
+  "/usr/share/cmake-3.27/Modules/ExternalProject/shared_internal_commands.cmake"
+  "/usr/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.27/Modules/FindPackageMessage.cmake"
+  "/usr/share/cmake-3.27/Modules/GNUInstallDirs.cmake"
   "/usr/share/cmake-3.27/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.27/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.27/Modules/Platform/Linux-Initialize.cmake"
   "/usr/share/cmake-3.27/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.27/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake"
   )
 
 # The corresponding makefile is:
@@ -76,7 +90,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/UnrealProjectSetup_autogen.dir/AutogenInfo.json"
+  "CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Info.json"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "json-develop/nlohmann_json.pc"
+  "json-develop/nlohmann_jsonConfigVersion.cmake"
+  "json-develop/nlohmann_jsonConfig.cmake"
+  "json-develop/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

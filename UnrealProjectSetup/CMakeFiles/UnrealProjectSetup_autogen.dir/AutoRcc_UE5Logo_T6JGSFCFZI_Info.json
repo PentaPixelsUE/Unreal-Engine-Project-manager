@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/UnrealProjectSetup_autogen",
+	"CMAKE_BINARY_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup",
+	"CMAKE_CURRENT_BINARY_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup",
+	"CMAKE_SOURCE_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup",
+	"INCLUDE_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/UnrealProjectSetup_autogen/include",
+	"INPUTS" : 
+	[
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/Saveicon.png",
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.png"
+	],
+	"LOCK_FILE" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "UE5Logo" ],
+	"OUTPUT_CHECKSUM" : "T6JGSFCFZI",
+	"OUTPUT_NAME" : "qrc_UE5Logo.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Used.txt",
+	"SOURCE" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.qrc",
+	"VERBOSITY" : 0
+}

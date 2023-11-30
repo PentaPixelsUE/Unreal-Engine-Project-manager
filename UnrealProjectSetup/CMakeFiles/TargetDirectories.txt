@@ -6,3 +6,9 @@
 /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeFiles/install/local.dir
 /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeFiles/install/strip.dir
 /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeFiles/UnrealProjectSetup_autogen.dir
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeFiles/edit_cache.dir
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeFiles/rebuild_cache.dir
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeFiles/list_install_components.dir
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeFiles/install.dir
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeFiles/install/local.dir
+/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/CMakeFiles/install/strip.dir

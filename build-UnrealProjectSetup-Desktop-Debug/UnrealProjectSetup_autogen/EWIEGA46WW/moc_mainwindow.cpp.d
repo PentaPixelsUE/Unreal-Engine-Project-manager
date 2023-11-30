@@ -272,6 +272,7 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonarray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonobject.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qjsonvalue.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \

@@ -4,7 +4,7 @@
 #include "projectjsongenerator.h"
 #include "pluginsmanager.h"
 #include <QSortFilterProxyModel>
-
+#include<QSettings>
 #include <QObject>
 #include <QDir>
 #include <QFileSystemModel>
@@ -27,17 +27,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-    QPixmap originalPixmap(":/UE5Logo.qrc/UE5Logo.png");
 
-    // Set the desired size (e.g., 100x100)
-    QSize newSize(10   , 10);
 
-    // Resize the pixmap
-    QPixmap scaledPixmap = originalPixmap.scaled(newSize, Qt::KeepAspectRatio);
 
-    ui->UE5_Logo_Lbl->setPixmap(scaledPixmap);
 
-    //filterProxyModel->setSourceModel(PluginManager::getInstance().getPluginsModel());
 
  setWindowTitle("Unreal Engine Project Manager");
 
@@ -47,6 +40,13 @@ MainWindow::MainWindow(QWidget *parent)
     filterProxyModel = new QSortFilterProxyModel(this);
 
 
+    QSettings settings;
+    QString lastProjectPath = settings.value("projectPath", "").toString();
+
+    if(!lastProjectPath.isEmpty()){
+        ui->UE_Source_Path_Txt->setText(lastProjectPath);
+        loadengineplugins();
+    }
 
 
     //Main UI
@@ -85,12 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
  //Plugins Buttons
     connect(ui->Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePluginClickr);
     connect(ui->Enable_Project_Plugins_Button, &QPushButton::clicked,this, &MainWindow::onEnablePluginForProjectBtnClickr);
-
-
-
-    //Plugins Lists
-
-
+    connect(ui->Toggle_Global_Plugin_Btn, &QPushButton::clicked, this, &MainWindow::onToggleDefaultPluginSettingBtnClickr);
 }
 
 void MainWindow::onGameMode()
@@ -146,49 +141,125 @@ void MainWindow::onProjectPathBrowseBtnClicker() {
 //Set The Engine Source Path
 
 
-void MainWindow::onEngineSourcePathBtnClicker() {
 
-    QString EnginePath = QFileDialog::getExistingDirectory(this, "Select Engine Folder", QDir::homePath(), QFileDialog::ShowDirsOnly);
+    void MainWindow::onEngineSourcePathBtnClicker() {
+        QString defaultPath = QDir::homePath();
 
-    ui->UE_Source_Path_Txt->setText(EnginePath);
-    QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
-    PluginManager::getInstance().setEnginePath(pluginPath);
+        // Retrieve the last saved project path from settings
+        QSettings settings;
+        QString lastProjectPath = settings.value("projectPath", "").toString();
+
+        QString projectPath = QFileDialog::getExistingDirectory(this, "Select Project Folder", lastProjectPath, QFileDialog::ShowDirsOnly);
+
+        if (projectPath.isEmpty()) {
+            // User canceled the selection, or an error occurred
+            return;
+        }
+
+        // Save the new project path to settings
+        settings.setValue("projectPath", projectPath);
+
+        if (lastProjectPath.isEmpty()) {
+            // Show a message box when the project path is set for the first time
+            QMessageBox::information(this, "Project Source Set", "Project source has been set to default.");
+        }
 
 
-    QMessageBox* loadingBox = new QMessageBox(this);
-    loadingBox->setWindowTitle("Loading");
-    loadingBox->setText("Loading Plugins...");
+        // Use the projectPath for both the project and engine paths
+        ui->UE_Source_Path_Txt->setText(projectPath);
+        QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
 
-    Qt::WindowFlags flags = loadingBox->windowFlags();
-    flags |= Qt::CustomizeWindowHint;
-    loadingBox->setWindowFlags(flags);
+        PluginManager::getInstance().setEnginePath(pluginPath);
 
-    loadingBox->show();
-    QApplication::processEvents();  // Ensure the message box is displayed
+        loadengineplugins();
 
-    // Clear the existing models
-    ui->Enabled_Plugins_List->setModel(nullptr);
-    ui->Disabled_Plugins_List->setModel(nullptr);
-
-    PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(), pluginPath);
-    PluginManager::getInstance().Fill_Plugin_lists_recursive(PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(), pluginPath);
-    RefreshEnabledDisabledPluginLists();
-
-     // Close the loading message box
-    loadingBox->close();
-    delete loadingBox;
 
  }
+void MainWindow::loadengineplugins() {
+
+        PluginManager::getInstance().setMainWindowInstance(this);
+        QMessageBox* loadingBox = new QMessageBox(this);
+        loadingBox->setWindowTitle("Loading");
+        loadingBox->setText("Loading Plugins...");
+
+        Qt::WindowFlags flags = loadingBox->windowFlags();
+        flags |= Qt::CustomizeWindowHint;
+        loadingBox->setWindowFlags(flags);
+
+        loadingBox->show();
+        QApplication::processEvents();  // Ensure the message box is displayed
+
+        // Clear the existing models
+        ui->Enabled_Plugins_List->setModel(nullptr);
+        ui->Disabled_Plugins_List->setModel(nullptr);
+        QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
+        QJsonArray pluginsArray;
+
+        PluginManager::getInstance().Fill_Plugin_lists_recursive(
+            PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(),
+            pluginPath,
+            pluginsArray
+            );
+
+        PluginManager::getInstance().Fill_Plugin_lists_recursive(
+            PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(),
+            pluginPath,
+            pluginsArray
+            );
 
 
 
+        writeJsonFile(pluginsArray, QDir::currentPath() + QDir::separator() + "plugins.json");
+
+        RefreshEnabledDisabledPluginLists();
+
+        // Close the loading message box
+        loadingBox->close();
+        delete loadingBox;
+    }
+
+
+    void MainWindow::writeJsonFile(const QJsonArray& jsonArray, const QString& filePath) {
+        if (!jsonArray.isEmpty()) {
+            QFile jsonFile(filePath);
+            if (jsonFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                jsonFile.write(QJsonDocument(jsonArray).toJson());
+                jsonFile.close();
+                qDebug() << "JSON file successfully updated at:" << filePath;
+            } else {
+                qDebug() << "Failed to open JSON file for writing:" << filePath;
+                qDebug() << "Error: " << jsonFile.errorString();
+            }
+        } else {
+            qDebug() << "JSON array is empty. Cannot write to file:" << filePath;
+        }
+    }
+
+
+    // Update the member variable
+    void MainWindow::setJsonArray(const QJsonArray& array) {
+        jsonArray = array;
+    }
+
+    // Retrieve the member variable
+    QJsonArray MainWindow::getJsonArray() const {
+        return jsonArray;
+    }
+
+
+    void MainWindow::updateJsonArray() {
+        QJsonObject newObject;
+        newObject["key"] = "value";
+        jsonArray.append(newObject);
+        setJsonArray(jsonArray);
+    }
 
 
 //Project files setup;
 void MainWindow::onSetupProjectFilesBtnClicker()
 {
 
-    if (!validateProjectName()) {
+    if (validateProjectName()) {
          QMessageBox::warning(this, "Invalid Project Name", "Cannot Create Project");
         return;
     }
@@ -290,8 +361,23 @@ void MainWindow::updateStandaloneLabel() {
 void MainWindow::onBuildClicker() {
         buildsetup buildSetupInstance;
         QString buildfile =ui->Project_Path_Txt->text() +QDir::separator() +ui->Project_Name_Txt->text() ;
+        QMessageBox* loadingBox = new QMessageBox(this);
+        loadingBox->setWindowTitle("Loading");
+        loadingBox->setText("Building Project...");
+
+        Qt::WindowFlags flags = loadingBox->windowFlags();
+        flags |= Qt::CustomizeWindowHint;
+        loadingBox->setWindowFlags(flags);
+
+        loadingBox->show();
+        QApplication::processEvents();  // Ensure the message box is displayed
+
 
         buildSetupInstance.getBuildFilePath(buildfile);
+        // Close the loading message box
+        loadingBox->close();
+        delete loadingBox;
+
          QMessageBox::information(this, "Build Info", "Build Successful: ");
 }
 
@@ -353,13 +439,6 @@ void MainWindow::onFilterPluginsUpdate() {
         RefreshEnabledDisabledPluginLists();
         RefreshProjectPluginList();
 
-        // Print row counts for debugging
-        qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
-        qDebug() << "Enabled Plugins Proxy Row Count: " << PluginManager::getInstance().getEnabledPluginsProxyModel()->rowCount();
-        qDebug() << "Disabled Plugins Row Count: " << PluginManager::getInstance().getDisabledPluginsModel()->rowCount();
-        qDebug() << "Disabled Plugins Proxy Row Count: " << PluginManager::getInstance().getDisabledPluginsProxyModel()->rowCount();
-
-        // Update your UI or perform any other actions when the filter changes
         updateEnabledPluginsList();
         updateDisabledPluginsList();
         UpdateProjectPluginsList();
@@ -377,9 +456,6 @@ void MainWindow::updateEnabledPluginsList() {
 
         ui->Enabled_Plugins_List->setModel(enabledPluginsProxyModel);
 
-        qDebug() << "Enabled Plugins Row Count: " << PluginManager::getInstance().getEnabledPluginsModel()->rowCount();
-        qDebug() << "Enabled Plugins Proxy Row Count: " << enabledPluginsProxyModel->rowCount();
-
 
 }
 
@@ -391,9 +467,6 @@ void MainWindow::updateDisabledPluginsList() {
         disabledPluginsProxyModel->setSourceModel(PluginManager::getInstance().getDisabledPluginsModel());
 
         ui->Disabled_Plugins_List->setModel(disabledPluginsProxyModel);
-
-        qDebug() << "Disabled Plugins Row Count: " << PluginManager::getInstance().getDisabledPluginsModel()->rowCount();
-        qDebug() << "Disabled Plugins Proxy Row Count: " << disabledPluginsProxyModel->rowCount();
 
 }
 
@@ -485,4 +558,39 @@ void MainWindow::onEnablePluginForProjectBtnClickr() {
 void MainWindow::onDisablePluginClickr() {
         onEnableDisablePluginClickr(false);
 }
+
+void MainWindow::onToggleDefaultPluginSettingBtnClickr() {
+        QString projectPath = ui->Project_Path_Txt->text();
+        QString projectName = ui->Project_Name_Txt->text();
+
+        // Get the enable flag from the setupListView function
+        bool enableFlag = PluginManager::getInstance().set_list_flag();
+
+        // Get the correct list view based on the enable flag
+        QListView* listView = enableFlag ? ui->Enabled_Plugins_List : ui->Disabled_Plugins_List;
+
+        // Get the selected item from the Plugins List (assume a single selection)
+        QModelIndexList selectedIndexes = listView->selectionModel()->selectedIndexes();
+
+        if (!selectedIndexes.isEmpty()) {
+            QString pluginName = enableFlag ?
+                                     PluginManager::getInstance().getEnabledPluginsProxyModel()->data(
+                                                                                                   PluginManager::getInstance().getEnabledPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
+                                                                                                   ).toString() :
+                                     PluginManager::getInstance().getDisabledPluginsProxyModel()->data(
+                                                                                                    PluginManager::getInstance().getDisabledPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
+                                                                                                    ).toString();
+
+            QString uprojectPath = projectPath + QDir::separator() + projectName;
+
+
+            qDebug() << "ENABLE STATE :" << enableFlag;
+            qDebug() << "Selected item in " << listView->objectName() << ": " << pluginName;
+
+            PluginManager::getInstance().DisableEnablePluginsGlobal(projectName, pluginName, enableFlag);
+        } else {
+            qDebug() << "No item selected in the Plugins List.";
+        }
+}
+
 

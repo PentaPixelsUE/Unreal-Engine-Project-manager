@@ -8,7 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp" "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o.d"
   "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/UnrealProjectSetup_autogen/mocs_compilation.cpp" "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.o.d"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp" "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o.d"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/main.cpp" "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/main.cpp.o.d"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.cpp" "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o.d"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.cpp" "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o.d"
+  "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.cpp" "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o" "gcc" "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

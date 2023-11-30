@@ -310,7 +310,7 @@ UnrealProjectSetup_SOURCE_DIR:STATIC=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b
 nlohmann_json_BINARY_DIR:STATIC=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop
 
 //The directory containing a CMake configuration file for nlohmann_json.
-nlohmann_json_DIR:PATH=nlohmann_json_DIR-NOTFOUND
+nlohmann_json_DIR:PATH=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop
 
 //Value Computed by CMake
 nlohmann_json_IS_TOP_LEVEL:STATIC=OFF
@@ -484,6 +484,8 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding nlohmann_json
+FIND_PACKAGE_MESSAGE_DETAILS_nlohmann_json:INTERNAL=[/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/nlohmann_jsonConfig.cmake][v3.11.2()]
 NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE

@@ -91,7 +91,7 @@ QTabBar::tab:selected {
       </property>
       <widget class="QWidget" name="Build_Page">
        <attribute name="title">
-        <string>Project Build</string>
+        <string>Plugins Setup</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
@@ -110,6 +110,80 @@ QTabBar::tab:selected {
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="Search_Plugin_Lbl">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>34</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/* Label */
+QLabel {
+  color:rgb(214, 187, 152);/* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+               </property>
+               <property name="text">
+                <string>Search Plugin</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="Plugins_Filter">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>34</height>
+                </size>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 3px;
+}</string>
+               </property>
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="placeholderText">
+                <string>filter</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_8">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>592</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
            <item>
             <layout class="QHBoxLayout" name="PLugins_Lables_HBOX">
              <property name="bottomMargin">
@@ -201,8 +275,8 @@ QLabel {
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>416</width>
-                  <height>422</height>
+                  <width>404</width>
+                  <height>461</height>
                  </rect>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_2">
@@ -274,7 +348,7 @@ QListView::item:selected:active {
                 </spacer>
                </item>
                <item>
-                <widget class="QPushButton" name="Enable_Global_Plugin_Btn">
+                <widget class="QPushButton" name="Toggle_Global_Plugin_Btn">
                  <property name="styleSheet">
                   <string notr="true">/* Button */
 QPushButton {
@@ -304,7 +378,7 @@ QPushButton:disabled {
 </string>
                  </property>
                  <property name="text">
-                  <string>Enable Global</string>
+                  <string>Set Default</string>
                  </property>
                 </widget>
                </item>
@@ -360,6 +434,47 @@ QPushButton:disabled {
                 </widget>
                </item>
                <item>
+                <widget class="QPushButton" name="Disable_Plugins_Btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>146</width>
+                   <height>34</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">/* Button */
+QPushButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QPushButton:hover {
+  background-color: rgb(214, 187, 152);
+  border-color: #585c62;
+}
+
+QPushButton:pressed {
+  background-color:  rgb(240, 125, 126);
+  border-color: #72767a;
+}
+
+QPushButton:disabled {
+  background-color: #52565a;
+  border-color: #64686c;
+  color: #888888;
+}
+</string>
+                 </property>
+                 <property name="text">
+                  <string>Remove From Project</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
                 <spacer name="verticalSpacer_9">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
@@ -395,8 +510,8 @@ QPushButton:disabled {
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>413</width>
-                    <height>187</height>
+                    <width>402</width>
+                    <height>206</height>
                    </rect>
                   </property>
                   <layout class="QGridLayout" name="gridLayout">
@@ -479,8 +594,8 @@ QLabel {
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>413</width>
-                    <height>187</height>
+                    <width>402</width>
+                    <height>207</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -534,108 +649,6 @@ QListView::item:selected:active {
              </item>
             </layout>
            </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4">
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="Search_Plugin_Lbl">
-               <property name="minimumSize">
-                <size>
-                 <width>150</width>
-                 <height>34</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">/* Label */
-QLabel {
-  color:rgb(214, 187, 152);/* Electric blue text */
-  font-family: 'Roboto', sans-serif; /* Modern font */
-  font-size: 17px;
-  font-weight: normal;
-  padding: 5px;
-}</string>
-               </property>
-               <property name="text">
-                <string>Search Plugin</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="Plugins_Filter">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>34</height>
-                </size>
-               </property>
-               <property name="autoFillBackground">
-                <bool>false</bool>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QLineEdit {
-    background-color: #333333;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    padding: 3px;
-}</string>
-               </property>
-               <property name="inputMask">
-                <string/>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="placeholderText">
-                <string>filter</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="Disable_Plugins_Btn">
-               <property name="minimumSize">
-                <size>
-                 <width>146</width>
-                 <height>34</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">/* Button */
-QPushButton {
-    background-color: #2a2a2a;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    padding: 5px;
-    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
-}
-
-QPushButton:hover {
-  background-color: rgb(214, 187, 152);
-  border-color: #585c62;
-}
-
-QPushButton:pressed {
-  background-color:  rgb(240, 125, 126);
-  border-color: #72767a;
-}
-
-QPushButton:disabled {
-  background-color: #52565a;
-  border-color: #64686c;
-  color: #888888;
-}
-</string>
-               </property>
-               <property name="text">
-                <string>Disable</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
           </layout>
          </widget>
         </item>
@@ -660,7 +673,7 @@ QPushButton:disabled {
              <x>0</x>
              <y>0</y>
              <width>1004</width>
-             <height>524</height>
+             <height>563</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -715,6 +728,12 @@ QPushButton:disabled {
            </item>
            <item>
             <widget class="QLabel" name="Project_Path_Label">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>34</height>
+              </size>
+             </property>
              <property name="styleSheet">
               <string notr="true">/* Label */
 QLabel {
@@ -755,6 +774,12 @@ QLabel {
            </item>
            <item>
             <widget class="QLabel" name="Project_Name_Label">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>34</height>
+              </size>
+             </property>
              <property name="styleSheet">
               <string notr="true">/* Label */
 QLabel {
@@ -1030,33 +1055,41 @@ QPushButton:disabled {
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="UE_Source_Path_Browse_Btn">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="rightMargin">
+              <number>0</number>
              </property>
-             <property name="minimumSize">
-              <size>
-               <width>146</width>
-               <height>34</height>
-              </size>
+             <property name="bottomMargin">
+              <number>0</number>
              </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="baseSize">
-              <size>
-               <width>0</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">/* Button */
+             <item>
+              <widget class="QPushButton" name="UE_Source_Path_Browse_Btn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>146</width>
+                 <height>34</height>
+                </size>
+               </property>
+               <property name="sizeIncrement">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/* Button */
 QPushButton {
     background-color: #2a2a2a;
     color: #ffffff;
@@ -1082,17 +1115,19 @@ QPushButton:disabled {
   color: #888888;
 }
 </string>
-             </property>
-             <property name="text">
-              <string>Engine Path</string>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>16</width>
-               <height>18</height>
-              </size>
-             </property>
-            </widget>
+               </property>
+               <property name="text">
+                <string>Engine Path</string>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>16</width>
+                 <height>18</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item>
             <widget class="QPushButton" name="Generate_Project_Files_Btn">
@@ -1117,7 +1152,7 @@ QPushButton:disabled {
              <property name="styleSheet">
               <string notr="true">/* Button */
 QPushButton {
-    background-color: #2a2a2a;
+    background-color: rgb(94, 92, 100);
     color: #ffffff;
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -1178,11 +1213,11 @@ QPushButton:disabled {
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Preferred</enum>
+            <enum>QSizePolicy::Expanding</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>251</width>
+             <width>300</width>
              <height>20</height>
             </size>
            </property>
@@ -1193,11 +1228,20 @@ QPushButton:disabled {
            <property name="minimumSize">
             <size>
              <width>1</width>
-             <height>73</height>
+             <height>34</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>64</height>
             </size>
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="QtDesign_Resources/UE5Logo.qrc">:/UE5Logo/UE5Logo.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -1242,11 +1286,11 @@ QLabel {
             <enum>Qt::Horizontal</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Preferred</enum>
+            <enum>QSizePolicy::Expanding</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>606</width>
+             <width>300</width>
              <height>20</height>
             </size>
            </property>
@@ -1355,6 +1399,9 @@ QRadioButton:disabled {
              </property>
              <property name="text">
               <string>Editor</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
@@ -1517,47 +1564,6 @@ QCheckBox:disabled {
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="Run_Btn">
-             <property name="minimumSize">
-              <size>
-               <width>146</width>
-               <height>34</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">/* Button */
-QPushButton {
-    background-color: #2a2a2a;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
-    padding: 5px;
-    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
-}
-
-QPushButton:hover {
-  background-color: rgb(214, 187, 152);
-  border-color: #585c62;
-}
-
-QPushButton:pressed {
-  background-color:  rgb(240, 125, 126);
-  border-color: #72767a;
-}
-
-QPushButton:disabled {
-  background-color: #52565a;
-  border-color: #64686c;
-  color: #888888;
-}
-</string>
-             </property>
-             <property name="text">
-              <string>Run</string>
-             </property>
-            </widget>
-           </item>
-           <item>
             <widget class="QPushButton" name="Build_Btn">
              <property name="minimumSize">
               <size>
@@ -1595,6 +1601,47 @@ QPushButton:disabled {
              </property>
              <property name="text">
               <string>Build</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Run_Btn">
+             <property name="minimumSize">
+              <size>
+               <width>146</width>
+               <height>34</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* Button */
+QPushButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QPushButton:hover {
+  background-color: rgb(214, 187, 152);
+  border-color: #585c62;
+}
+
+QPushButton:pressed {
+  background-color:  rgb(240, 125, 126);
+  border-color: #72767a;
+}
+
+QPushButton:disabled {
+  background-color: #52565a;
+  border-color: #64686c;
+  color: #888888;
+}
+</string>
+             </property>
+             <property name="text">
+              <string>Run</string>
              </property>
             </widget>
            </item>

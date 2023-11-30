@@ -187,6 +187,30 @@ UnrealProjectSetup_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup_autogen.dir/build.make CMakeFiles/UnrealProjectSetup_autogen.dir/build
 .PHONY : UnrealProjectSetup_autogen/fast
 
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.o: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.o
+
+# target to build an object file
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
+
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.i: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.i
+
+# target to preprocess a source file
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i
+
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.s: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.s
+
+# target to generate assembly for a file
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s
+.PHONY : UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.s
+
 UnrealProjectSetup_autogen/mocs_compilation.o: UnrealProjectSetup_autogen/mocs_compilation.cpp.o
 .PHONY : UnrealProjectSetup_autogen/mocs_compilation.o
 
@@ -211,6 +235,126 @@ UnrealProjectSetup_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/mocs_compilation.cpp.s
 .PHONY : UnrealProjectSetup_autogen/mocs_compilation.cpp.s
 
+buildsetup.o: buildsetup.cpp.o
+.PHONY : buildsetup.o
+
+# target to build an object file
+buildsetup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o
+.PHONY : buildsetup.cpp.o
+
+buildsetup.i: buildsetup.cpp.i
+.PHONY : buildsetup.i
+
+# target to preprocess a source file
+buildsetup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.i
+.PHONY : buildsetup.cpp.i
+
+buildsetup.s: buildsetup.cpp.s
+.PHONY : buildsetup.s
+
+# target to generate assembly for a file
+buildsetup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.s
+.PHONY : buildsetup.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+mainwindow.o: mainwindow.cpp.o
+.PHONY : mainwindow.o
+
+# target to build an object file
+mainwindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o
+.PHONY : mainwindow.cpp.o
+
+mainwindow.i: mainwindow.cpp.i
+.PHONY : mainwindow.i
+
+# target to preprocess a source file
+mainwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.i
+.PHONY : mainwindow.cpp.i
+
+mainwindow.s: mainwindow.cpp.s
+.PHONY : mainwindow.s
+
+# target to generate assembly for a file
+mainwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.s
+.PHONY : mainwindow.cpp.s
+
+pluginsmanager.o: pluginsmanager.cpp.o
+.PHONY : pluginsmanager.o
+
+# target to build an object file
+pluginsmanager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o
+.PHONY : pluginsmanager.cpp.o
+
+pluginsmanager.i: pluginsmanager.cpp.i
+.PHONY : pluginsmanager.i
+
+# target to preprocess a source file
+pluginsmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.i
+.PHONY : pluginsmanager.cpp.i
+
+pluginsmanager.s: pluginsmanager.cpp.s
+.PHONY : pluginsmanager.s
+
+# target to generate assembly for a file
+pluginsmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.s
+.PHONY : pluginsmanager.cpp.s
+
+projectjsongenerator.o: projectjsongenerator.cpp.o
+.PHONY : projectjsongenerator.o
+
+# target to build an object file
+projectjsongenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o
+.PHONY : projectjsongenerator.cpp.o
+
+projectjsongenerator.i: projectjsongenerator.cpp.i
+.PHONY : projectjsongenerator.i
+
+# target to preprocess a source file
+projectjsongenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.i
+.PHONY : projectjsongenerator.cpp.i
+
+projectjsongenerator.s: projectjsongenerator.cpp.s
+.PHONY : projectjsongenerator.s
+
+# target to generate assembly for a file
+projectjsongenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.s
+.PHONY : projectjsongenerator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -225,9 +369,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... UnrealProjectSetup_autogen"
 	@echo "... UnrealProjectSetup"
+	@echo "... UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.o"
+	@echo "... UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.i"
+	@echo "... UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.s"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.o"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.i"
 	@echo "... UnrealProjectSetup_autogen/mocs_compilation.s"
+	@echo "... buildsetup.o"
+	@echo "... buildsetup.i"
+	@echo "... buildsetup.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... mainwindow.o"
+	@echo "... mainwindow.i"
+	@echo "... mainwindow.s"
+	@echo "... pluginsmanager.o"
+	@echo "... pluginsmanager.i"
+	@echo "... pluginsmanager.s"
+	@echo "... projectjsongenerator.o"
+	@echo "... projectjsongenerator.i"
+	@echo "... projectjsongenerator.s"
 .PHONY : help
 
 

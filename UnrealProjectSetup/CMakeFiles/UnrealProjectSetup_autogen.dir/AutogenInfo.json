@@ -66,12 +66,43 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
-		"/usr/share/cmake-3.27/Modules/CMakeParseArguments.cmake"
+		"/usr/share/cmake-3.27/Modules/CMakeParseArguments.cmake",
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/nlohmann_jsonConfigVersion.cmake",
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/nlohmann_jsonConfig.cmake",
+		"/usr/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake",
+		"/usr/share/cmake-3.27/Modules/FindPackageMessage.cmake",
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.h",
+			"MU",
+			"EWIEGA46WW/moc_buildsetup.cpp",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.h",
+			"MU",
+			"EWIEGA46WW/moc_pluginsmanager.cpp",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.h",
+			"MU",
+			"EWIEGA46WW/moc_projectjsongenerator.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/UnrealProjectSetup_autogen/include",
 	"MOC_COMPILATION_FILE" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/UnrealProjectSetup_autogen/mocs_compilation.cpp",
@@ -85,6 +116,8 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop",
+		"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/include",
 		"/usr/include/x86_64-linux-gnu/qt5",
 		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
 		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
@@ -121,7 +154,34 @@
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
 	"SETTINGS_FILE" : "/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/CMakeFiles/UnrealProjectSetup_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/buildsetup.cpp",
+			"MU",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.cpp",
+			"MU",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],
