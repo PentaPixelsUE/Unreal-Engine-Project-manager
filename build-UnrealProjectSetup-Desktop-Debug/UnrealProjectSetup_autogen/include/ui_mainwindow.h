@@ -136,7 +136,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1052, 1096);
+        MainWindow->resize(1052, 1097);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(1);
         sizePolicy.setVerticalStretch(0);
@@ -289,7 +289,7 @@ public:
         Disabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Disabled_Pluginsl_Area = new QWidget();
         Disabled_Pluginsl_Area->setObjectName(QString::fromUtf8("Disabled_Pluginsl_Area"));
-        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 404, 461));
+        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 404, 462));
         gridLayout_2 = new QGridLayout(Disabled_Pluginsl_Area);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         Disabled_Plugins_List = new QListView(Disabled_Pluginsl_Area);
@@ -451,7 +451,7 @@ public:
         Enabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Enabled_Plugins_Area = new QWidget();
         Enabled_Plugins_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Area"));
-        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 402, 206));
+        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 402, 207));
         gridLayout = new QGridLayout(Enabled_Plugins_Area);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         Enabled_Plugins_List = new QListView(Enabled_Plugins_Area);
@@ -573,7 +573,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1004, 563));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1004, 564));
         horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         treeWidget = new QTreeWidget(scrollAreaWidgetContents);
@@ -834,7 +834,7 @@ public:
         Generate_Project_Files_Btn->setSizeIncrement(QSize(0, 0));
         Generate_Project_Files_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
 "QPushButton {\n"
-"    background-color: #2a2a2a;\n"
+"    background-color: rgb(94, 92, 100);\n"
 "    color: #ffffff;\n"
 "    border: 1px solid #ffffff;\n"
 "    border-radius: 5px;\n"
@@ -987,7 +987,7 @@ public:
 "    border: 1px solid rgb(214, 187, 152); /* Border color for disabled state */\n"
 "}\n"
 ""));
-        Editor_Mode_Tick->setChecked(true);
+        Editor_Mode_Tick->setChecked(false);
 
         Modes_Build_Run_HBOX->addWidget(Editor_Mode_Tick);
 
@@ -1034,6 +1034,8 @@ public:
 "    border: 1px solid rgb(214, 187, 152); /* Border color for disabled state */\n"
 "}\n"
 ""));
+        Standalone_Mode_Tick->setCheckable(true);
+        Standalone_Mode_Tick->setChecked(false);
 
         Modes_Build_Run_HBOX->addWidget(Standalone_Mode_Tick);
 
@@ -1257,7 +1259,7 @@ public:
         Plugins_Filter->setPlaceholderText(QCoreApplication::translate("MainWindow", "filter", nullptr));
         Plugins_Available_Lbl->setText(QCoreApplication::translate("MainWindow", "Disabled Plugins", nullptr));
         Plugins_Enabled_Lbl->setText(QCoreApplication::translate("MainWindow", "Enabled Plugins (Global)", nullptr));
-        Toggle_Global_Plugin_Btn->setText(QCoreApplication::translate("MainWindow", "Set Default", nullptr));
+        Toggle_Global_Plugin_Btn->setText(QCoreApplication::translate("MainWindow", "Change Default", nullptr));
         Enable_Project_Plugins_Button->setText(QCoreApplication::translate("MainWindow", "Enable For Project", nullptr));
         Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", "Remove From Project", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Project Plugins", nullptr));

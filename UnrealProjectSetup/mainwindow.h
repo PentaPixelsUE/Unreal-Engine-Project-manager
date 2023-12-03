@@ -28,10 +28,11 @@ public:
     void openSublimeWithFolders(const QString& engineRuntimePath, const QString& projectSourcePath, const QString& sublimePath);
     void writeJsonFile(const QJsonArray& jsonArray, const QString& filePath);
 
-    void updateJsonArray();
+//    void updateJsonArray();
     QJsonArray getJsonArray() const ;
 
-    void     setJsonArray(const QJsonArray& array);
+   void setJsonArray(const QJsonArray& array);
+
 private:
 
     Ui::MainWindow *ui;
@@ -97,7 +98,7 @@ private slots:
 
     // Slot for toggling the "Open Sublime" checkbox
     void onOpenSublimeCheckboxToggled(bool checked);
-    void onEnableDisablePluginClickr(bool enable);
+    void onEnableDisableProjectPluginBtnsClickr(bool enable);
     void onToggleDefaultPluginSettingBtnClickr();
 
 };

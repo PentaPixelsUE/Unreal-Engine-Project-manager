@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[23];
-    char stringdata0[455];
+    char stringdata0[466];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,9 +52,9 @@ QT_MOC_LITERAL(16, 301, 21), // "onDisablePluginClickr"
 QT_MOC_LITERAL(17, 323, 21), // "onFilterPluginsUpdate"
 QT_MOC_LITERAL(18, 345, 28), // "onOpenSublimeCheckboxToggled"
 QT_MOC_LITERAL(19, 374, 7), // "checked"
-QT_MOC_LITERAL(20, 382, 27), // "onEnableDisablePluginClickr"
-QT_MOC_LITERAL(21, 410, 6), // "enable"
-QT_MOC_LITERAL(22, 417, 37) // "onToggleDefaultPluginSettingB..."
+QT_MOC_LITERAL(20, 382, 38), // "onEnableDisableProjectPluginB..."
+QT_MOC_LITERAL(21, 421, 6), // "enable"
+QT_MOC_LITERAL(22, 428, 37) // "onToggleDefaultPluginSettingB..."
 
     },
     "MainWindow\0onEnablePluginForProjectBtnClickr\0"
@@ -68,8 +68,8 @@ QT_MOC_LITERAL(22, 417, 37) // "onToggleDefaultPluginSettingB..."
     "onEditorMode\0onDisablePluginClickr\0"
     "onFilterPluginsUpdate\0"
     "onOpenSublimeCheckboxToggled\0checked\0"
-    "onEnableDisablePluginClickr\0enable\0"
-    "onToggleDefaultPluginSettingBtnClickr"
+    "onEnableDisableProjectPluginBtnsClickr\0"
+    "enable\0onToggleDefaultPluginSettingBtnClickr"
 };
 #undef QT_MOC_LITERAL
 
@@ -152,7 +152,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 13: _t->onDisablePluginClickr(); break;
         case 14: _t->onFilterPluginsUpdate(); break;
         case 15: _t->onOpenSublimeCheckboxToggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 16: _t->onEnableDisablePluginClickr((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 16: _t->onEnableDisableProjectPluginBtnsClickr((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 17: _t->onToggleDefaultPluginSettingBtnClickr(); break;
         default: ;
         }

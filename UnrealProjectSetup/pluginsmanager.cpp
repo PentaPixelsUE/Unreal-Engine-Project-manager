@@ -116,14 +116,12 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
 }
 
 
-
 void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QString& projectName, QStandardItem* parent) {
 
-    qDebug() << "Trying to open UProject file: " << uprojectPath;
 
     QString uprojectFilePath = uprojectPath + QDir::separator() + projectName + ".uproject";
     QFile uprojectFile(uprojectFilePath);
-
+    qDebug() << "Trying to open UProject file: " << uprojectPath;
     if (!uprojectFile.exists()) {
         qDebug() << "UProject file not found.";
         return;
@@ -171,16 +169,19 @@ void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QS
     }
 }
 
-QModelIndex PluginManager::FindModelIndex(QStandardItemModel* model, const QString& pluginName) const {
-    for (int row = 0; row < model->rowCount(); ++row) {
-        QStandardItem* item = model->item(row);
-        if (item && item->text() == pluginName) {
-            return model->index(row, 0);
-        }
-    }
 
-    return QModelIndex();  // Return an invalid index if not found
-}
+
+//QModelIndex PluginManager::FindModelIndex(QStandardItemModel* model, const QString& pluginName) const {
+//    for (int row = 0; row < model->rowCount(); ++row) {
+//        QStandardItem* item = model->item(row);
+//        if (item && item->text() == pluginName) {
+//            return model->index(row, 0);
+//        }
+//    }
+
+//    return QModelIndex();  // Return an invalid index if not found
+//}
+
 
 void PluginManager::setupProxyModels() {
     // Clear existing models if they exist
@@ -232,7 +233,7 @@ void PluginManager::setupListView(QListView* listView, QSortFilterProxyModel* pr
             qDebug() << "No item selected in " << listView->objectName();
         } else {
             QModelIndex sourceIndex = proxyModel->mapToSource(selectedIndexes.first());
-//            qDebug() << "Selected item in " << listView->objectName() << ": " << sourceIndex.data().toString();
+           qDebug() << "Selected item in " << listView->objectName() << ": " << sourceIndex.data().toString();
 
 //            qDebug() << "Object name: " << listView->objectName();
             enableFlag = (listView->objectName().trimmed() == "Enabled_Plugins_List");
@@ -248,8 +249,8 @@ bool PluginManager::set_list_flag() const {
 
 
 
-void PluginManager::EnablePluginForProject(const QString& projectName, const QString& pluginName) {
 
+void PluginManager::EnablePluginForProject(const QString& projectName, const QString& pluginName) {
 
     QString uprojectPath = getUProjectPath()+ QDir::separator() + projectName + ".uproject";
 
@@ -308,7 +309,6 @@ void PluginManager::EnablePluginForProject(const QString& projectName, const QSt
 
     qDebug() << "Plugin" << pluginName << "enabled for project" << projectName;
 }
-
 void PluginManager::DisablePluginForProject(const QString& projectName, const QString& pluginName) {
     QString uprojectPath = getUProjectPath() + QDir::separator() + projectName + ".uproject";
 
@@ -365,15 +365,11 @@ void PluginManager::DisablePluginForProject(const QString& projectName, const QS
         qDebug() << "Error: Failed to write changes to UProject file. Error: " << uprojectFile.errorString();
     }
 }
-
 void PluginManager::DisableEnablePluginsGlobal(const QString& projectName, const QString& pluginName, bool isDisabled) {
     if (mainWindowInstance) {
-
-        qDebug() << "MainWindow instance is set in PluginManager.";
-
         QString jsonFilePath = QDir::currentPath() + QDir::separator() + "plugins.json";
 
-        // Read the JSON file
+        // Read the main JSON file
         QFile jsonFile(jsonFilePath);
         if (!jsonFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
             qDebug() << "Failed to open JSON file for reading:" << jsonFilePath;
@@ -382,22 +378,56 @@ void PluginManager::DisableEnablePluginsGlobal(const QString& projectName, const
 
         QJsonDocument jsonDocument = QJsonDocument::fromJson(jsonFile.readAll());
         QJsonArray jsonArray = jsonDocument.array();
-        jsonFile.close();
 
         // Find the corresponding entry for the plugin name
-        for (QJsonValueRef pluginRef : jsonArray) {
-            QJsonObject pluginObject = pluginRef.toObject();
+        for (int i = 0; i < jsonArray.size(); ++i) {
+            QJsonObject pluginObject = jsonArray[i].toObject();
             if (pluginObject["PluginName"].toString() == pluginName) {
-                // Update the "IsEnabled" property
+                // Access the "PluginPath" entry
+                QString pluginPath = pluginObject["PluginPath"].toString();
+                qDebug() << "Plugin" << pluginName << "Path:" << pluginPath;
+
+                // Read the .uplugin file
+                QFile upluginFile(pluginPath);
+                if (!upluginFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                    qDebug() << "Failed to open .uplugin file for reading:" << pluginPath;
+                    return;
+                }
+
+                // Read the content of .uplugin file
+                QTextStream upluginStream(&upluginFile);
+                QString upluginContent = upluginStream.readAll();
+                upluginFile.close();
+
+                // Modify the JSON content in memory
+                QJsonDocument upluginDocument = QJsonDocument::fromJson(upluginContent.toUtf8());
+                QJsonObject upluginObject = upluginDocument.object();
+                upluginObject["EnabledByDefault"] = isDisabled;
+                upluginDocument.setObject(upluginObject);
+
+                // Write the modified .uplugin content back to the file
+                if (!upluginFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                    qDebug() << "Failed to open .uplugin file for writing:" << pluginPath;
+                    return;
+                }
+                QTextStream out(&upluginFile);
+                out << upluginDocument.toJson();
+                upluginFile.close();
+
+                // Update the "IsEnabled" property in the main JSON array
                 pluginObject["IsEnabled"] = isDisabled;
+                qDebug() << "Plugin" << pluginName << "is now" << (isDisabled ? "enabled" : "disabled");
+
+                // Replace the modified JSON object in the main array
+                jsonArray[i] = pluginObject;
 
                 // Update the member variable in MainWindow
                 mainWindowInstance->setJsonArray(jsonArray);
 
-                // Write the modified JSON back to the file
+                // Write the modified main JSON back to the file
                 mainWindowInstance->writeJsonFile(mainWindowInstance->getJsonArray(), jsonFilePath);
+                jsonFile.close();
 
-                qDebug() << "Plugin" << pluginName << "is now" << (isDisabled ? "disabled" : "enabled");
                 return;  // Exit the loop once the plugin is found and updated
             }
         }
@@ -407,5 +437,61 @@ void PluginManager::DisableEnablePluginsGlobal(const QString& projectName, const
         qDebug() << "MainWindow instance is not set in PluginManager.";
     }
 }
+
+
+
+//void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QString& projectName, QStandardItem* parent) {
+
+//    qDebug() << "Trying to open UProject file: " << uprojectPath;
+
+//    QString uprojectFilePath = uprojectPath + QDir::separator() + projectName + ".uproject";
+//    QFile uprojectFile(uprojectFilePath);
+
+//    if (!uprojectFile.exists()) {
+//        qDebug() << "UProject file not found.";
+//        return;
+//    }
+
+//    if (!uprojectFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+//        qDebug() << "Failed to open UProject file. Error: " << uprojectFile.errorString();
+//        return;
+//    }
+
+//    QTextStream in(&uprojectFile);
+//    QString uprojectContent = in.readAll();
+//    uprojectFile.close();
+
+//    qDebug() << "UProject content read successfully.";
+
+//    // Clear the existing model
+//    parent->removeRows(0, parent->rowCount());
+
+//    // Look for the "Plugins" key
+//    int pluginsIndex = uprojectContent.indexOf("\"Plugins\":");
+//    if (pluginsIndex == -1) {
+//        qDebug() << "No 'Plugins' entry found in UProject file.";
+//        return;
+//    }
+
+//    QStringList lines = uprojectContent.mid(pluginsIndex).split('\n');
+
+//    // Skip the first line
+//    bool skipFirstPlugin = true;
+
+//    for (const QString& line : lines) {
+//        if (skipFirstPlugin) {
+//            // Skip the first plugin
+//            skipFirstPlugin = false;
+//            continue;
+//        }
+
+//        if (line.contains("Name")) {
+//            QString pluginName = line.split(":")[1].trimmed().remove(QRegExp("[\",]"));
+//            // Add the plugin name to the list
+//            QStandardItem* pluginItem = new QStandardItem(pluginName);
+//            parent->appendRow(pluginItem);
+//        }
+//    }
+//}
 
 

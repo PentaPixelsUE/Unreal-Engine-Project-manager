@@ -1,6 +1,6 @@
 [
     {
-        "IsEnabled": true,
+        "IsEnabled": false,
         "PluginName": "SmartSnapping",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/2D/Paper2D/Paper2D.uplugin"
     },
