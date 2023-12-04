@@ -276,8 +276,9 @@ void MainWindow::onSetupProjectFilesBtnClicker()
         ProjectGenerator projectGenerator;
         QMessageBox::information(this, "Project Name", "Project Name: " + project_name);
 
-        QString executablePath = QCoreApplication::applicationDirPath();
-        QString jsonFilePath =   ":/QtDesign_Resources/linuxconfig.json";
+     //   QString executablePath = QCoreApplication::applicationDirPath();
+        QString jsonFilePath = QApplication::applicationDirPath() + QDir::separator() + "linuxconfig.json";
+
 
 
         QString projectFolderPath = ui->Project_Path_Txt->text() ;
@@ -580,11 +581,10 @@ void MainWindow::onEnableDisableProjectPluginBtnsClickr(bool enable) {
 
 
 
-            updateEnabledPluginsList();
-           updateDisabledPluginsList();
+
             UpdateProjectPluginsList();
-           RefreshEnabledDisabledPluginLists();
-           RefreshProjectPluginList();
+
+          RefreshProjectPluginList();
         } else {
             qDebug() << "No item selected.";
         }

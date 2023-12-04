@@ -30,7 +30,7 @@
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/MassCrowd/MassCrowd.uplugin"
     },
     {
-        "IsEnabled": false,
+        "IsEnabled": true,
         "PluginName": "NNE",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/MLAdapter/MLAdapter.uplugin"
     },
