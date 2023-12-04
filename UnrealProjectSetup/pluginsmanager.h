@@ -82,7 +82,7 @@ public:
     void DisableEnablePluginsGlobal(const QString& projectName, const QString& pluginName, bool isDisabled);
     bool set_list_flag()const;
 
-
+    void Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap);
 
 private:
      QJsonArray pluginsArray;

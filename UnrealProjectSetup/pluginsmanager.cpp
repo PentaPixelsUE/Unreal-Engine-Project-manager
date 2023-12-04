@@ -171,18 +171,6 @@ void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QS
 
 
 
-//QModelIndex PluginManager::FindModelIndex(QStandardItemModel* model, const QString& pluginName) const {
-//    for (int row = 0; row < model->rowCount(); ++row) {
-//        QStandardItem* item = model->item(row);
-//        if (item && item->text() == pluginName) {
-//            return model->index(row, 0);
-//        }
-//    }
-
-//    return QModelIndex();  // Return an invalid index if not found
-//}
-
-
 void PluginManager::setupProxyModels() {
     // Clear existing models if they exist
     delete enabledPluginsModel;
@@ -467,61 +455,25 @@ void PluginManager::DisableEnablePluginsGlobal(const QString& projectName, const
         qDebug() << "MainWindow instance is not set in PluginManager.";
     }
 }
+void PluginManager::Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap) {
+    // Clear existing items
+    parent->removeRows(0, parent->rowCount());
 
+    for (auto it = pluginMap.begin(); it != pluginMap.end(); ++it) {
+        const QString& pluginName = it.key();
+        const bool isEnabled = it.value();
 
+        QStandardItem* item = new QStandardItem(pluginName);
 
-//void PluginManager::FillProjectPluginsList(const QString& uprojectPath, const QString& projectName, QStandardItem* parent) {
+        if (isEnabled) {
+            // Add to the enabled plugins list
+            getEnabledPluginsModel()->invisibleRootItem()->appendRow(item);
+        } else {
+            // Add to the disabled plugins list
+            getDisabledPluginsModel()->invisibleRootItem()->appendRow(item);
+        }
+    }
+}
 
-//    qDebug() << "Trying to open UProject file: " << uprojectPath;
-
-//    QString uprojectFilePath = uprojectPath + QDir::separator() + projectName + ".uproject";
-//    QFile uprojectFile(uprojectFilePath);
-
-//    if (!uprojectFile.exists()) {
-//        qDebug() << "UProject file not found.";
-//        return;
-//    }
-
-//    if (!uprojectFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-//        qDebug() << "Failed to open UProject file. Error: " << uprojectFile.errorString();
-//        return;
-//    }
-
-//    QTextStream in(&uprojectFile);
-//    QString uprojectContent = in.readAll();
-//    uprojectFile.close();
-
-//    qDebug() << "UProject content read successfully.";
-
-//    // Clear the existing model
-//    parent->removeRows(0, parent->rowCount());
-
-//    // Look for the "Plugins" key
-//    int pluginsIndex = uprojectContent.indexOf("\"Plugins\":");
-//    if (pluginsIndex == -1) {
-//        qDebug() << "No 'Plugins' entry found in UProject file.";
-//        return;
-//    }
-
-//    QStringList lines = uprojectContent.mid(pluginsIndex).split('\n');
-
-//    // Skip the first line
-//    bool skipFirstPlugin = true;
-
-//    for (const QString& line : lines) {
-//        if (skipFirstPlugin) {
-//            // Skip the first plugin
-//            skipFirstPlugin = false;
-//            continue;
-//        }
-
-//        if (line.contains("Name")) {
-//            QString pluginName = line.split(":")[1].trimmed().remove(QRegExp("[\",]"));
-//            // Add the plugin name to the list
-//            QStandardItem* pluginItem = new QStandardItem(pluginName);
-//            parent->appendRow(pluginItem);
-//        }
-//    }
-//}
 
 

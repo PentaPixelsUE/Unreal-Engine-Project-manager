@@ -3,6 +3,7 @@
 #include "buildsetup.h"
 #include "projectjsongenerator.h"
 #include "pluginsmanager.h"
+
 #include <QSortFilterProxyModel>
 #include<QSettings>
 #include <QObject>
@@ -178,48 +179,115 @@ void MainWindow::onProjectPathBrowseBtnClicker() {
 
  }
 
-void MainWindow::loadengineplugins() {
+    QMap<QString, bool> loadEnabledPluginsFromJson(const QString& jsonFilePath) {
+       QMap<QString, bool> enabledPlugins;
 
-        PluginManager::getInstance().setMainWindowInstance(this);
-        QMessageBox* loadingBox = new QMessageBox(this);
-        loadingBox->setWindowTitle("Loading");
-        loadingBox->setText("Loading Plugins...");
+       QFile jsonFile(jsonFilePath);
+       if (jsonFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+            QByteArray jsonData = jsonFile.readAll();
+            QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
 
-        Qt::WindowFlags flags = loadingBox->windowFlags();
-        flags |= Qt::CustomizeWindowHint;
-        loadingBox->setWindowFlags(flags);
+            if (jsonDoc.isArray()) {
+                QJsonArray jsonArray = jsonDoc.array();
+                for (const auto& pluginObject : jsonArray) {
+                    if (pluginObject.isObject()) {
+                        QString pluginName = pluginObject.toObject()["PluginName"].toString();
+                        bool isEnabled = pluginObject.toObject()["IsEnabled"].toBool();
+                        enabledPlugins[pluginName] = isEnabled;
+                    }
+                }
+            }
+            jsonFile.close();
+       }
 
-        loadingBox->show();
-        QApplication::processEvents();  // Ensure the message box is displayed
+       return enabledPlugins;
+    }
 
-        // Clear the existing models
-        ui->Enabled_Plugins_List->setModel(nullptr);
-        ui->Disabled_Plugins_List->setModel(nullptr);
-        QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
-        QJsonArray pluginsArray;
+    void MainWindow::loadengineplugins() {
+       PluginManager::getInstance().setMainWindowInstance(this);
+       QMessageBox* loadingBox = new QMessageBox(this);
+       loadingBox->setWindowTitle("Loading");
+       loadingBox->setText("Loading Plugins...");
 
-        PluginManager::getInstance().Fill_Plugin_lists_recursive(
-            PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(),
-            pluginPath,
-            pluginsArray
-            );
+       Qt::WindowFlags flags = loadingBox->windowFlags();
+       flags |= Qt::CustomizeWindowHint;
+       loadingBox->setWindowFlags(flags);
 
-        PluginManager::getInstance().Fill_Plugin_lists_recursive(
-            PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(),
-            pluginPath,
-            pluginsArray
-            );
+       loadingBox->show();
+       QApplication::processEvents();  // Ensure the message box is displayed
+
+       // Clear the existing models
+       ui->Enabled_Plugins_List->setModel(nullptr);
+       ui->Disabled_Plugins_List->setModel(nullptr);
+
+       QString pluginPath = ui->UE_Source_Path_Txt->text() + QDir::separator() + "Plugins";
+
+       QString jsonFilePath = QDir::currentPath() + QDir::separator() + "plugins.json";
+       QMap<QString, bool> enabledPlugins;
 
 
+       if (QFile(jsonFilePath).exists()) {
+            // If plugins.json exists, load enabled plugins from it
+            enabledPlugins = loadEnabledPluginsFromJson(jsonFilePath);
 
-        writeJsonFile(pluginsArray, QDir::currentPath() + QDir::separator() + "plugins.json");
+            // Output the names of enabled plugins
+            if (enabledPlugins.isEmpty()) {
+                qDebug() << "No enabled plugins found in plugins.json.";
+            } else {
+                qDebug() << "Enabled Plugins from plugins.json:";
 
+                // Create a QMap to hold the enabled plugins
+                QMap<QString, bool> enabledPluginsMap;
+
+                for (auto it = enabledPlugins.constBegin(); it != enabledPlugins.constEnd(); ++it) {
+                    // Skip processing if the plugin name is empty
+                    if (it.key().isEmpty()) {
+                        continue;
+                    }
+
+                    // Populate the QMap with the loaded plugins based on the value
+                    enabledPluginsMap.insert(it.key(), it.value());
+                }
+
+                // Fill the models with the loaded plugins
+                PluginManager::getInstance().Fill_Plugin_lists_from_map(
+                    PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(),
+                    enabledPluginsMap
+                    );
+            }
+       } else {
+            qDebug() << "plugins.json not found.";
+
+            // If plugins.json doesn't exist or is empty, fill the pluginsArray recursively
+            QJsonArray pluginsArray;
+            PluginManager::getInstance().Fill_Plugin_lists_recursive(
+                PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(),
+                pluginPath,
+                pluginsArray
+                );
+
+            PluginManager::getInstance().Fill_Plugin_lists_recursive(
+                PluginManager::getInstance().getDisabledPluginsModel()->invisibleRootItem(),
+                pluginPath,
+                pluginsArray
+                );
+
+            // Write pluginsArray to plugins.json
+            writeJsonFile(pluginsArray, jsonFilePath);
+
+            // Refresh the enabled and disabled plugin lists
+            RefreshEnabledDisabledPluginLists();
+       }
+
+       // Refresh the enabled and disabled plugin lists
        RefreshEnabledDisabledPluginLists();
 
-
-        loadingBox->close();
-        delete loadingBox;
+       loadingBox->close();
+       delete loadingBox;
     }
+
+
+
 
 
     void MainWindow::writeJsonFile(const QJsonArray& jsonArray, const QString& filePath) {
@@ -251,15 +319,7 @@ void MainWindow::loadengineplugins() {
     }
 
 
-//    void MainWindow::updateJsonArray() {
-//        QJsonObject newObject;
-//        newObject["key"] = "value";
-//        jsonArray.append(newObject);
-//        setJsonArray(jsonArray);
-//    }
 
-
-//Project files setup;
 void MainWindow::onSetupProjectFilesBtnClicker()
 {
 
@@ -627,6 +687,8 @@ void MainWindow::onToggleDefaultPluginSettingBtnClickr() {
 
             PluginManager::getInstance().DisableEnablePluginsGlobal(projectName, pluginName, !enableFlag);
             // Some part of your code where you want to update the JSON array
+
+            loadengineplugins();
             updateEnabledPluginsList();
             updateDisabledPluginsList();
             RefreshEnabledDisabledPluginLists();

@@ -1,6 +1,6 @@
 [
     {
-        "IsEnabled": false,
+        "IsEnabled": true,
         "PluginName": "SmartSnapping",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/2D/Paper2D/Paper2D.uplugin"
     },
@@ -35,7 +35,7 @@
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/AI/MLAdapter/MLAdapter.uplugin"
     },
     {
-        "IsEnabled": true,
+        "IsEnabled": false,
         "PluginName": "ACLPluginEditor",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Animation/ACLPlugin/ACLPlugin.uplugin"
     },
@@ -871,6 +871,11 @@
     },
     {
         "IsEnabled": false,
+        "PluginName": "NNE",
+        "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/NNERuntimeORTCpu/NNERuntimeORTCpu.uplugin"
+    },
+    {
+        "IsEnabled": false,
         "PluginName": "NNERuntimeORTCpu",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Experimental/NNERuntimeORTGpu/NNERuntimeORTGpu.uplugin"
     },
@@ -1365,12 +1370,12 @@
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/Adjust/Adjust.uplugin"
     },
     {
-        "IsEnabled": false,
+        "IsEnabled": true,
         "PluginName": "AnalyticsBlueprintLibrary",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/AnalyticsBlueprintLibrary/AnalyticsBlueprintLibrary.uplugin"
     },
     {
-        "IsEnabled": false,
+        "IsEnabled": true,
         "PluginName": "AnalyticsMulticast",
         "PluginPath": "/home/saif/UnrealEngineSource/UnrealEngine/Engine/Plugins/Runtime/Analytics/AnalyticsMulticast/AnalyticsMulticast.uplugin"
     },
