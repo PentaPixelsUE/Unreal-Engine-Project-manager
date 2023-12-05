@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1052</width>
-    <height>1097</height>
+    <height>1163</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -32,6 +32,11 @@
    <layout class="QFormLayout" name="formLayout">
     <item row="1" column="1">
      <widget class="QTabWidget" name="Main_Menu_Tabs">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -69,7 +74,7 @@ QTabBar::tab:selected {
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="elideMode">
        <enum>Qt::ElideNone</enum>
@@ -276,7 +281,7 @@ QLabel {
                   <x>0</x>
                   <y>0</y>
                   <width>404</width>
-                  <height>462</height>
+                  <height>470</height>
                  </rect>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_2">
@@ -284,7 +289,7 @@ QLabel {
                   <widget class="QListView" name="Disabled_Plugins_List">
                    <property name="font">
                     <font>
-                     <pointsize>12</pointsize>
+                     <pointsize>14</pointsize>
                     </font>
                    </property>
                    <property name="styleSheet">
@@ -511,7 +516,7 @@ QPushButton:disabled {
                     <x>0</x>
                     <y>0</y>
                     <width>402</width>
-                    <height>207</height>
+                    <height>211</height>
                    </rect>
                   </property>
                   <layout class="QGridLayout" name="gridLayout">
@@ -519,7 +524,7 @@ QPushButton:disabled {
                     <widget class="QListView" name="Enabled_Plugins_List">
                      <property name="font">
                       <font>
-                       <pointsize>12</pointsize>
+                       <pointsize>14</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -595,7 +600,7 @@ QLabel {
                     <x>0</x>
                     <y>0</y>
                     <width>402</width>
-                    <height>207</height>
+                    <height>211</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -603,7 +608,7 @@ QLabel {
                     <widget class="QListView" name="Project_Plugins_List">
                      <property name="font">
                       <font>
-                       <pointsize>12</pointsize>
+                       <pointsize>14</pointsize>
                       </font>
                      </property>
                      <property name="styleSheet">
@@ -673,21 +678,361 @@ QListView::item:selected:active {
              <x>0</x>
              <y>0</y>
              <width>1004</width>
-             <height>564</height>
+             <height>572</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
-             <widget class="QTreeWidget" name="treeWidget">
-              <column>
-               <property name="text">
-                <string>Project Folder Structure (Game/)</string>
-               </property>
-              </column>
-             </widget>
-            </item>
-            <item>
-             <widget class="QTreeView" name="treeView"/>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="spacing">
+                 <number>9</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_11">
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>34</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">/* Label */
+QLabel {
+  color:rgb(214, 187, 152);/* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Current Content Folder</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_2">
+                    <property name="styleSheet">
+                     <string notr="true">/* Button */
+QPushButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QPushButton:hover {
+  background-color: rgb(214, 187, 152);
+  border-color: #585c62;
+}
+
+QPushButton:pressed {
+  background-color:  rgb(240, 125, 126);
+  border-color: #72767a;
+}
+
+QPushButton:disabled {
+  background-color: #52565a;
+  border-color: #64686c;
+  color: #888888;
+}
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Add Folder</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton">
+                    <property name="styleSheet">
+                     <string notr="true">/* Button */
+QPushButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QPushButton:hover {
+  background-color: rgb(214, 187, 152);
+  border-color: #585c62;
+}
+
+QPushButton:pressed {
+  background-color:  rgb(240, 125, 126);
+  border-color: #72767a;
+}
+
+QPushButton:disabled {
+  background-color: #52565a;
+  border-color: #64686c;
+  color: #888888;
+}
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Remove Folder</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTreeView" name="CurrentProject_Tree">
+                  <property name="styleSheet">
+                   <string notr="true">QTreeView {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+/* Set the background color and font for QTreeView items */
+QTreeView::item {
+    color: rgb(214, 187, 152);
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    font-size: 17px;
+}
+
+/* Set the background color for selected items in QTreeView */
+QTreeView::item:selected {
+    background-color: rgb(240, 125, 126);
+}
+
+/* Set the font color and size for text in selected items */
+QTreeView::item:selected:active {
+    color: black;
+    font-size: 20px;
+}
+
+</string>
+                  </property>
+                  <attribute name="headerVisible">
+                   <bool>true</bool>
+                  </attribute>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_10">
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">/* Label */
+QLabel {
+  color:rgb(214, 187, 152);/* Electric blue text */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-size: 17px;
+  font-weight: normal;
+  padding: 5px;
+}</string>
+                    </property>
+                    <property name="text">
+                     <string>Presets</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_9">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeType">
+                     <enum>QSizePolicy::Fixed</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>1</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="SuggestedStructures_CBOX">
+                    <property name="font">
+                     <font>
+                      <family>Segoe UI</family>
+                      <pointsize>14</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">/* ComboBox */
+QComboBox {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 1px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QComboBox:hover {
+    background-color: rgb(214, 187, 152);
+    border-color: #585c62;
+}
+
+
+
+QComboBox:disabled {
+    background-color: #52565a;
+    border-color: #64686c;
+    color: #888888;
+}
+
+QComboBox::drop-down {
+    border: none; /* Remove the default arrow button */
+}
+
+
+
+/* ComboBox Popup */
+QComboBox QAbstractItemView {
+    background-color: #2a2a2a;
+    color: #000000; /* Font color when the list view is open */
+    border: 1px solid #ffffff;
+    selection-background-color: rgb(240, 125, 126); /* Color when an item is pressed */
+	
+}
+
+/* Selected Item */
+QComboBox::item:selected {
+    background-color: rgb(240, 125, 126);
+}
+</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_3">
+                    <property name="styleSheet">
+                     <string notr="true">/* Button */
+QPushButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QPushButton:hover {
+  background-color: rgb(214, 187, 152);
+  border-color: #585c62;
+}
+
+QPushButton:pressed {
+  background-color:  rgb(240, 125, 126);
+  border-color: #72767a;
+}
+
+QPushButton:disabled {
+  background-color: #52565a;
+  border-color: #64686c;
+  color: #888888;
+}
+</string>
+                    </property>
+                    <property name="text">
+                     <string>Apply Preset</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTreeView" name="SuggestedStructuresGame_Tree">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QTreeView {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+/* Set the background color and font for QTreeView items */
+QTreeView::item {
+    color: rgb(214, 187, 152);
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    font-size: 17px;
+}
+
+/* Set the background color for selected items in QTreeView */
+QTreeView::item:selected {
+    background-color: rgb(240, 125, 126);
+}
+
+/* Set the font color and size for text in selected items */
+QTreeView::item:selected:active {
+    color: black;
+    font-size: 20px;
+}
+</string>
+                  </property>
+                  <property name="lineWidth">
+                   <number>1</number>
+                  </property>
+                  <property name="editTriggers">
+                   <set>QAbstractItemView::NoEditTriggers</set>
+                  </property>
+                  <property name="showDropIndicator" stdset="0">
+                   <bool>false</bool>
+                  </property>
+                  <property name="itemsExpandable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="animated">
+                   <bool>false</bool>
+                  </property>
+                  <attribute name="headerVisible">
+                   <bool>false</bool>
+                  </attribute>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>

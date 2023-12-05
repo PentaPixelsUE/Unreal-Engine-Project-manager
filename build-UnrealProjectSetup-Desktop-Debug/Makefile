@@ -355,6 +355,30 @@ projectjsongenerator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.s
 .PHONY : projectjsongenerator.cpp.s
 
+projectstructure.o: projectstructure.cpp.o
+.PHONY : projectstructure.o
+
+# target to build an object file
+projectstructure.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o
+.PHONY : projectstructure.cpp.o
+
+projectstructure.i: projectstructure.cpp.i
+.PHONY : projectstructure.i
+
+# target to preprocess a source file
+projectstructure.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.i
+.PHONY : projectstructure.cpp.i
+
+projectstructure.s: projectstructure.cpp.s
+.PHONY : projectstructure.s
+
+# target to generate assembly for a file
+projectstructure.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnrealProjectSetup.dir/build.make CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.s
+.PHONY : projectstructure.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -390,6 +414,9 @@ help:
 	@echo "... projectjsongenerator.o"
 	@echo "... projectjsongenerator.i"
 	@echo "... projectjsongenerator.s"
+	@echo "... projectstructure.o"
+	@echo "... projectstructure.i"
+	@echo "... projectstructure.s"
 .PHONY : help
 
 

@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="UE5Logo">
+    <file>addfolder.png</file>
+    <file>deletefolder.png</file>
     <file>Saveicon.png</file>
     <file>UE5Logo.png</file>
   </qresource>

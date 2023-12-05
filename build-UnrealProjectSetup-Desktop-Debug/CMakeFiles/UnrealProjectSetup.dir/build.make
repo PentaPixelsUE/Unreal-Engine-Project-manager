@@ -73,6 +73,8 @@ UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Info.json
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/Saveicon.png
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/UE5Logo.png
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/deletefolder.png
+UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/QtDesign_Resources/addfolder.png
 UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp: /usr/lib/qt5/bin/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic RCC for QtDesign_Resources/UE5Logo.qrc"
 	/usr/bin/cmake -E cmake_autorcc /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles/UnrealProjectSetup_autogen.dir/AutoRcc_UE5Logo_T6JGSFCFZI_Info.json Debug
@@ -161,10 +163,24 @@ CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/pluginsmanager.cpp -o CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.s
 
+CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o: CMakeFiles/UnrealProjectSetup.dir/flags.make
+CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o: /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectstructure.cpp
+CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o: CMakeFiles/UnrealProjectSetup.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o -MF CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o.d -o CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o -c /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectstructure.cpp
+
+CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectstructure.cpp > CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.i
+
+CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectstructure.cpp -o CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.s
+
 CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o: CMakeFiles/UnrealProjectSetup.dir/flags.make
 CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o: UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp
 CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o: CMakeFiles/UnrealProjectSetup.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o -MF CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o.d -o CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o -c /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp
 
 CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.i: cmake_force
@@ -183,6 +199,7 @@ UnrealProjectSetup_OBJECTS = \
 "CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o" \
 "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o" \
 "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o" \
+"CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o" \
 "CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o"
 
 # External object files for target UnrealProjectSetup
@@ -194,13 +211,14 @@ UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/mainwindow.cpp.o
 UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/buildsetup.cpp.o
 UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o
 UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o
+UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o
 UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp.o
 UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/build.make
 UnrealProjectSetup: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.10
 UnrealProjectSetup: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.10
 UnrealProjectSetup: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.10
 UnrealProjectSetup: CMakeFiles/UnrealProjectSetup.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable UnrealProjectSetup"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/build-UnrealProjectSetup-Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable UnrealProjectSetup"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/UnrealProjectSetup.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

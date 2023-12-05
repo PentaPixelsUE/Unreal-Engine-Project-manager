@@ -3,6 +3,7 @@
 #include "buildsetup.h"
 #include "projectjsongenerator.h"
 #include "pluginsmanager.h"
+#include "projectstructure.h"
 
 #include <QSortFilterProxyModel>
 #include<QSettings>
@@ -41,6 +42,8 @@ MainWindow::MainWindow(QWidget *parent)
     setMinimumSize(900, 750);
 
     filterProxyModel = new QSortFilterProxyModel(this);
+    // Assuming you have a QTreeView named 'ui->CurrentProject_Tree'
+    // Assuming you have a QTreeView named 'ui->CurrentProject_Tree'
 
 
     QSettings settings;
@@ -52,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
 
+//    FillSuggestedStructureTree();
     //Main UI
 
     connect(ui->Project_Path_Browse_Btn, &QPushButton::clicked, this, &::MainWindow::onProjectPathBrowseBtnClicker);
@@ -89,6 +93,25 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Disable_Plugins_Btn,&QPushButton::clicked,this,&MainWindow::onDisablePluginClickr);
     connect(ui->Enable_Project_Plugins_Button, &QPushButton::clicked,this, &MainWindow::onEnablePluginForProjectBtnClickr);
     connect(ui->Toggle_Global_Plugin_Btn, &QPushButton::clicked, this, &MainWindow::onToggleDefaultPluginSettingBtnClickr);
+
+//CBOX Suggested Sturcts
+    connect(ui->SuggestedStructures_CBOX, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &MainWindow::onSuggestedStructureIndexChanged);
+
+QStringList suggestedProjects = {
+    "Shooter",
+    "Top Down",
+    "Virtual Production",
+    "2D Side Scroller",
+    "Open World",
+    "ArchViz",
+    "Animation",
+    "Mobile / Tablet",
+        "AR/VR"
+
+};
+
+ui->SuggestedStructures_CBOX->addItems(suggestedProjects);
 }
 
 void MainWindow::onGameMode()
@@ -388,23 +411,28 @@ bool MainWindow::validateProjectName() {
 
         // Check if the uprojectPath has changed
         if (uprojectPath != PluginManager::getInstance().getUProjectPath()) {
-            // Clear the model before updating
-            qDebug() << uprojectPath << " COMPARING" << PluginManager::getInstance().getUProjectPath();
-      //      ui->Project_Plugins_List->setModel(nullptr);
+                // Clear the model before updating
+                qDebug() << uprojectPath << " COMPARING" << PluginManager::getInstance().getUProjectPath();
 
-            // Update the model and set the project path
-            PluginManager::getInstance().setUProjectPath(uprojectPath);
-            PluginManager::getInstance().setProjectName(projectName);
-            PluginManager::getInstance().FillProjectPluginsList(uprojectPath, projectName, PluginManager::getInstance().getProjectPluginsModel()->invisibleRootItem());
-            UpdateProjectPluginsList();
-           RefreshProjectPluginList();
+                QStandardItemModel *model = new QStandardItemModel(this);
+                QString ContentPath=  uprojectPath + QDir::separator() +"Content";
+                // Assuming DisplayFolders is a recursive function to populate the model with the folder structure
+                DisplayFolders(ContentPath, model, nullptr);
+
+                // Set the model to the QTreeView
+                ui->CurrentProject_Tree->setModel(model);
+
+                // Update the model and set the project path
+                PluginManager::getInstance().setUProjectPath(uprojectPath);
+                PluginManager::getInstance().setProjectName(projectName);
+                PluginManager::getInstance().FillProjectPluginsList(uprojectPath, projectName, PluginManager::getInstance().getProjectPluginsModel()->invisibleRootItem());
+                UpdateProjectPluginsList();
+                RefreshProjectPluginList();
         }
 
         return true;
     }
 
-    // If validation fails, clear the model
-    ui->Project_Plugins_List->setModel(nullptr);
     return false;
 }
 
@@ -667,6 +695,51 @@ void MainWindow::onToggleDefaultPluginSettingBtnClickr() {
 
         } else {
             qDebug() << "No item selected in the Plugins List.";
+        }
+}
+
+void MainWindow::onSuggestedStructureIndexChanged(int index)
+{
+        QString selectedProject = ui->SuggestedStructures_CBOX->itemText(index);
+        QStandardItemModel *model = new QStandardItemModel(this);
+        projectstructure project;
+        if (selectedProject == "Shooter") {
+            project.ShooterStructure(model);
+        } else if (selectedProject == "Top Down") {
+            project.TopDownStructure(model);
+        } else if ( selectedProject == "Virtual Production") {
+            project.VirtualProdStructure(model);
+        }else if ( selectedProject == "Open World") {
+            project.OpenWorldStructure(model);
+        }else if ( selectedProject == "2D Side Scroller") {
+            project.SideScrollerStructure(model);
+        }else if ( selectedProject == "ArchViz") {
+            project.ArchVizStructure(model);
+        }else if ( selectedProject == "Animation") {
+            project.AnimationStructure(model);
+        }else if ( selectedProject ==  "Mobile / Tablet") {
+            project.MobileTabletStructure(model);
+        }else if ( selectedProject ==    "AR/VR") {
+            project.ARVRStructure(model);
+        }
+        ui->SuggestedStructuresGame_Tree->setModel(model);
+        ui->SuggestedStructuresGame_Tree->expandAll();
+}
+
+
+void MainWindow::DisplayFolders(const QDir &folder, QStandardItemModel *model, QStandardItem *parentItem)
+{
+        QFileInfoList fileInfoList = folder.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+
+        for (const QFileInfo &fileInfo : fileInfoList)
+        {
+            QStandardItem *item = new QStandardItem(fileInfo.fileName());
+
+            // Recursively display contents for subdirectories
+            QDir subDir(fileInfo.filePath());
+            DisplayFolders(subDir, model, item);
+
+            parentItem ? parentItem->appendRow(item) : model->appendRow(item);
         }
 }
 

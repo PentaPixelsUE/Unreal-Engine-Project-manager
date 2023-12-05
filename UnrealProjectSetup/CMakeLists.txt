@@ -25,7 +25,8 @@ set(PROJECT_SOURCES
         pluginsmanager.cpp
         QtDesign_Resources/UE5Logo.qrc
         linuxconfig.json
-
+        projectstructure.cpp
+        projectstructure.h
     )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

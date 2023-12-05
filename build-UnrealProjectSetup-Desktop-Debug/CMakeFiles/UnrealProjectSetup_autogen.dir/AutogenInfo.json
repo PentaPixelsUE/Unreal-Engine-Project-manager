@@ -102,6 +102,12 @@
 			"MU",
 			"EWIEGA46WW/moc_projectjsongenerator.cpp",
 			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectstructure.h",
+			"MU",
+			"EWIEGA46WW/moc_projectstructure.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -179,6 +185,11 @@
 		],
 		[
 			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectjsongenerator.cpp",
+			"MU",
+			null
+		],
+		[
+			"/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/projectstructure.cpp",
 			"MU",
 			null
 		]

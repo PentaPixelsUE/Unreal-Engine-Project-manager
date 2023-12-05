@@ -72,19 +72,22 @@ public:
     QStandardItemModel* getProjectPluginsModel() const {
         return projectPluginsModel;
     }
-        void setMainWindowInstance(MainWindow* mainWindow);
+
+
+     void setMainWindowInstance(MainWindow* mainWindow);
     void setupListView(QListView* listView,QSortFilterProxyModel* proxyModel);
    void Fill_Plugin_lists_recursive(QStandardItem* parent, const QString& directory, QJsonArray& pluginsArray);
-    //void Fill_Disabled_Plugin_lists_recursive(QStandardItem* parent, const QString& directory);
     void FillProjectPluginsList(const QString& uprojectPath,const QString& projectName,QStandardItem* parent);
     void EnablePluginForProject(const QString& projectName, const QString& pluginName);
     void DisablePluginForProject(const QString& projectName, const QString& pluginName) ;
     void DisableEnablePluginsGlobal(const QString& projectName, const QString& pluginName, bool isDisabled);
+     void Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap);
     bool set_list_flag()const;
 
-    void Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap);
+
 
 private:
+
     QMap<QString, QString> getPluginNameMapping() ;
      QJsonArray pluginsArray;
     bool enableFlag;

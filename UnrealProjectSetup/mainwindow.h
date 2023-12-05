@@ -1,9 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "qdir.h"
 #include "qjsonarray.h"
 #include "qjsonobject.h"
 #include "qsortfilterproxymodel.h"
+#include "qstandarditemmodel.h"
 #include <QMainWindow>
 
 enum RunMode {
@@ -50,8 +52,12 @@ private:
     void RefreshEnabledDisabledPluginLists();
     void RefreshProjectPluginList();
     void loadengineplugins();
-
+    void DisplayFolders(const QDir &folder, QStandardItemModel *model, QStandardItem *parentItem = nullptr);
+//    void FillSuggestedStructureTree();
 private slots:
+
+    void onSuggestedStructureIndexChanged(int index);
+
     //Slot for handeling the "Enable Plugin For Project" Button Clicker
     void onEnablePluginForProjectBtnClickr();
     // Slot for handling the "Browse" button click to select the project path

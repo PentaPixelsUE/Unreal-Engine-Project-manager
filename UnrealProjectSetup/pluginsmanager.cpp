@@ -342,7 +342,7 @@ void PluginManager::EnablePluginForProject(const QString& projectName, const QSt
             break;
         }
     }
-  qDebug() << "Plugin" << pluginName << " enabled for project" << projectName << ". Written Name: " << newPlugin["Name"].toString();
+
     pluginsArray.append(newPlugin);
 
     // Update the "Plugins" array in the JSON object

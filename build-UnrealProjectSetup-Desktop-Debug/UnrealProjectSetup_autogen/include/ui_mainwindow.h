@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
@@ -29,7 +30,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTreeView>
-#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -81,8 +81,20 @@ public:
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_6;
-    QTreeWidget *treeWidget;
-    QTreeView *treeView;
+    QHBoxLayout *horizontalLayout_9;
+    QVBoxLayout *verticalLayout_5;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *label_2;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
+    QTreeView *CurrentProject_Tree;
+    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_4;
+    QSpacerItem *horizontalSpacer_9;
+    QComboBox *SuggestedStructures_CBOX;
+    QPushButton *pushButton_3;
+    QTreeView *SuggestedStructuresGame_Tree;
     QFrame *PathsFrame;
     QGridLayout *gridLayout_3;
     QHBoxLayout *Paths_HBOX;
@@ -136,7 +148,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1052, 1097);
+        MainWindow->resize(1052, 1163);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(1);
         sizePolicy.setVerticalStretch(0);
@@ -153,6 +165,9 @@ public:
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         Main_Menu_Tabs = new QTabWidget(Project_Path_Hbox);
         Main_Menu_Tabs->setObjectName(QString::fromUtf8("Main_Menu_Tabs"));
+        QFont font;
+        font.setPointSize(14);
+        Main_Menu_Tabs->setFont(font);
         Main_Menu_Tabs->setAutoFillBackground(false);
         Main_Menu_Tabs->setStyleSheet(QString::fromUtf8("QTabWidget {\n"
 "    background-color: #333333;\n"
@@ -289,13 +304,11 @@ public:
         Disabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Disabled_Pluginsl_Area = new QWidget();
         Disabled_Pluginsl_Area->setObjectName(QString::fromUtf8("Disabled_Pluginsl_Area"));
-        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 404, 462));
+        Disabled_Pluginsl_Area->setGeometry(QRect(0, 0, 404, 470));
         gridLayout_2 = new QGridLayout(Disabled_Pluginsl_Area);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         Disabled_Plugins_List = new QListView(Disabled_Pluginsl_Area);
         Disabled_Plugins_List->setObjectName(QString::fromUtf8("Disabled_Plugins_List"));
-        QFont font;
-        font.setPointSize(12);
         Disabled_Plugins_List->setFont(font);
         Disabled_Plugins_List->setStyleSheet(QString::fromUtf8("QListView {\n"
 "    background-color: #333333;\n"
@@ -451,7 +464,7 @@ public:
         Enabled_Plugins_Scroll_Area->setWidgetResizable(true);
         Enabled_Plugins_Area = new QWidget();
         Enabled_Plugins_Area->setObjectName(QString::fromUtf8("Enabled_Plugins_Area"));
-        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 402, 207));
+        Enabled_Plugins_Area->setGeometry(QRect(0, 0, 402, 211));
         gridLayout = new QGridLayout(Enabled_Plugins_Area);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         Enabled_Plugins_List = new QListView(Enabled_Plugins_Area);
@@ -513,7 +526,7 @@ public:
         Project_Plugins_Scroll_Area->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 402, 207));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 402, 211));
         verticalLayout_4 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         Project_Plugins_List = new QListView(scrollAreaWidgetContents_2);
@@ -573,18 +586,287 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1004, 564));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1004, 572));
         horizontalLayout_6 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        treeWidget = new QTreeWidget(scrollAreaWidgetContents);
-        treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        horizontalLayout_9->setContentsMargins(-1, -1, 0, -1);
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setSpacing(9);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(-1, -1, 0, -1);
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
+        horizontalLayout_11->setContentsMargins(-1, -1, -1, 0);
+        label_2 = new QLabel(scrollAreaWidgetContents);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setMinimumSize(QSize(0, 34));
+        label_2->setStyleSheet(QString::fromUtf8("/* Label */\n"
+"QLabel {\n"
+"  color:rgb(214, 187, 152);/* Electric blue text */\n"
+"  font-family: 'Roboto', sans-serif; /* Modern font */\n"
+"  font-size: 17px;\n"
+"  font-weight: normal;\n"
+"  padding: 5px;\n"
+"}"));
 
-        horizontalLayout_6->addWidget(treeWidget);
+        horizontalLayout_11->addWidget(label_2);
 
-        treeView = new QTreeView(scrollAreaWidgetContents);
-        treeView->setObjectName(QString::fromUtf8("treeView"));
+        pushButton_2 = new QPushButton(scrollAreaWidgetContents);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        pushButton_2->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: rgb(214, 187, 152);\n"
+"  border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color:  rgb(240, 125, 126);\n"
+"  border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"  background-color: #52565a;\n"
+"  border-color: #64686c;\n"
+"  color: #888888;\n"
+"}\n"
+""));
 
-        horizontalLayout_6->addWidget(treeView);
+        horizontalLayout_11->addWidget(pushButton_2);
+
+        pushButton = new QPushButton(scrollAreaWidgetContents);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: rgb(214, 187, 152);\n"
+"  border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color:  rgb(240, 125, 126);\n"
+"  border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"  background-color: #52565a;\n"
+"  border-color: #64686c;\n"
+"  color: #888888;\n"
+"}\n"
+""));
+
+        horizontalLayout_11->addWidget(pushButton);
+
+
+        verticalLayout_5->addLayout(horizontalLayout_11);
+
+        CurrentProject_Tree = new QTreeView(scrollAreaWidgetContents);
+        CurrentProject_Tree->setObjectName(QString::fromUtf8("CurrentProject_Tree"));
+        CurrentProject_Tree->setStyleSheet(QString::fromUtf8("QTreeView {\n"
+"    background-color: #333333;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"/* Set the background color and font for QTreeView items */\n"
+"QTreeView::item {\n"
+"    color: rgb(214, 187, 152);\n"
+"    font-family: 'Roboto', sans-serif; /* Modern font */\n"
+"    font-size: 17px;\n"
+"}\n"
+"\n"
+"/* Set the background color for selected items in QTreeView */\n"
+"QTreeView::item:selected {\n"
+"    background-color: rgb(240, 125, 126);\n"
+"}\n"
+"\n"
+"/* Set the font color and size for text in selected items */\n"
+"QTreeView::item:selected:active {\n"
+"    color: black;\n"
+"    font-size: 20px;\n"
+"}\n"
+"\n"
+""));
+        CurrentProject_Tree->header()->setVisible(true);
+
+        verticalLayout_5->addWidget(CurrentProject_Tree);
+
+
+        horizontalLayout_9->addLayout(verticalLayout_5);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(-1, -1, 0, -1);
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        horizontalLayout_10->setContentsMargins(-1, -1, -1, 0);
+        label_4 = new QLabel(scrollAreaWidgetContents);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setMinimumSize(QSize(0, 0));
+        label_4->setStyleSheet(QString::fromUtf8("/* Label */\n"
+"QLabel {\n"
+"  color:rgb(214, 187, 152);/* Electric blue text */\n"
+"  font-family: 'Roboto', sans-serif; /* Modern font */\n"
+"  font-size: 17px;\n"
+"  font-weight: normal;\n"
+"  padding: 5px;\n"
+"}"));
+        label_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+
+        horizontalLayout_10->addWidget(label_4);
+
+        horizontalSpacer_9 = new QSpacerItem(1, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_10->addItem(horizontalSpacer_9);
+
+        SuggestedStructures_CBOX = new QComboBox(scrollAreaWidgetContents);
+        SuggestedStructures_CBOX->setObjectName(QString::fromUtf8("SuggestedStructures_CBOX"));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Segoe UI"));
+        font1.setPointSize(14);
+        SuggestedStructures_CBOX->setFont(font1);
+        SuggestedStructures_CBOX->setStyleSheet(QString::fromUtf8("/* ComboBox */\n"
+"QComboBox {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 1px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QComboBox:hover {\n"
+"    background-color: rgb(214, 187, 152);\n"
+"    border-color: #585c62;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QComboBox:disabled {\n"
+"    background-color: #52565a;\n"
+"    border-color: #64686c;\n"
+"    color: #888888;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: none; /* Remove the default arrow button */\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"/* ComboBox Popup */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #000000; /* Font color when the list view is open */\n"
+"    border: 1px solid #ffffff;\n"
+"    selection-background-color: rgb(240, 125, 126); /* Color when an item is pressed */\n"
+"	\n"
+"}\n"
+"\n"
+"/* Selected Item */\n"
+"QComboBox::item:selected {\n"
+"    background-color: rgb(240, 125, 126);\n"
+"}"
+                        "\n"
+""));
+
+        horizontalLayout_10->addWidget(SuggestedStructures_CBOX);
+
+        pushButton_3 = new QPushButton(scrollAreaWidgetContents);
+        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        pushButton_3->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: rgb(214, 187, 152);\n"
+"  border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color:  rgb(240, 125, 126);\n"
+"  border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"  background-color: #52565a;\n"
+"  border-color: #64686c;\n"
+"  color: #888888;\n"
+"}\n"
+""));
+
+        horizontalLayout_10->addWidget(pushButton_3);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_10);
+
+        SuggestedStructuresGame_Tree = new QTreeView(scrollAreaWidgetContents);
+        SuggestedStructuresGame_Tree->setObjectName(QString::fromUtf8("SuggestedStructuresGame_Tree"));
+        SuggestedStructuresGame_Tree->setFont(font);
+        SuggestedStructuresGame_Tree->setStyleSheet(QString::fromUtf8("QTreeView {\n"
+"    background-color: #333333;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"}\n"
+"\n"
+"/* Set the background color and font for QTreeView items */\n"
+"QTreeView::item {\n"
+"    color: rgb(214, 187, 152);\n"
+"    font-family: 'Roboto', sans-serif; /* Modern font */\n"
+"    font-size: 17px;\n"
+"}\n"
+"\n"
+"/* Set the background color for selected items in QTreeView */\n"
+"QTreeView::item:selected {\n"
+"    background-color: rgb(240, 125, 126);\n"
+"}\n"
+"\n"
+"/* Set the font color and size for text in selected items */\n"
+"QTreeView::item:selected:active {\n"
+"    color: black;\n"
+"    font-size: 20px;\n"
+"}\n"
+""));
+        SuggestedStructuresGame_Tree->setLineWidth(1);
+        SuggestedStructuresGame_Tree->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        SuggestedStructuresGame_Tree->setProperty("showDropIndicator", QVariant(false));
+        SuggestedStructuresGame_Tree->setItemsExpandable(true);
+        SuggestedStructuresGame_Tree->setAnimated(false);
+        SuggestedStructuresGame_Tree->header()->setVisible(false);
+
+        verticalLayout_2->addWidget(SuggestedStructuresGame_Tree);
+
+
+        horizontalLayout_9->addLayout(verticalLayout_2);
+
+
+        horizontalLayout_6->addLayout(horizontalLayout_9);
 
         scrollArea->setWidget(scrollAreaWidgetContents);
 
@@ -712,11 +994,11 @@ public:
         Project_Name_Error->setObjectName(QString::fromUtf8("Project_Name_Error"));
         Project_Name_Error->setMinimumSize(QSize(0, 0));
         Project_Name_Error->setBaseSize(QSize(0, 0));
-        QFont font1;
-        font1.setFamily(QString::fromUtf8("Roboto"));
-        font1.setBold(false);
-        font1.setWeight(50);
-        Project_Name_Error->setFont(font1);
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Roboto"));
+        font2.setBold(false);
+        font2.setWeight(50);
+        Project_Name_Error->setFont(font2);
         Project_Name_Error->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
 "  color:rgb(211, 133, 59);/* Electric blue text */\n"
@@ -1212,7 +1494,7 @@ public:
         Standalone_Warning_Lbl = new QLabel(Build_Setup_Frame);
         Standalone_Warning_Lbl->setObjectName(QString::fromUtf8("Standalone_Warning_Lbl"));
         Standalone_Warning_Lbl->setMinimumSize(QSize(0, 37));
-        Standalone_Warning_Lbl->setFont(font1);
+        Standalone_Warning_Lbl->setFont(font2);
         Standalone_Warning_Lbl->setStyleSheet(QString::fromUtf8("/* Label */\n"
 "QLabel {\n"
 "  color:rgb(211, 133, 59);/* Electric blue text */\n"
@@ -1244,7 +1526,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        Main_Menu_Tabs->setCurrentIndex(0);
+        Main_Menu_Tabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1264,8 +1546,11 @@ public:
         Disable_Plugins_Btn->setText(QCoreApplication::translate("MainWindow", "Remove From Project", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Project Plugins", nullptr));
         Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Build_Page), QCoreApplication::translate("MainWindow", "Plugins Setup", nullptr));
-        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("MainWindow", "Project Folder Structure (Game/)", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Current Content Folder", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Add Folder", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Remove Folder", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Presets", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Apply Preset", nullptr));
         Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Project_Structure_Tab), QCoreApplication::translate("MainWindow", "Project Structure", nullptr));
         Project_Path_Label->setText(QCoreApplication::translate("MainWindow", "Project Path", nullptr));
         UE_Source_Path_Label->setText(QCoreApplication::translate("MainWindow", "Engine Path", nullptr));

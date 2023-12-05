@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/UnrealProjectSetup.dir/pluginsmanager.cpp.o.d"
   "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o"
   "CMakeFiles/UnrealProjectSetup.dir/projectjsongenerator.cpp.o.d"
+  "CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o"
+  "CMakeFiles/UnrealProjectSetup.dir/projectstructure.cpp.o.d"
   "UnrealProjectSetup"
   "UnrealProjectSetup.pdb"
   "UnrealProjectSetup_autogen/T6JGSFCFZI/qrc_UE5Logo.cpp"
