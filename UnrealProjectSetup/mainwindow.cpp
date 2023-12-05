@@ -254,6 +254,7 @@ void MainWindow::onProjectPathBrowseBtnClicker() {
                     PluginManager::getInstance().getEnabledPluginsModel()->invisibleRootItem(),
                     enabledPluginsMap
                     );
+
             }
        } else {
             qDebug() << "plugins.json not found.";
@@ -578,35 +579,6 @@ void MainWindow::RefreshProjectPluginList() {
         PluginManager::getInstance().setupListView(ui->Project_Plugins_List, PluginManager::getInstance().getProjectPluginsProxyModel());
 }
 
-//void MainWindow::onEnablePluginForProjectBtnClickr() {
-
-//        QString projectName = ui->Project_Name_Txt->text();
-//        QString projectPath = ui->Project_Path_Txt->text();
-
-//        // Get the selected item from the Disabled Plugins List
-//        QModelIndexList selectedIndexes = ui->Disabled_Plugins_List->selectionModel()->selectedIndexes();
-
-//        if (!selectedIndexes.isEmpty()) {
-//            // Get the selected item's text (plugin name)
-//            QString pluginName = PluginManager::getInstance().getDisabledPluginsProxyModel()->data(
-//                                                                                                PluginManager::getInstance().getDisabledPluginsProxyModel()->index(selectedIndexes.first().row(), 0)
-//                                                                                                ).toString();
-//            QString uprojectPath = projectPath + QDir::separator() + projectName;
-//            // Call EnablePluginForProject with the selected project name and plugin name
-//            PluginManager::getInstance().EnablePluginForProject(projectName, pluginName);
-//            PluginManager::getInstance().setUProjectPath(uprojectPath);
-//            PluginManager::getInstance().setProjectName(projectName);
-//            PluginManager::getInstance().FillProjectPluginsList(uprojectPath, projectName, PluginManager::getInstance().getProjectPluginsModel()->invisibleRootItem());
-//            RefreshEnabledDisabledPluginLists();
-//            RefreshProjectPluginList();
-//            updateEnabledPluginsList();
-//            updateDisabledPluginsList();
-//            UpdateProjectPluginsList();
-
-//        } else {
-//            qDebug() << "No item selected in the Disabled Plugins List.";
-//        }
-//}
 void MainWindow::onEnableDisableProjectPluginBtnsClickr(bool enable) {
         QString projectName = ui->Project_Name_Txt->text();
         QString projectPath = ui->Project_Path_Txt->text();

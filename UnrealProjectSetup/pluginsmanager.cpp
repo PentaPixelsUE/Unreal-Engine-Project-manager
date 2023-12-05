@@ -66,7 +66,7 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
                     isEnabledByDefault = true;
                 } else if (line.contains("\"EnabledByDefault\": false")) {
                     isEnabledByDefault = false;
-                } else if (line.contains("\"Name\":")) {
+                } else if (line.contains("\"FriendlyName\":")) {
                     // Extract the plugin name
                     pluginName = line.split(":")[1].trimmed().remove(QRegExp("[\",]"));
                 }
@@ -101,6 +101,12 @@ void PluginManager::Fill_Plugin_lists_recursive(QStandardItem* parent, const QSt
                 pluginObject["PluginName"] = pluginName;
                 pluginObject["PluginPath"] = filePath;
                 pluginObject["IsEnabled"] = isEnabledByDefault;
+
+                // Extract the last part of the plugin path without the extension
+                QFileInfo fileInfo(filePath);
+                QString inEngineName = fileInfo.baseName();  // baseName returns the file name without the extension
+                pluginObject["InEngineName"] = inEngineName;
+
                 pluginsArray.append(pluginObject);
             }
         }
@@ -238,9 +244,44 @@ bool PluginManager::set_list_flag() const {
 
 /********************************************************************************************************************************/
 
+QMap<QString, QString> PluginManager::getPluginNameMapping() {
+    QMap<QString, QString> pluginNameMapping;
+    QString pluginsFilepath =QDir::currentPath() + QDir::separator() + "plugins.json";
+    QFile pluginsFile(pluginsFilepath);
 
+    if (!pluginsFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Error: Failed to open plugins.json for reading. Error: " << pluginsFile.errorString();
+        return pluginNameMapping;
+    }
 
+    // Read the content from plugins.json
+    QTextStream pluginsIn(&pluginsFile);
+    QString pluginsContent = pluginsIn.readAll();
+
+    // Close the file after reading
+    pluginsFile.close();
+
+    // Create a QJsonDocument from the JSON-like content
+    QJsonDocument pluginsJsonDoc = QJsonDocument::fromJson(pluginsContent.toUtf8());
+    QJsonArray pluginsJsonArray = pluginsJsonDoc.array();
+
+    // Populate the mapping
+    for (const auto& plugin : pluginsJsonArray) {
+        QJsonObject pluginObject = plugin.toObject();
+        QString pluginName = pluginObject["PluginName"].toString();
+        QString inEngineName = pluginObject["InEngineName"].toString();
+        pluginNameMapping[pluginName] = inEngineName;
+    }
+
+    return pluginNameMapping;
+}
 void PluginManager::EnablePluginForProject(const QString& projectName, const QString& pluginName) {
+    // Get the map of plugin names to in-engine names
+    QMap<QString, QString> pluginNameMapping = getPluginNameMapping();
+
+    // Check if the plugin is already enabled
+    bool pluginAlreadyEnabled = false;
+    QString inEngineName = pluginNameMapping.value(pluginName, pluginName);
     QString uprojectFilePath = getUProjectPath() + QDir::separator() + projectName + ".uproject";
 
     if (uprojectFilePath.isEmpty()) {
@@ -283,15 +324,25 @@ void PluginManager::EnablePluginForProject(const QString& projectName, const QSt
     for (const auto& plugin : pluginsArray) {
         QJsonObject pluginObject = plugin.toObject();
         if (pluginObject["Name"].toString() == pluginName) {
-            qDebug() << "Plugin" << pluginName << "is already enabled for project" << projectName;
+            qDebug() << "Plugin" << pluginName << " is already enabled for project" << projectName;
             return;
         }
     }
 
     // Add the new plugin entry
     QJsonObject newPlugin;
-    newPlugin["Name"] = pluginName;
+    newPlugin["Name"] = inEngineName;  // Use inEngineName instead of pluginName
     newPlugin["Enabled"] = true;
+
+    // Find the corresponding entry in plugins.json to get the InEngineName
+    for (const auto& pluginEntry : pluginsArray) {
+        QJsonObject pluginObject = pluginEntry.toObject();
+        if (pluginObject["PluginName"].toString() == pluginName) {
+            newPlugin["Name"] = pluginObject["InEngineName"].toString();
+            break;
+        }
+    }
+  qDebug() << "Plugin" << pluginName << " enabled for project" << projectName << ". Written Name: " << newPlugin["Name"].toString();
     pluginsArray.append(newPlugin);
 
     // Update the "Plugins" array in the JSON object
@@ -305,11 +356,13 @@ void PluginManager::EnablePluginForProject(const QString& projectName, const QSt
         QTextStream out(&uprojectFile);
         out << uprojectContent;
         uprojectFile.close();
-        qDebug() << "Plugin" << pluginName << "enabled for project" << projectName;
+        qDebug() << "Plugin" << pluginName << " enabled for project" << projectName << ". Written Name: " << newPlugin["Name"].toString();
     } else {
         qDebug() << "Error: Failed to write changes to UProject file. Error: " << uprojectFile.errorString();
     }
 }
+
+
 
 /********************************************************************************************************************************/
 void PluginManager::DisablePluginForProject(const QString& projectName, const QString& pluginName) {
@@ -380,8 +433,32 @@ void PluginManager::DisablePluginForProject(const QString& projectName, const QS
 
 
 
-/********************************************************************************************************************************/
 
+
+
+
+void PluginManager::Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap) {
+    // Clear existing items in both lists
+    getEnabledPluginsModel()->invisibleRootItem()->removeRows(0, getEnabledPluginsModel()->rowCount());
+    getDisabledPluginsModel()->invisibleRootItem()->removeRows(0, getDisabledPluginsModel()->rowCount());
+
+    for (auto it = pluginMap.begin(); it != pluginMap.end(); ++it) {
+        const QString& pluginName = it.key();
+        const bool isEnabled = it.value();
+
+        QStandardItem* item = new QStandardItem(pluginName);
+
+        if (isEnabled) {
+            // Add to the enabled plugins list
+            getEnabledPluginsModel()->invisibleRootItem()->appendRow(item);
+        } else {
+            // Add to the disabled plugins list
+            getDisabledPluginsModel()->invisibleRootItem()->appendRow(item);
+        }
+    }
+}
+
+/********************************************************************************************************************************/
 
 void PluginManager::DisableEnablePluginsGlobal(const QString& projectName, const QString& pluginName, bool isDisabled) {
     if (mainWindowInstance) {
@@ -455,25 +532,3 @@ void PluginManager::DisableEnablePluginsGlobal(const QString& projectName, const
         qDebug() << "MainWindow instance is not set in PluginManager.";
     }
 }
-void PluginManager::Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap) {
-    // Clear existing items
-    parent->removeRows(0, parent->rowCount());
-
-    for (auto it = pluginMap.begin(); it != pluginMap.end(); ++it) {
-        const QString& pluginName = it.key();
-        const bool isEnabled = it.value();
-
-        QStandardItem* item = new QStandardItem(pluginName);
-
-        if (isEnabled) {
-            // Add to the enabled plugins list
-            getEnabledPluginsModel()->invisibleRootItem()->appendRow(item);
-        } else {
-            // Add to the disabled plugins list
-            getDisabledPluginsModel()->invisibleRootItem()->appendRow(item);
-        }
-    }
-}
-
-
-

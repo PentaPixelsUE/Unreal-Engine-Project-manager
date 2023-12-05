@@ -85,6 +85,7 @@ public:
     void Fill_Plugin_lists_from_map(QStandardItem* parent, const QMap<QString, bool>& pluginMap);
 
 private:
+    QMap<QString, QString> getPluginNameMapping() ;
      QJsonArray pluginsArray;
     bool enableFlag;
     QString projectName;
