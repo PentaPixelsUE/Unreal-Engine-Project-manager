@@ -89,16 +89,16 @@ public:
 private:
 
     QMap<QString, QString> getPluginNameMapping() ;
-     QJsonArray pluginsArray;
+    QJsonArray pluginsArray;
     bool enableFlag;
     QString projectName;
     QString enginePath;
     QString uprojectPath;
     QStandardItemModel* enabledPluginsModel;
-     QSortFilterProxyModel* enabledPluginsProxyModel;
-    QSortFilterProxyModel* disabledPluginsProxyModel;
     QStandardItemModel* disabledPluginsModel;
     QStandardItemModel* projectPluginsModel;
+     QSortFilterProxyModel* enabledPluginsProxyModel;
+    QSortFilterProxyModel* disabledPluginsProxyModel;
     QSortFilterProxyModel* projectPluginsProxyModel;
     QItemSelectionModel* AllListsSelectionModel;
 

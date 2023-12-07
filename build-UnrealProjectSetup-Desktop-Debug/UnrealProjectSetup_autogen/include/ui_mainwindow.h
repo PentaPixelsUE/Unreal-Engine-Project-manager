@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
@@ -85,15 +86,16 @@ public:
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_11;
     QLabel *label_2;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QPushButton *Add_Folder_Btn;
+    QPushButton *Remove_Folder_Btn;
+    QPushButton *Create_hierarchy_Btn;
     QTreeView *CurrentProject_Tree;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_4;
     QSpacerItem *horizontalSpacer_9;
     QComboBox *SuggestedStructures_CBOX;
-    QPushButton *pushButton_3;
+    QPushButton *Apply_Preset_Btn;
     QTreeView *SuggestedStructuresGame_Tree;
     QFrame *PathsFrame;
     QGridLayout *gridLayout_3;
@@ -613,9 +615,9 @@ public:
 
         horizontalLayout_11->addWidget(label_2);
 
-        pushButton_2 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setStyleSheet(QString::fromUtf8("/* Button */\n"
+        Add_Folder_Btn = new QPushButton(scrollAreaWidgetContents);
+        Add_Folder_Btn->setObjectName(QString::fromUtf8("Add_Folder_Btn"));
+        Add_Folder_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
 "QPushButton {\n"
 "    background-color: #2a2a2a;\n"
 "    color: #ffffff;\n"
@@ -642,11 +644,11 @@ public:
 "}\n"
 ""));
 
-        horizontalLayout_11->addWidget(pushButton_2);
+        horizontalLayout_11->addWidget(Add_Folder_Btn);
 
-        pushButton = new QPushButton(scrollAreaWidgetContents);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setStyleSheet(QString::fromUtf8("/* Button */\n"
+        Remove_Folder_Btn = new QPushButton(scrollAreaWidgetContents);
+        Remove_Folder_Btn->setObjectName(QString::fromUtf8("Remove_Folder_Btn"));
+        Remove_Folder_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
 "QPushButton {\n"
 "    background-color: #2a2a2a;\n"
 "    color: #ffffff;\n"
@@ -673,13 +675,49 @@ public:
 "}\n"
 ""));
 
-        horizontalLayout_11->addWidget(pushButton);
+        horizontalLayout_11->addWidget(Remove_Folder_Btn);
+
+        Create_hierarchy_Btn = new QPushButton(scrollAreaWidgetContents);
+        Create_hierarchy_Btn->setObjectName(QString::fromUtf8("Create_hierarchy_Btn"));
+        Create_hierarchy_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
+"QPushButton {\n"
+"    background-color: #2a2a2a;\n"
+"    color: #ffffff;\n"
+"    border: 1px solid #ffffff;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    font-family: \"Segoe UI\", sans-serif; /* Modern font example */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"  background-color: rgb(214, 187, 152);\n"
+"  border-color: #585c62;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"  background-color:  rgb(240, 125, 126);\n"
+"  border-color: #72767a;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"  background-color: #52565a;\n"
+"  border-color: #64686c;\n"
+"  color: #888888;\n"
+"}\n"
+""));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/UE5Logo/Saveicon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Create_hierarchy_Btn->setIcon(icon);
+        Create_hierarchy_Btn->setIconSize(QSize(23, 23));
+
+        horizontalLayout_11->addWidget(Create_hierarchy_Btn);
 
 
         verticalLayout_5->addLayout(horizontalLayout_11);
 
         CurrentProject_Tree = new QTreeView(scrollAreaWidgetContents);
         CurrentProject_Tree->setObjectName(QString::fromUtf8("CurrentProject_Tree"));
+        CurrentProject_Tree->setFont(font);
         CurrentProject_Tree->setStyleSheet(QString::fromUtf8("QTreeView {\n"
 "    background-color: #333333;\n"
 "    color: #ffffff;\n"
@@ -706,7 +744,9 @@ public:
 "}\n"
 "\n"
 ""));
-        CurrentProject_Tree->header()->setVisible(true);
+        CurrentProject_Tree->setSelectionBehavior(QAbstractItemView::SelectRows);
+        CurrentProject_Tree->setHeaderHidden(true);
+        CurrentProject_Tree->header()->setVisible(false);
 
         verticalLayout_5->addWidget(CurrentProject_Tree);
 
@@ -791,9 +831,9 @@ public:
 
         horizontalLayout_10->addWidget(SuggestedStructures_CBOX);
 
-        pushButton_3 = new QPushButton(scrollAreaWidgetContents);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setStyleSheet(QString::fromUtf8("/* Button */\n"
+        Apply_Preset_Btn = new QPushButton(scrollAreaWidgetContents);
+        Apply_Preset_Btn->setObjectName(QString::fromUtf8("Apply_Preset_Btn"));
+        Apply_Preset_Btn->setStyleSheet(QString::fromUtf8("/* Button */\n"
 "QPushButton {\n"
 "    background-color: #2a2a2a;\n"
 "    color: #ffffff;\n"
@@ -820,7 +860,7 @@ public:
 "}\n"
 ""));
 
-        horizontalLayout_10->addWidget(pushButton_3);
+        horizontalLayout_10->addWidget(Apply_Preset_Btn);
 
 
         verticalLayout_2->addLayout(horizontalLayout_10);
@@ -1547,10 +1587,11 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Project Plugins", nullptr));
         Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Build_Page), QCoreApplication::translate("MainWindow", "Plugins Setup", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Current Content Folder", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Add Folder", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Remove Folder", nullptr));
+        Add_Folder_Btn->setText(QCoreApplication::translate("MainWindow", "Add Folder", nullptr));
+        Remove_Folder_Btn->setText(QCoreApplication::translate("MainWindow", "Remove Folder", nullptr));
+        Create_hierarchy_Btn->setText(QString());
         label_4->setText(QCoreApplication::translate("MainWindow", "Presets", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Apply Preset", nullptr));
+        Apply_Preset_Btn->setText(QCoreApplication::translate("MainWindow", "Apply Preset", nullptr));
         Main_Menu_Tabs->setTabText(Main_Menu_Tabs->indexOf(Project_Structure_Tab), QCoreApplication::translate("MainWindow", "Project Structure", nullptr));
         Project_Path_Label->setText(QCoreApplication::translate("MainWindow", "Project Path", nullptr));
         UE_Source_Path_Label->setText(QCoreApplication::translate("MainWindow", "Engine Path", nullptr));

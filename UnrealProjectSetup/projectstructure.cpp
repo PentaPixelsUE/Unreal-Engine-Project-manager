@@ -1,30 +1,37 @@
 #include "projectstructure.h"
+#include "qdebug.h"
+
 #include <QStandardItem>
 
-projectstructure::projectstructure(){
+projectstructure::projectstructure() {
 
+    currentProjectModel = new QStandardItemModel();
+}
+
+projectstructure::~projectstructure() {
+    delete currentProjectModel;
 }
 
 void projectstructure::ShooterStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
-    // Game
-    QStandardItem* gameItem = new QStandardItem("Game");
-    rootItem->appendRow(gameItem);
+//    // Game
+//    QStandardItem* rootItem = new QStandardItem("Game");
+//    rootItem->appendRow(rootItem);
 
     // Blueprints
     QStandardItem* blueprintsItem = new QStandardItem("Blueprints");
-    gameItem->appendRow(blueprintsItem);
+    rootItem->appendRow(blueprintsItem);
 
     // Characters
     QStandardItem* charactersItem = new QStandardItem("Characters");
-    gameItem->appendRow(charactersItem);
+    rootItem->appendRow(charactersItem);
 
     // Environments
     QStandardItem* environmentsItem = new QStandardItem("Environments");
-    gameItem->appendRow(environmentsItem);
+    rootItem->appendRow(environmentsItem);
 
     // Architecture
     QStandardItem* architectureItem = new QStandardItem("Architecture");
@@ -44,11 +51,11 @@ void projectstructure::ShooterStructure(QStandardItemModel* model)
 
     // UI
     QStandardItem* uiItem = new QStandardItem("UI");
-    gameItem->appendRow(uiItem);
+    rootItem->appendRow(uiItem);
 
     // Weapons
     QStandardItem* weaponsItem = new QStandardItem("Weapons");
-    gameItem->appendRow(weaponsItem);
+    rootItem->appendRow(weaponsItem);
 
     // Config
     QStandardItem* configItem = new QStandardItem("Config");
@@ -125,23 +132,23 @@ void projectstructure::ShooterStructure(QStandardItemModel* model)
 void projectstructure::TopDownStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
-    // Game
-    QStandardItem* gameItem = new QStandardItem("Game");
-    rootItem->appendRow(gameItem);
+//    // Game
+//    QStandardItem* rootItem = new QStandardItem("Game");
+//    rootItem->appendRow(rootItem);
 
     // Blueprints
     QStandardItem* blueprintsItem = new QStandardItem("Blueprints");
-    gameItem->appendRow(blueprintsItem);
+    rootItem->appendRow(blueprintsItem);
 
     // Characters
     QStandardItem* charactersItem = new QStandardItem("Characters");
-    gameItem->appendRow(charactersItem);
+    rootItem->appendRow(charactersItem);
 
     // Environments
     QStandardItem* environmentsItem = new QStandardItem("Environments");
-    gameItem->appendRow(environmentsItem);
+    rootItem->appendRow(environmentsItem);
 
     // Tiles
     QStandardItem* tilesItem = new QStandardItem("Tiles");
@@ -149,11 +156,11 @@ void projectstructure::TopDownStructure(QStandardItemModel* model)
 
     // UI
     QStandardItem* uiItem = new QStandardItem("UI");
-    gameItem->appendRow(uiItem);
+    rootItem->appendRow(uiItem);
 
     // Weapons
     QStandardItem* weaponsItem = new QStandardItem("Weapons");
-    gameItem->appendRow(weaponsItem);
+    rootItem->appendRow(weaponsItem);
 
     // Maps
     QStandardItem* mapsItem = new QStandardItem("Maps");
@@ -210,23 +217,23 @@ void projectstructure::TopDownStructure(QStandardItemModel* model)
 void projectstructure::VirtualProdStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
-    // Game
-    QStandardItem* gameItem = new QStandardItem("Game");
-    rootItem->appendRow(gameItem);
+//    // Game
+//    QStandardItem* rootItem = new QStandardItem("Game");
+//    rootItem->appendRow(rootItem);
 
     // Blueprints
     QStandardItem* blueprintsItem = new QStandardItem("Blueprints");
-    gameItem->appendRow(blueprintsItem);
+    rootItem->appendRow(blueprintsItem);
 
     // Characters
     QStandardItem* charactersItem = new QStandardItem("Characters");
-    gameItem->appendRow(charactersItem);
+    rootItem->appendRow(charactersItem);
 
     // Environments
     QStandardItem* environmentsItem = new QStandardItem("Environments");
-    gameItem->appendRow(environmentsItem);
+    rootItem->appendRow(environmentsItem);
 
     // Materials
     QStandardItem* materialsItem = new QStandardItem("Materials");
@@ -311,7 +318,7 @@ void projectstructure::VirtualProdStructure(QStandardItemModel* model)
 void projectstructure::OpenWorldStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
     // Assets
     QStandardItem* assetsItem = new QStandardItem("Assets");
@@ -437,9 +444,9 @@ void projectstructure::OpenWorldStructure(QStandardItemModel* model)
     QStandardItem* rendersItem = new QStandardItem("Renders");
     outputItem->appendRow(rendersItem);
 
-    // Game
-    QStandardItem* gameItem = new QStandardItem("Game");
-    outputItem->appendRow(gameItem);
+//    // Game
+//    QStandardItem* rootItem = new QStandardItem("Game");
+//    outputItem->appendRow(rootItem);
 
     // ThirdParty
     QStandardItem* thirdPartyItem = new QStandardItem("ThirdParty");
@@ -452,23 +459,23 @@ void projectstructure::OpenWorldStructure(QStandardItemModel* model)
 void projectstructure::SideScrollerStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
-    // Game
-    QStandardItem* gameItem = new QStandardItem("Game");
-    rootItem->appendRow(gameItem);
+//    // Game
+//    QStandardItem* rootItem = new QStandardItem("Game");
+//    rootItem->appendRow(rootItem);
 
     // Blueprints
     QStandardItem* blueprintsItem = new QStandardItem("Blueprints");
-    gameItem->appendRow(blueprintsItem);
+    rootItem->appendRow(blueprintsItem);
 
     // Characters
     QStandardItem* charactersItem = new QStandardItem("Characters");
-    gameItem->appendRow(charactersItem);
+    rootItem->appendRow(charactersItem);
 
     // Environments
     QStandardItem* environmentsItem = new QStandardItem("Environments");
-    gameItem->appendRow(environmentsItem);
+    rootItem->appendRow(environmentsItem);
 
     // Materials
     QStandardItem* materialsItem = new QStandardItem("Materials");
@@ -517,7 +524,7 @@ void projectstructure::SideScrollerStructure(QStandardItemModel* model)
 void projectstructure::ArchVizStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
     // Environments
     QStandardItem* environmentsItem = new QStandardItem("Environments");
@@ -590,7 +597,7 @@ void projectstructure::ArchVizStructure(QStandardItemModel* model)
 void projectstructure::AnimationStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
     // Characters
     QStandardItem* charactersItem = new QStandardItem("Characters");
@@ -707,7 +714,7 @@ void projectstructure::AnimationStructure(QStandardItemModel* model)
 void projectstructure::MobileTabletStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
     // Characters
     QStandardItem* charactersItem = new QStandardItem("Characters");
@@ -810,7 +817,7 @@ void projectstructure::MobileTabletStructure(QStandardItemModel* model)
 void projectstructure::ARVRStructure(QStandardItemModel* model)
 {
     // Root item
-    QStandardItem* rootItem = new QStandardItem("Content");
+    QStandardItem* rootItem = new QStandardItem("Game");
 
     // Scenes
     QStandardItem* scenesItem = new QStandardItem("Scenes");
@@ -894,6 +901,66 @@ void projectstructure::ARVRStructure(QStandardItemModel* model)
 
     // Add the root item to the model
     model->appendRow(rootItem);
+}
+
+
+void projectstructure::DisplayFolders(const QDir &folder, QStandardItemModel *model, QStandardItem *parentItem)
+{
+    QStandardItem *rootItem = parentItem ? parentItem : model->invisibleRootItem();
+
+    QFileInfoList fileInfoList = folder.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+
+    for (const QFileInfo &fileInfo : fileInfoList)
+    {
+        QStandardItem *item = new QStandardItem(fileInfo.fileName());
+
+        // Recursively display contents for subdirectories
+        QDir subDir(fileInfo.filePath());
+        DisplayFolders(subDir, model, item);
+
+        rootItem->appendRow(item);
+    }
+}
+
+void projectstructure::cloneTreeStructure(QStandardItem* sourceItem, QStandardItem* targetItem)
+{
+    // Clone child items recursively
+    for (int row = 0; row < sourceItem->rowCount(); ++row) {
+        QStandardItem* childItem = sourceItem->child(row);
+        if (childItem) {
+            // Clone the child item and append it to the target item
+            QStandardItem* cloneChildItem = childItem->clone();
+            targetItem->appendRow(cloneChildItem);
+
+            // Recursively clone child items of the child item
+            cloneTreeStructure(childItem, cloneChildItem);
+        }
+    }
+}
+
+void projectstructure::createMissingFolders(const QDir& diskFolder, QStandardItem* treeItem)
+{
+    qDebug() << "Checking folder:" << diskFolder.path();
+
+    if (!diskFolder.exists()) {
+        // Folder doesn't exist on disk, create it
+        if (!diskFolder.mkpath(".")) {
+            qDebug() << "Error creating folder:" << diskFolder.path();
+            return;
+        }
+    }
+
+    // Iterate over child items in the tree
+    qDebug() << "Iterating over child items in the tree:" << diskFolder.path();
+    for (int row = 0; row < treeItem->rowCount(); ++row) {
+        QStandardItem* childItem = treeItem->child(row);
+        QString childFolderName = diskFolder.filePath(childItem->text());
+
+        qDebug() << "Child folder path:" << childFolderName;
+
+        // Recursively check and create subfolders
+        createMissingFolders(QDir(childFolderName), childItem);
+    }
 }
 
 

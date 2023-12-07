@@ -724,7 +724,7 @@ QLabel {
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_2">
+                   <widget class="QPushButton" name="Add_Folder_Btn">
                     <property name="styleSheet">
                      <string notr="true">/* Button */
 QPushButton {
@@ -759,7 +759,7 @@ QPushButton:disabled {
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton">
+                   <widget class="QPushButton" name="Remove_Folder_Btn">
                     <property name="styleSheet">
                      <string notr="true">/* Button */
 QPushButton {
@@ -793,10 +793,60 @@ QPushButton:disabled {
                     </property>
                    </widget>
                   </item>
+                  <item>
+                   <widget class="QPushButton" name="Create_hierarchy_Btn">
+                    <property name="styleSheet">
+                     <string notr="true">/* Button */
+QPushButton {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;Segoe UI&quot;, sans-serif; /* Modern font example */
+}
+
+QPushButton:hover {
+  background-color: rgb(214, 187, 152);
+  border-color: #585c62;
+}
+
+QPushButton:pressed {
+  background-color:  rgb(240, 125, 126);
+  border-color: #72767a;
+}
+
+QPushButton:disabled {
+  background-color: #52565a;
+  border-color: #64686c;
+  color: #888888;
+}
+</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset resource="QtDesign_Resources/UE5Logo.qrc">
+                      <normaloff>:/UE5Logo/Saveicon.png</normaloff>:/UE5Logo/Saveicon.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>23</width>
+                      <height>23</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
                  </layout>
                 </item>
                 <item>
                  <widget class="QTreeView" name="CurrentProject_Tree">
+                  <property name="font">
+                   <font>
+                    <pointsize>14</pointsize>
+                   </font>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">QTreeView {
     background-color: #333333;
@@ -825,8 +875,14 @@ QTreeView::item:selected:active {
 
 </string>
                   </property>
-                  <attribute name="headerVisible">
+                  <property name="selectionBehavior">
+                   <enum>QAbstractItemView::SelectRows</enum>
+                  </property>
+                  <property name="headerHidden">
                    <bool>true</bool>
+                  </property>
+                  <attribute name="headerVisible">
+                   <bool>false</bool>
                   </attribute>
                  </widget>
                 </item>
@@ -940,7 +996,7 @@ QComboBox::item:selected {
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="pushButton_3">
+                   <widget class="QPushButton" name="Apply_Preset_Btn">
                     <property name="styleSheet">
                      <string notr="true">/* Button */
 QPushButton {

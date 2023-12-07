@@ -94,9 +94,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->Enable_Project_Plugins_Button, &QPushButton::clicked,this, &MainWindow::onEnablePluginForProjectBtnClickr);
     connect(ui->Toggle_Global_Plugin_Btn, &QPushButton::clicked, this, &MainWindow::onToggleDefaultPluginSettingBtnClickr);
 
-//CBOX Suggested Sturcts
+//folder  Sturcts
     connect(ui->SuggestedStructures_CBOX, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &MainWindow::onSuggestedStructureIndexChanged);
+    connect(ui->CurrentProject_Tree, &QTreeView::clicked, this, &MainWindow::clearSelectionOnEmptyArea);
+
+    connect(ui->Apply_Preset_Btn, &QPushButton::clicked, this, &MainWindow::onApplyPresetButtonClickr);
+   connect(ui->Add_Folder_Btn, &QPushButton::clicked, this, &MainWindow::onAddFolderButtonClickr);
+    connect(ui->Remove_Folder_Btn, &QPushButton::clicked, this, &MainWindow::onRemoveFolderButtonClickr);
+    connect(ui->Create_hierarchy_Btn, &QPushButton::clicked, this, &MainWindow::onApplyFolderHierarchyclickr);
 
 QStringList suggestedProjects = {
     "Shooter",
@@ -388,6 +394,7 @@ void MainWindow::updateErrorLabel(const QString& errorMessage) {
 
 bool MainWindow::validateProjectName() {
     // Clear the error label at the beginning of the function
+
     updateErrorLabel("");
 
     QString projectName = ui->Project_Name_Txt->text();
@@ -409,6 +416,7 @@ bool MainWindow::validateProjectName() {
 
         QString uprojectPath = projectPath + QDir::separator() + projectName;
 
+
         // Check if the uprojectPath has changed
         if (uprojectPath != PluginManager::getInstance().getUProjectPath()) {
                 // Clear the model before updating
@@ -417,7 +425,7 @@ bool MainWindow::validateProjectName() {
                 QStandardItemModel *model = new QStandardItemModel(this);
                 QString ContentPath=  uprojectPath + QDir::separator() +"Content";
                 // Assuming DisplayFolders is a recursive function to populate the model with the folder structure
-                DisplayFolders(ContentPath, model, nullptr);
+                projectstructure::getInstance().DisplayFolders(ContentPath, model, nullptr);
 
                 // Set the model to the QTreeView
                 ui->CurrentProject_Tree->setModel(model);
@@ -435,6 +443,7 @@ bool MainWindow::validateProjectName() {
 
     return false;
 }
+
 
 
 
@@ -700,9 +709,10 @@ void MainWindow::onToggleDefaultPluginSettingBtnClickr() {
 
 void MainWindow::onSuggestedStructureIndexChanged(int index)
 {
+
         QString selectedProject = ui->SuggestedStructures_CBOX->itemText(index);
         QStandardItemModel *model = new QStandardItemModel(this);
-        projectstructure project;
+        projectstructure& project = projectstructure::getInstance();
         if (selectedProject == "Shooter") {
             project.ShooterStructure(model);
         } else if (selectedProject == "Top Down") {
@@ -727,19 +737,184 @@ void MainWindow::onSuggestedStructureIndexChanged(int index)
 }
 
 
-void MainWindow::DisplayFolders(const QDir &folder, QStandardItemModel *model, QStandardItem *parentItem)
+void MainWindow::onApplyPresetButtonClickr()
 {
-        QFileInfoList fileInfoList = folder.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot);
+        // Get the models of both trees
+        QStandardItemModel* suggestedModel = qobject_cast<QStandardItemModel*>(ui->SuggestedStructuresGame_Tree->model());
+        QStandardItemModel* currentModel = qobject_cast<QStandardItemModel*>(ui->CurrentProject_Tree->model());
 
-        for (const QFileInfo &fileInfo : fileInfoList)
-        {
-            QStandardItem *item = new QStandardItem(fileInfo.fileName());
+        if (!suggestedModel || !currentModel) {
+            // Ensure both models are valid
+            qDebug() << "Invalid models";
+            return;
+        }
 
-            // Recursively display contents for subdirectories
-            QDir subDir(fileInfo.filePath());
-            DisplayFolders(subDir, model, item);
+        // Find the index to append the new preset
+        int appendIndex = 0;
+        while (currentModel->item(appendIndex) && currentModel->item(appendIndex)->text() == "Game " + QString::number(appendIndex + 1)) {
+            // Increment the index if a "Game x" folder already exists
+            ++appendIndex;
+        }
 
-            parentItem ? parentItem->appendRow(item) : model->appendRow(item);
+        // Clone the items from the SuggestedStructuresGame_Tree and append them to the current tree
+        for (int row = 0; row < suggestedModel->rowCount(); ++row) {
+            QStandardItem* rootItem = suggestedModel->item(row);
+            if (rootItem) {
+           // Clone the root item to add it to the current tree
+           QStandardItem* cloneRootItem = rootItem->clone();
+
+           // Append the cloned item to the current tree with the appropriate name
+           currentModel->insertRow(appendIndex, cloneRootItem);
+           cloneRootItem->setText("Game " + QString::number(appendIndex + 1));
+
+           // Recursively clone child items
+           projectstructure::getInstance().cloneTreeStructure(rootItem, cloneRootItem);
+            }
+        }
+}
+
+void MainWindow::onRemoveFolderButtonClickr()
+{
+        // Your implementation here, using the getSelectedTreeItem function
+        QStandardItem* selectedItem = getSelectedTreeItem();
+
+        // Check if an item is selected
+        if (selectedItem) {
+            QStandardItemModel* currentModel = qobject_cast<QStandardItemModel*>(ui->CurrentProject_Tree->model());
+
+            if (currentModel) {
+           // Check if the selected item is a top-level folder
+           QStandardItem* parentItem = selectedItem->parent();
+           if (!parentItem) {
+                    // Append its children to the root
+                    int rowCount = selectedItem->rowCount();
+                    for (int i = 0; i < rowCount; ++i) {
+                        QStandardItem* childItem = selectedItem->child(i);
+                        currentModel->appendRow(childItem->clone());
+                    }
+           }
+
+           // Remove the selected item
+           int row = selectedItem->row();
+           if (parentItem) {
+                    parentItem->removeRow(row);
+           } else {
+                    currentModel->removeRow(row);
+           }
+
+           // Clear the selection after removing the folder
+           ui->CurrentProject_Tree->clearSelection();
+            }
+        } else {
+            // Display an error if nothing is selected
+            qDebug() << "Error: No item selected for removal.";
+        }
+}
+
+
+void MainWindow::onAddFolderButtonClickr()
+{
+
+        QStandardItem* selectedItem = getSelectedTreeItem();
+
+        // Create a new folder item on the heap
+        std::unique_ptr<QStandardItem> newFolderItem = std::make_unique<QStandardItem>("New Folder");
+
+        if (selectedItem) {
+            // Add the new folder as a child to the selected item
+            selectedItem->appendRow(newFolderItem.release());
+        } else {
+            // Add the new folder to the root of the tree
+            QStandardItemModel* currentModel = qobject_cast<QStandardItemModel*>(ui->CurrentProject_Tree->model());
+            if (currentModel) {
+           currentModel->appendRow(newFolderItem.release());
+            }
+        }
+
+        // Clear the selection after adding the new folder
+        ui->CurrentProject_Tree->clearSelection();
+}
+
+QStandardItem* MainWindow::getSelectedTreeItem()
+{
+        QItemSelectionModel* selectionModel = ui->CurrentProject_Tree->selectionModel();
+
+        if (selectionModel->hasSelection()) {
+
+            QModelIndexList selectedIndexes = selectionModel->selectedIndexes();
+
+            // Assuming your model is a QStandardItemModel
+            QStandardItemModel* model = qobject_cast<QStandardItemModel*>(ui->CurrentProject_Tree->model());
+
+            if (model && !selectedIndexes.isEmpty()) {
+           QModelIndex selectedIndex = selectedIndexes.first();
+           QStandardItem* selectedItem = model->itemFromIndex(selectedIndex);
+
+           return selectedItem;
+            }
+        }
+
+        return nullptr;
+}
+
+void MainWindow::clearSelectionOnEmptyArea(const QModelIndex &index)
+{
+        if (!index.isValid()) {
+            // The user clicked on an empty area, not on an item
+            ui->CurrentProject_Tree->clearSelection();
+        }
+}
+void MainWindow::onApplyFolderHierarchyclickr()
+{
+        projectstructure& myProjectStructure = projectstructure::getInstance();
+
+        QString projectName = ui->Project_Name_Txt->text();
+        QString projectPath = ui->Project_Path_Txt->text();
+        QString uprojectPath = projectPath + QDir::separator() + projectName;
+        QString contentPath = uprojectPath + QDir::separator() + "Content";
+
+        QDir contentFolder(contentPath);
+        qDebug() << contentPath << "Contentpath";
+        QStandardItemModel* model = projectstructure::getInstance().currentProjectModel;
+        if (model) {
+            displayFolderHierarchy(model->invisibleRootItem(), "");
+        }
+
+        // Ensure that currentProjectModel is not null
+        if (projectstructure::getInstance().currentProjectModel) {
+            // Debug output to check the contents of currentProjectModel
+            QStandardItemModel* model = projectstructure::getInstance().currentProjectModel;
+            qDebug() << "Contents of currentProjectModel:";
+
+            for (int row = 0; row < model->rowCount(); ++row) {
+           QStandardItem* item = model->item(row);
+           qDebug() << "Item:" << item->text();
+            }
+
+            // Check and create missing folders
+            qDebug() << "Check and create missing folders:";
+            projectstructure::getInstance().createMissingFolders(contentFolder, model->invisibleRootItem());
+
+            // Now, the folder structure in the tree is synchronized with the disk
+        } else {
+            qDebug() << "Error: currentProjectModel is null or not properly initialized.";
+        }
+}
+
+
+void MainWindow::displayFolderHierarchy(QStandardItem *parentItem, QString indent)
+{
+        if (!parentItem)
+            return;
+
+        int rowCount = parentItem->rowCount();
+        for (int row = 0; row < rowCount; ++row) {
+            QStandardItem *childItem = parentItem->child(row);
+            QString folderName = childItem->text();
+            qDebug() << indent << folderName;
+
+            // Recursive call to display child items
+            displayFolderHierarchy(childItem, indent + "  ");
         }
 }
 

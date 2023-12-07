@@ -44,7 +44,8 @@ private:
     QSortFilterProxyModel* filterProxyModel;
 
     RunMode selectedMode;
-
+ QStandardItem* getSelectedTreeItem();
+    void clearSelectionOnEmptyArea(const QModelIndex &index);
     bool openSublimeFlag;
     // Update the list of disabled plugins
     void updateDisabledPluginsList();
@@ -53,9 +54,14 @@ private:
     void RefreshProjectPluginList();
     void loadengineplugins();
     void DisplayFolders(const QDir &folder, QStandardItemModel *model, QStandardItem *parentItem = nullptr);
+    void displayFolderHierarchy(QStandardItem *parentItem, QString indent);
+//    QStandardItem* findGameFolder(QStandardItemModel* model);
 //    void FillSuggestedStructureTree();
 private slots:
-
+    void onApplyFolderHierarchyclickr();
+    void onRemoveFolderButtonClickr();
+    void onAddFolderButtonClickr();
+     void onApplyPresetButtonClickr();
     void onSuggestedStructureIndexChanged(int index);
 
     //Slot for handeling the "Enable Plugin For Project" Button Clicker
