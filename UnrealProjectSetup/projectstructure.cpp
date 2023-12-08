@@ -938,6 +938,7 @@ void projectstructure::cloneTreeStructure(QStandardItem* sourceItem, QStandardIt
     }
 }
 
+
 void projectstructure::createMissingFolders(const QDir& diskFolder, QStandardItem* treeItem)
 {
     qDebug() << "Checking folder:" << diskFolder.path();

@@ -709,29 +709,35 @@ void MainWindow::onToggleDefaultPluginSettingBtnClickr() {
 
 void MainWindow::onSuggestedStructureIndexChanged(int index)
 {
-
         QString selectedProject = ui->SuggestedStructures_CBOX->itemText(index);
-        QStandardItemModel *model = new QStandardItemModel(this);
         projectstructure& project = projectstructure::getInstance();
+        QStandardItemModel* model = project.currentProjectModel;
+
+        // Clear the existing model
+        model->clear();
+
+        // Apply the structure based on the selected project
         if (selectedProject == "Shooter") {
             project.ShooterStructure(model);
         } else if (selectedProject == "Top Down") {
             project.TopDownStructure(model);
-        } else if ( selectedProject == "Virtual Production") {
+        } else if (selectedProject == "Virtual Production") {
             project.VirtualProdStructure(model);
-        }else if ( selectedProject == "Open World") {
+        } else if (selectedProject == "Open World") {
             project.OpenWorldStructure(model);
-        }else if ( selectedProject == "2D Side Scroller") {
+        } else if (selectedProject == "2D Side Scroller") {
             project.SideScrollerStructure(model);
-        }else if ( selectedProject == "ArchViz") {
+        } else if (selectedProject == "ArchViz") {
             project.ArchVizStructure(model);
-        }else if ( selectedProject == "Animation") {
+        } else if (selectedProject == "Animation") {
             project.AnimationStructure(model);
-        }else if ( selectedProject ==  "Mobile / Tablet") {
+        } else if (selectedProject == "Mobile / Tablet") {
             project.MobileTabletStructure(model);
-        }else if ( selectedProject ==    "AR/VR") {
+        } else if (selectedProject == "AR/VR") {
             project.ARVRStructure(model);
         }
+
+        // Update the tree view with the new model
         ui->SuggestedStructuresGame_Tree->setModel(model);
         ui->SuggestedStructuresGame_Tree->expandAll();
 }
@@ -739,12 +745,10 @@ void MainWindow::onSuggestedStructureIndexChanged(int index)
 
 void MainWindow::onApplyPresetButtonClickr()
 {
-        // Get the models of both trees
         QStandardItemModel* suggestedModel = qobject_cast<QStandardItemModel*>(ui->SuggestedStructuresGame_Tree->model());
         QStandardItemModel* currentModel = qobject_cast<QStandardItemModel*>(ui->CurrentProject_Tree->model());
 
         if (!suggestedModel || !currentModel) {
-            // Ensure both models are valid
             qDebug() << "Invalid models";
             return;
         }
@@ -752,7 +756,6 @@ void MainWindow::onApplyPresetButtonClickr()
         // Find the index to append the new preset
         int appendIndex = 0;
         while (currentModel->item(appendIndex) && currentModel->item(appendIndex)->text() == "Game " + QString::number(appendIndex + 1)) {
-            // Increment the index if a "Game x" folder already exists
             ++appendIndex;
         }
 
@@ -884,15 +887,20 @@ void MainWindow::onApplyFolderHierarchyclickr()
         if (projectstructure::getInstance().currentProjectModel) {
             // Debug output to check the contents of currentProjectModel
             QStandardItemModel* model = projectstructure::getInstance().currentProjectModel;
+
             qDebug() << "Contents of currentProjectModel:";
 
-            for (int row = 0; row < model->rowCount(); ++row) {
-           QStandardItem* item = model->item(row);
+            for (int row = 0; row < projectstructure::getInstance().currentProjectModel->rowCount(); ++row) {
+           QStandardItem* item = projectstructure::getInstance().currentProjectModel->item(row);
            qDebug() << "Item:" << item->text();
             }
 
+
             // Check and create missing folders
             qDebug() << "Check and create missing folders:";
+
+            // Set the model to the QTreeView
+
             projectstructure::getInstance().createMissingFolders(contentFolder, model->invisibleRootItem());
 
             // Now, the folder structure in the tree is synchronized with the disk
