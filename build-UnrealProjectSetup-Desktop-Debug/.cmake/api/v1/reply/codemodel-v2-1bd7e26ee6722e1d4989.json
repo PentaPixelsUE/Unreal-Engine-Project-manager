@@ -11,7 +11,7 @@
 						1
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-692204941828302953f8.json",
+					"jsonFile" : "directory-.-Debug-0fa15159fabda267a921.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -69,7 +69,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "UnrealProjectSetup::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-UnrealProjectSetup-Debug-a5329a1131cb548f270a.json",
+					"jsonFile" : "target-UnrealProjectSetup-Debug-3234e68c5120f0423315.json",
 					"name" : "UnrealProjectSetup",
 					"projectIndex" : 0
 				},

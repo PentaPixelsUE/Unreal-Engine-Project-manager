@@ -1,4 +1,3 @@
-// pluginsmanager.h
 #ifndef PLUGINSMANAGER_H
 #define PLUGINSMANAGER_H
 
@@ -35,7 +34,7 @@ public:
         return projectPluginsProxyModel;
     }
 
-  //Getters and setters for paths
+
     const QString& getEnginePath() const {
         return enginePath;
     }

@@ -28,6 +28,7 @@ set(PROJECT_SOURCES
         projectstructure.cpp
         projectstructure.h
     )
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/linuxconfig.json ${CMAKE_CURRENT_BINARY_DIR}/linuxconfig.json COPYONLY)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 

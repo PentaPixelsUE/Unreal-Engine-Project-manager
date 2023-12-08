@@ -266,6 +266,9 @@
 			"path" : "/usr/share/cmake-3.27/Modules/CMakeParseArguments.cmake"
 		},
 		{
+			"path" : "linuxconfig.json"
+		},
+		{
 			"path" : "json-develop/nlohmann_jsonConfigVersion.cmake"
 		},
 		{
