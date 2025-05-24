@@ -5,6 +5,7 @@
 #include <QProcess>
 #include <QDebug>
 #include <QFile>
+#include <QSysInfo> // Added for OS checking, though #ifdef is used
 
 buildsetup::buildsetup()
 {
@@ -18,19 +19,26 @@ void buildsetup::getBuildFilePath(const QString& buildfilepath)
     // Function implementation using buildfilepath
     qDebug() << "ProjectPath = " << buildfilepath;
 
-    // Construct the full path to the build.sh and run.sh files
-    QString buildfile = buildfilepath + QDir::separator() + "build.sh";
+    QString scriptName = "build.sh";
+    #ifdef _WIN32
+    scriptName = "build.bat";
+    #endif
+    QString buildScriptPath = buildfilepath + QDir::separator() + scriptName;
 
-    qDebug() << "BuildFilePath = " << buildfile;
+    qDebug() << "BuildFilePath = " << buildScriptPath;
 
 
     // Check if the build file exists
-    QFile buildFile(buildfile);
+    QFile buildFile(buildScriptPath);
     if (buildFile.exists()) {
 
         qDebug() << "Build file exists.";
         QProcess buildProcess;
-        buildProcess.start("bash", QStringList() << buildfile);
+        #ifdef _WIN32
+        buildProcess.start("cmd.exe", QStringList() << "/c" << buildScriptPath);
+        #else
+        buildProcess.start("bash", QStringList() << buildScriptPath);
+        #endif
         buildProcess.waitForFinished(-1);
         QString buildOutput = buildProcess.readAllStandardOutput();
         QString buildError = buildProcess.readAllStandardError();
@@ -39,7 +47,7 @@ void buildsetup::getBuildFilePath(const QString& buildfilepath)
         qDebug() << "Build Script Error:\n" << buildError;
     } else {
 
-        qDebug() << "Build file does not exist.";
+        qDebug() << "Build file does not exist at path: " << buildScriptPath;
 
     }
 }
@@ -50,34 +58,56 @@ void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode
 {
     MainWindow MainWindowInstance;
 
-    QString runfile = runfilepath + QDir::separator() + "run.sh";
-    qDebug() << "RunFilePath = " << runfile;
+    QString scriptName = "run.sh";
+    #ifdef _WIN32
+    scriptName = "run.bat";
+    #endif
+    QString runScriptPath = runfilepath + QDir::separator() + scriptName;
+    qDebug() << "RunFilePath = " << runScriptPath;
 
-    QFile runFile(runfile);
+    QFile runFile(runScriptPath);
 
     if (runFile.exists()) {
         qDebug() << "Run file exists.";
 
         QProcess runProcess;
 
-        switch (selectedMode) {
-        case GameMode:
-            runProcess.start("bash", QStringList() << runfile<<"game");
-            break;
-        case EditorMode:
-            runProcess.start("bash", QStringList() << runfile << "editor");
-
-            MainWindowInstance.openSublimeWithFolders(enginePath + QDir::separator() + "Source" + QDir::separator() + "Runtime",
-                                   projectPath + QDir::separator() + projectName + QDir::separator() + "Source",
-                                   "/opt/sublime_text/sublime_text");
-            break;
-        case StandaloneMode:
-            runProcess.start("bash", QStringList() << runfile << "standalone");
-            break;
-        default:
-            qDebug() << "Invalid mode selected.";
+        #ifdef _WIN32
+        if (selectedMode == EditorMode) {
+            runProcess.start("cmd.exe", QStringList() << "/c" << runScriptPath << "editor");
+        } else if (selectedMode == GameMode) {
+            runProcess.start("cmd.exe", QStringList() << "/c" << runScriptPath << "game");
+        } else if (selectedMode == StandaloneMode) {
+            runProcess.start("cmd.exe", QStringList() << "/c" << runScriptPath << "standalone");
+        }
+        #else
+        if (selectedMode == EditorMode) {
+            runProcess.start("bash", QStringList() << runScriptPath << "editor");
+        } else if (selectedMode == GameMode) {
+            runProcess.start("bash", QStringList() << runScriptPath << "game");
+        } else if (selectedMode == StandaloneMode) {
+            runProcess.start("bash", QStringList() << runScriptPath << "standalone");
+        }
+        #endif
+        else { // Should match one of the modes
+            qDebug() << "Invalid mode selected for run script.";
             return;
         }
+        
+        // Handle Sublime Text opening for EditorMode (outside of script execution)
+        if (selectedMode == EditorMode) {
+            #ifdef _WIN32
+            qDebug() << "Sublime Text integration: Path configuration for Windows is required.";
+            // Optionally, you could try to call openSublimeWithFolders with an empty sublimePath 
+            // or a placeholder and let that function handle it, or just disable it.
+            // For now, just a debug message.
+            #else
+            MainWindowInstance.openSublimeWithFolders(enginePath + QDir::separator() + "Source" + QDir::separator() + "Runtime",
+                                       projectPath + QDir::separator() + projectName + QDir::separator() + "Source",
+                                       "/opt/sublime_text/sublime_text");
+            #endif
+        }
+
 
         runProcess.waitForFinished(-1);
 
@@ -86,7 +116,7 @@ void buildsetup::getRunFilePath(const QString& runfilepath, RunMode selectedMode
         qDebug() << "Run Script Output:\n" << runOutput;
         qDebug() << "Run Script Error:\n" << runError;
     } else {
-        qDebug() << "Run file does not exist.";
+        qDebug() << "Run file does not exist at path: " << runScriptPath;
     }
 }
 

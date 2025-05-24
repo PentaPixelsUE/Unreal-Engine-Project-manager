@@ -25,10 +25,23 @@ set(PROJECT_SOURCES
         pluginsmanager.cpp
         QtDesign_Resources/UE5Logo.qrc
         linuxconfig.json
+        windowsconfig.json
         projectstructure.cpp
         projectstructure.h
     )
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/linuxconfig.json ${CMAKE_CURRENT_BINARY_DIR}/linuxconfig.json COPYONLY)
+if(WIN32)
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/windowsconfig.json
+        ${CMAKE_CURRENT_BINARY_DIR}/config.json
+        COPYONLY
+    )
+else()
+    configure_file(
+        ${CMAKE_CURRENT_SOURCE_DIR}/linuxconfig.json
+        ${CMAKE_CURRENT_BINARY_DIR}/config.json
+        COPYONLY
+    )
+endif()
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
@@ -76,16 +89,11 @@ endif()
 
 
 include_directories(json-develop/)
-set(CMAKE_PREFIX_PATH /media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/)
 
 # Add the nlohmann/json library
-add_subdirectory(/media/saif/a6fc8aae-38f2-48da-bac6-fb7a12b6f241/Plugins/UnrealProjectSetup/json-develop/)
+add_subdirectory(json-develop)
 
 
 
 target_link_libraries(UnrealProjectSetup PRIVATE Qt${QT_VERSION_MAJOR}::Widgets nlohmann_json)
-
-
-find_package(nlohmann_json REQUIRED)
-target_include_directories(UnrealProjectSetup PRIVATE ${JSONCPP_INCLUDE_DIRS})
 

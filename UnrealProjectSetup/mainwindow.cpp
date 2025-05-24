@@ -367,7 +367,7 @@ void MainWindow::onSetupProjectFilesBtnClicker()
         QMessageBox::information(this, "Project Name", "Project Name: " + project_name);
 
      //   QString executablePath = QCoreApplication::applicationDirPath();
-        QString jsonFilePath = QApplication::applicationDirPath() + QDir::separator() + "linuxconfig.json";
+        QString jsonFilePath = QApplication::applicationDirPath() + QDir::separator() + "config.json";
 
 
 
